@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+   <allowoverlay>no</allowoverlay>
+   <onload>ActivateWindow(9506)</onload>
+   <onunload>ActivateWindow(12005)</onunload>
+   <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
+   <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingmovies)</onload>
+   <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
+   <coordinates>
+      <system>1</system>
+      <posx>0</posx>
+      <posy>0</posy>
+   </coordinates>
+   <animation effect="fade" time="700">WindowOpen</animation>
+   <animation effect="fade" time="700">WindowClose</animation>
+   <controls>
+      <!--FOCUSED TEXT COLOR-->
+      <control type="button" id="99">
+         <visible>false</visible>
+         <label>0xFFFFFFFF</label>
+      </control>
+      <!--TEXT COLOR-->
+      <control type="button" id="100">
+         <visible>false</visible>
+         <label>0xC0C0C0C0</label>
+      </control>
+      <!--TEXT FONT-->
+      <control type="button" id="105">
+         <visible>false</visible>
+         <label>font12</label>
+      </control>
+      <!--EPG BACKGROUND-->
+      <control type="image">
+         <description>Info Background</description>
+         <posx>0</posx>
+         <posy>0</posy>
+         <width>1920</width>
+         <height>1080</height>
+         <texture>CMZEPGMask.png</texture>
+         <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      <control type="image">
+         <description>Info Background</description>
+         <posx>0</posx>
+         <posy>0</posy>
+         <width>1920</width>
+         <height>1080</height>
+         <texture>CMZEPG100.png</texture>
+         <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      <!--EPG DATE-->
+      <control type="label" id="104">
+         <description>Date Label</description>
+         <posx>100</posx>
+         <posy>108</posy>
+         <width>212</width>
+         <height>35</height>
+         <align>center</align>
+         <aligny>center</aligny>
+         <label>Current Date</label>
+         <font>font10</font>
+         <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <!--TIME BAR 1/3-->
+      <control type="label" id="101">
+         <description>Time Left Label</description>
+         <posx>330</posx>
+         <posy>108</posy>
+         <width>250</width>
+         <height>35</height>
+         <label>Time 1</label>
+         <font>font10</font>
+         <align>left</align>
+         <aligny>center</aligny>
+         <textcolor>FFFF3D6F</textcolor>
+      </control>
+      <!--TIME BAR 2/3-->
+      <control type="label" id="102">
+         <description>Time Middle Label</description>
+         <posx>830</posx>
+         <posy>108</posy>
+         <width>250</width>
+         <height>35</height>
+         <label>Time 2</label>
+         <font>font10</font>
+         <align>left</align>
+         <aligny>center</aligny>
+         <textcolor>FFFF3D6F</textcolor>
+      </control>
+      <!--TIME BAR 3/3-->
+      <control type="label" id="103">
+         <description>Time Right Label</description>
+         <posx>1330</posx>
+         <posy>108</posy>
+         <width>250</width>
+         <height>35</height>
+         <label>Time 3</label>
+         <font>font10</font>
+         <align>left</align>
+         <aligny>center</aligny>
+         <textcolor>FFFF3D6F</textcolor>
+      </control>
+      <!-- DESCRIPTION INFO PANEL -->
+      <control type="grouplist">
+         <posx>670</posx>
+         <posy>695</posy>
+         <align>left</align>
+         <aligny>bottom</aligny>
+         <orientation>horizontal</orientation>
+         <itemgap>5</itemgap>
+         <control type="label" id="500">
+            <description>Show Name Label</description>
+            <width min="50" max="550">auto</width>
+            <height>30</height>
+            <label />
+            <font>font12</font>
+            <textcolor>FFFFAEC3</textcolor>
+            <scroll>true</scroll>
+            <wrapmultiline>false</wrapmultiline>
+            <scrollspeed>50</scrollspeed>
+            <scrollsuffix>-</scrollsuffix>
+         </control>
+         <control type="label">
+            <description>Showtitle Sep Label</description>
+            <width>10</width>
+            <height>30</height>
+            <label>-</label>
+            <font>font12</font>
+            <textcolor>FFFFAEC3</textcolor>
+         </control>
+         <control type="label" id="501">
+            <description>Show Title Label</description>
+            <width min="50" max="270">auto</width>
+            <height>30</height>
+            <label />
+            <font>font12</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <scroll>true</scroll>
+            <wrapmultiline>false</wrapmultiline>
+            <scrollspeed>50</scrollspeed>
+            <scrollsuffix>-</scrollsuffix>
+         </control>
+      </control>
+      <!--CHANNEL NUMBER-->
+      <control type="grouplist">
+         <posx>266</posx>
+         <posy>150</posy>
+		 <animation effect="fade" time="200" delay="200">Hidden</animation>
+         <itemgap>7</itemgap>
+         <orientation>vertical</orientation>
+         <control type="label" id="311">
+            <description>Channel 1 Number</description>
+            <width>41</width>
+            <height>83</height>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+         </control>
+         <control type="label" id="312">
+            <description>Channel 2 Number</description>
+            <width>41</width>
+            <height>83</height>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+         </control>
+         <control type="label" id="313">
+            <description>Channel 3 Number</description>
+            <width>41</width>
+            <height>83</height>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+         </control>
+         <control type="label" id="314">
+            <description>Channel 4 Number</description>
+            <width>41</width>
+            <height>83</height>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+         </control>
+         <control type="label" id="315">
+            <description>Channel 5 Number</description>
+            <width>41</width>
+            <height>83</height>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+         </control>
+         <control type="label" id="316">
+            <description>Channel 6 Number</description>
+            <width>41</width>
+            <height>83</height>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+         </control>
+      </control>
+      <!--CHANNEL LIST-->
+      <control type="grouplist">
+         <posx>107</posx>
+         <posy>155</posy>
+		 <animation effect="fade" time="200" delay="200">Hidden</animation>
+         <itemgap>17</itemgap>
+         <orientation>vertical</orientation>
+         <!--EPG NAME/ICON-->
+         <control type="label" id="301">
+            <description>Channel 1 Name</description>
+            <width>158</width>
+            <height>73</height>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+            <visible>StringCompare(Control.GetLabel(321),)</visible>
+         </control>
+         <control type="image" id="321">
+            <description>Channel 1 Icon</description>
+            <width>158</width>
+            <height>73</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <visible>!StringCompare(Control.GetLabel(321),)</visible>
+         </control>
+         <control type="label" id="302">
+            <description>Channel 2 Name</description>
+            <width>158</width>
+            <height>73</height>
+            <posy>2</posy>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+            <visible>StringCompare(Control.GetLabel(322),)</visible>
+         </control>
+         <control type="image" id="322">
+            <description>Channel 2 Icon</description>
+            <width>158</width>
+            <height>73</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <visible>!StringCompare(Control.GetLabel(322),)</visible>
+         </control>
+         <control type="label" id="303">
+            <description>Channel 3 Name</description>
+            <width>158</width>
+            <height>73</height>
+            <posy>4</posy>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+            <visible>StringCompare(Control.GetLabel(323),)</visible>
+         </control>
+         <control type="image" id="323">
+            <description>Channel 3 Icon</description>
+            <width>158</width>
+            <height>73</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <visible>!StringCompare(Control.GetLabel(323),)</visible>
+         </control>
+         <control type="label" id="304">
+            <description>Channel 4 Name</description>
+            <width>158</width>
+            <height>73</height>
+            <posy>6</posy>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+            <visible>StringCompare(Control.GetLabel(324),)</visible>
+         </control>
+         <control type="image" id="324">
+            <description>Channel 4 Icon</description>
+            <width>158</width>
+            <height>73</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <visible>!StringCompare(Control.GetLabel(324),)</visible>
+         </control>
+         <control type="label" id="305">
+            <description>Channel 5 Name</description>
+            <width>158</width>
+            <height>73</height>
+            <posy>8</posy>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+            <visible>StringCompare(Control.GetLabel(325),)</visible>
+         </control>
+         <control type="image" id="325">
+            <description>Channel 5 Icon</description>
+            <width>158</width>
+            <height>73</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <visible>!StringCompare(Control.GetLabel(325),)</visible>
+         </control>
+         <control type="label" id="306">
+            <description>Channel 6 Name</description>
+            <width>158</width>
+            <height>73</height>
+            <posy>10</posy>
+            <label />
+            <font>font10</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>FFB21A41</textcolor>
+            <visible>StringCompare(Control.GetLabel(326),)</visible>
+         </control>
+         <control type="image" id="326">
+            <description>Channel 6 Icon</description>
+            <width>158</width>
+            <height>73</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <visible>!StringCompare(Control.GetLabel(326),)</visible>
+         </control>
+      </control>
+      <!--EPG CHANNEL LISTINGS-->
+      <control type="image">
+         <description>Channel Background</description>
+         <posx>320</posx>
+         <posy>150</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="group" id="111">
+         <posx>320</posx>
+         <posy>150</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="image">
+         <description>Channel Background</description>
+         <posx>320</posx>
+         <posy>240</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="group" id="112">
+         <posx>320</posx>
+         <posy>240</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="image">
+         <description>Channel Background</description>
+         <posx>320</posx>
+         <posy>330</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="group" id="113">
+         <posx>320</posx>
+         <posy>330</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="image">
+         <description>Channel Background</description>
+         <posx>320</posx>
+         <posy>420</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="group" id="114">
+         <posx>320</posx>
+         <posy>420</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="image">
+         <description>Channel Background</description>
+         <posx>320</posx>
+         <posy>510</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="group" id="115">
+         <posx>320</posx>
+         <posy>510</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="image">
+         <description>Channel Background</description>
+         <posx>320</posx>
+         <posy>600</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <control type="group" id="116">
+         <posx>320</posx>
+         <posy>600</posy>
+         <width>1500</width>
+         <height>83</height>
+      </control>
+      <!--EPG INDICATOR BAR -->
+      <control type="image" id="120">
+         <posx>327</posx>
+         <posy>150</posy>
+         <width>2</width>
+         <height>533</height>
+         <aspectratio>keep</aspectratio>
+      </control>
+      <!-- ARTWORK 507/508 -->
+      <control type="group">
+         <posx>101</posx>
+         <posy>690</posy>
+		 <animation effect="fade" time="200" delay="200">Hidden</animation>
+         <control type="button" id="507">
+            <description>Dynamic art</description>
+            <label>landscape</label>
+            <visible>false</visible>
+         </control>
+         <control type="image" id="508">
+            <description>Dynamic art</description>
+            <width>550</width>
+            <height>282</height>
+            <align>center</align>
+            <aspectratio>stretch</aspectratio>
+         </control>
+      </control>
+      <!--SHOW DESCRIPTION-->
+      <control type="label" id="502">
+         <description>Show Description</description>
+         <posx>670</posx>
+         <posy>740</posy>
+         <width>855</width>
+         <height>300</height>
+         <align>left</align>
+         <aligny>top</aligny>
+         <label />
+         <textcolor>FFFFFFFF</textcolor>
+         <font>font10</font>
+         <wrapmultiline>true</wrapmultiline>
+      </control>
+      <!--TRAKT.TV COMING UP-->
+      <control type="grouplist">
+         <posx>665</posx>
+         <posy>930</posy>
+         <align>left</align>
+         <orientation>horizontal</orientation>
+         <itemgap>15</itemgap>
+         <!--SELECTED CHANNEL LOGO -->
+         <control type="image" id="503">
+            <description>Show Channel Icon</description>
+            <posx>1</posx>
+            <posy>1</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>False</visible>
+         </control>
+         <!--RSS FEED ICON -->
+         <control type="image">
+            <width>40</width>
+            <height>40</height>
+            <aligny>bottom</aligny>
+            <visible>!Skin.HasSetting(disable.rss) + !IsEmpty(Window(home).Property(TrendingShows.1.Title))</visible>
+            <texture>rss.png</texture>
+         </control>
+         <!--COMING UP-->
+         <control type="label">
+            <width>800</width>
+            <height>40</height>
+            <font>Font12</font>
+            <aligny>bottom</aligny>
+            <scroll>True</scroll>
+            <textcolor>C0C0C0C0</textcolor>
+            <scrollsuffix>-</scrollsuffix>
+            <visible>!Skin.HasSetting(disable.rss) + !IsEmpty(Window(home).Property(TrendingShows.1.Title))</visible>
+            <autoscroll time="1000" delay="1000" repeat="2000">True</autoscroll>
+            <label>[COLOR=FFFFFFFF]Trending on [B]Trakt.tv[/B]:[B] $INFO[Window(Home).Property(TrendingShows.1.Title), ][/B] ($INFO[Window(Home).Property(TrendingShows.1.Watchers), ] Watchers)  -  [B]$INFO[Window(Home).Property(TrendingShows.2.Title), ][/B] ($INFO[Window(Home).Property(TrendingShows.2.Watchers), ] Watchers)  -  [B]$INFO[Window(Home).Property(TrendingShows.3.Title), ][/B] ($INFO[Window(Home).Property(TrendingShows.3.Watchers), ] Watchers)     Trending Movies: [B]$INFO[Window(Home).Property(TrendingMovies.1.Title), ][/B]  -  [B]$INFO[Window(Home).Property(TrendingMovies.2.Title), ][/B]  -  [B]$INFO[Window(Home).Property(TrendingMovies.3.Title), ][/B][/COLOR]  ///  [COLOR=C0C0C0C0]Coming up: [B]$INFO[Window(home).Property(NextAired.1.Label),,  ][/B][/COLOR]$INFO[Window(home).Property(NextAired.1.AirTime),,  ]$INFO[Window(home).Property(NextAired.1.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.1.Network),on  ,  ]$INFO[Window(home).Property(NextAired.2.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.2.AirTime),,  ]$INFO[Window(home).Property(NextAired.2.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.2.Network),on  ,  ]$INFO[Window(home).Property(NextAired.3.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.3.AirTime),,  ]$INFO[Window(home).Property(NextAired.3.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.3.Network),on  ,  ]$INFO[Window(home).Property(NextAired.4.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.4.AirTime),,  ]$INFO[Window(home).Property(NextAired.4.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.4.Network),on  ,  ]$INFO[Window(home).Property(NextAired.5.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.5.AirTime),,  ]$INFO[Window(home).Property(NextAired.5.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.5.Network),on  ,  ]$INFO[Window(home).Property(NextAired.6.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.6.AirTime),,  ]$INFO[Window(home).Property(NextAired.6.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.6.Network),on  ,  ]$INFO[Window(home).Property(NextAired.7.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.7.AirTime),,  ]$INFO[Window(home).Property(NextAired.7.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.7.Network),on  ,  ]$INFO[Window(home).Property(NextAired.8.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.8.AirTime),,  ]$INFO[Window(home).Property(NextAired.8.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.8.Network),on  ,  ]$INFO[Window(home).Property(NextAired.9.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.9.AirTime),,  ]$INFO[Window(home).Property(NextAired.9.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.9.Network),on  ,  ]$INFO[Window(home).Property(NextAired.10.Label),  -  [COLOR=C0C0C0C0][B],[/B][/COLOR]  ]$INFO[Window(home).Property(NextAired.10.AirTime),,  ]$INFO[Window(home).Property(NextAired.10.NextDate),(,)  ]$INFO[Window(home).Property(NextAired.10.Network),on  ,  ]</label>
+         </control>
+      </control>
+      <!-- WEATHER -->
+      <control type="label">
+         <description>Time</description>
+         <posx>1547</posx>
+         <posy>697</posy>
+         <width>267</width>
+         <height>30</height>
+         <label>$INFO[System.Time]  -  $INFO[Window(weather).Property(Location)]</label>
+         <font>Font10</font>
+         <align>center</align>
+         <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="image">
+         <posx>1540</posx>
+         <posy>732</posy>
+         <width>280</width>
+         <height>190</height>
+         <aspectratio>keep</aspectratio>
+         <texture>$INFO[Weather.FanartCode,weather/,.png]</texture>
+      </control>
+      <control type="label">
+         <description>Weather</description>
+         <posx>1547</posx>
+         <posy>914</posy>
+         <width>267</width>
+         <height>30</height>
+         <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
+         <font>font30_title</font>
+         <align>center</align>
+         <textcolor>FFFFFFFF</textcolor>
+      </control>
+   </controls>
+</window>

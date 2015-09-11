@@ -1,0 +1,40 @@
+**************************************************************************************************
+INSTALLATION INSTRUCTIONS
+**************************************************************************************************
+1) MAKE SURE PseudoTV Live and XBMC are NOT running.
+
+2) COPY THE CONTENTS of the "skin" folder into the root of your PTVL "custom" folder. 
+	GENERALLY LOCATED HERE ON WINDOWS SYSTEMS. 
+	C:\Users\%user name%\AppData\Roaming\XBMC\addons\script.pseudotv.live-master\resources\skins\Custom
+
+3) CHANGE THE DEFAULT SKIN to Custom. You do this in PseudoTV Live's settings.
+
+4) Start XBMC, start PseudoTV Live and enjoy.
+
+TO CHANGE COLOR SCHEMES open the "ColorVariants" folder and select the color you want.
+Inside the color folder you selected, copy the two folders named "1080i" and "media" along with all the content 
+they contain and paste them into the root of your skin folder. Overwriting ALL of the original files. The default 
+color scheme is blue but you can change it to any color you like as often as you like. Restart PsuedoTV Live
+to see the changes take effect.
+
+THE LOGOPACK FOLDER contains channel icons optimized for this skin. Copy it some place convenient and 
+set the PseudoTV Live options to use the icons contained within this folder.
+
+**************************************************************************************************
+SHOW YOUR SUPPORT
+**************************************************************************************************
+Buy me (CodeMonkeyZero) a beer. http://tinyurl.com/qdfv6bx
+Buy Lunatixz a beer. http://tinyurl.com/lvs8ngb
+
+**************************************************************************************************
+IF YOU HAVE QUESTIONS or need general support using PseudoTV Live visit the support forums here. 
+http://forum.kodi.tv/showthread.php?tid=169032
+
+*** BE SURE TO READ THE VERY FIRST POST IN THE THREAD. ***
+IT CONTAINS DETAILED INSTRUCTIONS ON INSTALLING AND CONFIGURING PSEUDOTV LIVE.
+
+THE COMMUNITY IS VERY HELPFUL, but you are expected to help yourself or at least help them to help you.
+Asking silly questions that were clearly answered in the directions is severely frowned upon. 
+
+Good luck and enjoy,
+CodeMonkeyZero
