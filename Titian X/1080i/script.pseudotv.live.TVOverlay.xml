@@ -21,7 +21,7 @@
             <visible>Control.IsVisible(101)</visible>
             <align>center</align>
             <aligny>center</aligny>
-			<visible>false</visible>
+			 <visible>false</visible>
         </control>
         <control type="image">
             <description>Channel Logo</description>
@@ -285,8 +285,8 @@
                 <posy>495r</posy>  
                 <width>360</width> 
                 <height min="180" max="460">auto</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="video_diffuse.png"></texture>
+              <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture diffuse="video_diffuse.png"></texture>
                 <texture fallback="poster.jpg">$INFO[Window(10000).Property(OVERLAY.type2ART)]</texture>
                 <animation effect="fade" start="75" end="75" condition="True">Conditional</animation>
             </control>
@@ -301,8 +301,8 @@
             </control> 
 			<control type="image">
             <description>Background Image</description>
-			<posx>400</posx>
-            <posy>255r</posy> 
+			 <posx>400</posx>
+              <posy>255r</posy> 
             <width>1290</width>
             <height>780</height>
             <texture>border.png</texture>
@@ -324,7 +324,7 @@
 				<texture>$INFO[Player.Art(fanart)]</texture>
 			</control>
 				<!-- Episodes Info -->
-		<control type="group" id="1">
+			<control type="group" id="1">
 				<posx>400</posx>
 				<posy>840</posy>
 			   	<visible>VideoPlayer.Content(Episodes)</visible>
@@ -407,7 +407,7 @@
 				<textcolor>FFFFFFFF</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Director]</label>
 			</control>
-		</control>
+			</control>
 			<!-- Movies Info -->
 	<control type="group" id="1">
 				<posx>400</posx>
@@ -510,7 +510,7 @@
             <!--line 2 -->
             <control type="grouplist">
                 <posx>420</posx>
-                <posy>455r</posy>
+                <posy>450r</posy>
                 <width>1550</width>
                 <orientation>vertical</orientation>
                 <itemgap>16</itemgap>
@@ -519,7 +519,7 @@
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1450</width>
-                        <height>32</height>
+                        <height>12</height>
                         <texturebg>seek/progress_back.png</texturebg>
                         <lefttexture border="0">seek/progresscache_left.png</lefttexture>
                         <midtexture border="0">seek/progresscache_mid.png</midtexture>
@@ -530,9 +530,9 @@
                     </control>
                     <control type="progress">
                         <posx>0</posx>
-                        <posy>0</posy>
+                        <posy>-10</posy>
                         <width>1450</width>
-                        <height>32</height>
+                        <height>30</height>
                         <texturebg>seek/progresscache_back.png</texturebg>
                         <lefttexture border="0">seek/progress_left.png</lefttexture>
                         <midtexture border="0">seek/progress_mid.png</midtexture>
