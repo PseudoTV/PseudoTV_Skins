@@ -1352,7 +1352,7 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]</texture>
+                    <texture>$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
                     <colordiffuse></colordiffuse>
                     <visible>![substring(VideoPlayer.VideoCodec,div,left) | stringcompare(VideoPlayer.VideoCodec,dx50)]</visible>
                 </control>
