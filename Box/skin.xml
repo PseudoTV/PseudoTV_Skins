@@ -1,0 +1,12 @@
+<skin>
+  <defaultresolution>1080i</defaultresolution>
+  <defaultresolutionwide>1080i</defaultresolutionwide>
+  <version>0.6.7.</version>
+  <!-- amount to zoom skin to remove overscan compensation -->
+  <zoom>0</zoom>
+  
+  <credits>
+    <skinname>Box</skinname>
+    <name>Tromyl</name>
+  </credits>
+</skin>
