@@ -154,6 +154,7 @@
             <font>font12_Title</font>
             <align>left</align>
             <aligny>center</aligny>
+			<visible>false</visible>
         </control>
         <control type="image" id="109">
             <posx>370</posx>
@@ -225,10 +226,10 @@
             <texture>pstvlButtonNoFocus.png</texture>
         </control> 
 		<control type="image" id="1">
-		  <description>Second Line</description>
+		  <description>backround channel</description>
 			<posx>355</posx>
 			<posy>120</posy>
-			<width>100</width>
+			<width>97</width>
 			<height>70</height>
 			<texture>pstvlButtonFocus.png</texture>
 	 	</control>
@@ -245,7 +246,7 @@
 		  <description>Second Line</description>
 			<posx>355</posx>
 			<posy>200</posy>
-			<width>100</width>
+			<width>97</width>
 			<height>70</height>
 			<texture>pstvlButtonFocus.png</texture>
 	 	</control>
@@ -262,7 +263,7 @@
 		  <description>Second Line</description>
 			<posx>355</posx>
 			<posy>280</posy>
-			<width>100</width>
+			<width>97</width>
 			<height>70</height>
 			<texture>pstvlButtonFocus.png</texture>
 	 	</control>
@@ -279,7 +280,7 @@
 		  <description>Second Line</description>
 			<posx>355</posx>
 			<posy>360</posy>
-			<width>100</width>
+			<width>97</width>
 			<height>70</height>
 			<texture>pstvlButtonFocus.png</texture>
 	 	</control>
@@ -296,7 +297,7 @@
 		  <description>Second Line</description>
 			<posx>355</posx>
 			<posy>440</posy>
-			<width>100</width>
+			<width>97</width>
 			<height>70</height>
 			<texture>pstvlButtonFocus.png</texture>
 	 	</control>
@@ -313,7 +314,7 @@
 		  <description>Second Line</description>
 			<posx>355</posx>
 			<posy>520</posy>
-			<width>100</width>
+			<width>97</width>
 			<height>70</height>
 			<texture>pstvlButtonFocus.png</texture>
 	 	</control>
@@ -393,11 +394,11 @@
             <!--CHANNEL Name/Icon-->
             <control type="label" id="301">
                 <description>Channel 1 Name</description>
-                <width>270</width>
+                <width>230</width>
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-             <align>center</align>
+             <align>right</align>
                 <aligny>bottom</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(321),)</visible>
@@ -408,18 +409,18 @@
                 <description>Channel 1 Icon</description>              
                 <width>270</width>
                 <height>55</height>
-                <align>center</align>
+                <align>left</align>
                 <aligny>bottom</aligny>
                 <aspectratio>keep</aspectratio>      
                 <visible>!StringCompare(Control.GetLabel(321),)</visible>
             </control>
             <control type="label" id="302">
                 <description>Channel 2 Name</description>
-                <width>270</width>
+                <width>230</width>
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>left</align>
+                <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(322),)</visible>
@@ -430,18 +431,18 @@
                 <description>Channel 2 Icon</description>
                 <width>270</width>
                 <height>55</height>
-                <align>center</align>
+                <align>left</align>
                 <aligny>bottom</aligny>
                 <aspectratio>keep</aspectratio>
                 <visible>!StringCompare(Control.GetLabel(322),)</visible>
             </control>
             <control type="label" id="303">
                 <description>Channel 3 Name</description>
-                <width>270</width>
+                <width>230</width>
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>left</align>
+                <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(323),)</visible>
@@ -452,18 +453,18 @@
                 <description>Channel 3 Icon</description>
                 <width>270</width>
                 <height>55</height>
-                <align>center</align>
+                <align>left</align>
                 <aligny>bottom</aligny>
                 <aspectratio>keep</aspectratio>
                 <visible>!StringCompare(Control.GetLabel(323),)</visible>
             </control>
             <control type="label" id="304">
                 <description>Channel 4 Name</description>
-                <width>270</width>
+                <width>230</width>
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>left</align>
+                <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(324),)</visible>
@@ -474,18 +475,18 @@
                 <description>Channel 4 Icon</description>
                 <width>270</width>
                 <height>55</height>
-                <align>center</align>
+                <align>left</align>
                 <aligny>bottom</aligny>
                 <aspectratio>keep</aspectratio>
                 <visible>!StringCompare(Control.GetLabel(324),)</visible>
             </control>
             <control type="label" id="305">
                 <description>Channel 5 Name</description>
-                <width>270</width>
+                <width>230</width>
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>left</align>
+                <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(325),)</visible>
@@ -496,18 +497,18 @@
                 <description>Channel 5 Icon</description>
                 <width>270</width>
                 <height>55</height>
-                <align>center</align>
+                <align>left</align>
                 <aligny>bottom</aligny>
                 <aspectratio>keep</aspectratio> 
                 <visible>!StringCompare(Control.GetLabel(325),)</visible>
             </control>  
             <control type="label" id="306">
                 <description>Channel 6 Name</description>
-                <width>270</width>
+                <width>230</width>
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>left</align>
+                <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(326),)</visible>
@@ -518,7 +519,7 @@
                 <description>Channel 6 Icon</description>
                 <width>270</width>
                 <height>55</height>
-                <align>center</align>
+                <align>left</align>
                 <aligny>bottom</aligny>
                 <aspectratio>keep</aspectratio>  
                 <visible>!StringCompare(Control.GetLabel(326),)</visible>
@@ -574,40 +575,40 @@
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
             </control>   
-        </control>           
+        </control> 
         <!--SHOW LISTINGS-->
         <control type="group" id="111">
-            <posx>700</posx>
+            <posx>702</posx>
             <posy>120</posy>
             <width>1215</width>
             <height>70</height>
         </control>
         <control type="group" id="112">
-            <posx>700</posx>
+            <posx>702</posx>
             <posy>200</posy>
             <width>1215</width>
             <height>70</height>
         </control>
         <control type="group" id="113">
-            <posx>700</posx>
+            <posx>702</posx>
             <posy>280</posy>
             <width>1215</width>
             <height>70</height>
         </control>
         <control type="group" id="114">
-            <posx>700</posx>
+            <posx>702</posx>
             <posy>360</posy>
             <width>1215</width>
             <height>70</height>
         </control>
         <control type="group" id="115">
-            <posx>700</posx>
+            <posx>702</posx>
             <posy>440</posy>
             <width>1215</width>
             <height>70</height>
         </control>
         <control type="group" id="116">
-            <posx>700</posx>
+            <posx>702</posx>
             <posy>520</posy>
             <width>1215</width>
             <height>70</height>
