@@ -37,9 +37,9 @@
 		 <control type="image">
             <description>EPG Background</description>
             <posx>-20</posx>
-            <posy>0</posy>
+            <posy>-20</posy>
             <width>1985</width>
-            <height>1080</height>
+            <height>1120</height>
             <texture>220.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control> 
@@ -246,7 +246,7 @@
             <textcolor>FFFFFFFF</textcolor>
         </control>
         <control type="image" id="110">
-            <posx>1800</posx>
+            <posx>1850</posx>
             <posy>110</posy>
             <width>10</width>
             <height>38</height>
