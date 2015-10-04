@@ -584,7 +584,7 @@
         <control type="grouplist">  
             <posx>370</posx>
             <posy>330</posy>
-            <itemgap>8</itemgap>
+            <itemgap>6</itemgap>
             <orientation>vertical</orientation>
             <control type="label" id="311">
                 <description>Channel 1 Number</description>
