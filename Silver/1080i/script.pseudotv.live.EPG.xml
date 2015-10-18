@@ -438,7 +438,7 @@
             <width>1520</width>                  
             <height>43</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>2.png</texture>
         </control>     
       
 	
@@ -533,7 +533,7 @@
             <width>250</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>2.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -542,7 +542,7 @@
             <width>250</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>2.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -551,7 +551,7 @@
             <width>250</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>2.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -560,7 +560,7 @@
             <width>250</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>2.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -569,7 +569,7 @@
             <width>250</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>2.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -578,7 +578,7 @@
             <width>250</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>2.png</texture>
         </control>
         <!--CHANNEL Number-->
         <control type="grouplist">  

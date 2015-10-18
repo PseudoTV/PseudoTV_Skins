@@ -1,11 +1,11 @@
 <window>
     <allowoverlay>yes</allowoverlay>
-    <onload>SetProperty(OVERLAY.type1EXT,landscape,10000)</onload><!-- label 508 artwork -->
-    <onload>SetProperty(OVERLAY.type2EXT,poster,10000)</onload><!-- label 510 artwork -->
-    <onload>SetProperty(OVERLAY.type3EXT,landscape,10000)</onload><!-- onnow artwork -->
-    <onload>SetProperty(OVERLAY.type4EXT,landscape,10000)</onload><!-- popup coming up next -->
-    <onload>SetProperty(EPG.type1EXT,landscape,10000)</onload><!-- epg.xml label 508 artwork -->
-    <onload>SetProperty(EPG.type2EXT,poster,10000)</onload><!-- epg.xml label 510 artwork -->
+    <onload>SetProperty(OVERLAY.type1,landscape,10000)</onload><!-- label 508 artwork -->
+    <onload>SetProperty(OVERLAY.type2,poster,10000)</onload><!-- label 510 artwork -->
+    <onload>SetProperty(OVERLAY.type3,landscape,10000)</onload><!-- onnow artwork -->
+    <onload>SetProperty(OVERLAY.type4,landscape,10000)</onload><!-- popup coming up next -->
+    <onload>SetProperty(EPG.type1,landscape,10000)</onload><!-- epg.xml label 508 artwork -->
+    <onload>SetProperty(EPG.type2,poster,10000)</onload><!-- epg.xml label 510 artwork -->
     <onload>SetProperty(PTVL.EPG_rowCount,6,10000)</onload><!-- epg row count -->
     <coordinates>
         <system>1</system>
@@ -1491,55 +1491,58 @@
             </control>
             <control type="group">       
                 <control type="image" id="122">
-                    <description>Dynamic art3 - Popup</description>
+                    <description>Dynamic art2 - Popup</description>
                     <posx>67</posx>
-                    <posy>47</posy>
-                    <width>330</width>      
-                    <height>170</height>
+                    <posy>57</posy>
+                    <width>200</width>      
+                    <height>250</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
-                    <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.type4ART)]</texture>
+                    <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.type2ART)]</texture>
                     <animation effect="fade" start="75" end="75" condition="True">Conditional</animation>
-                </control>
-                <control type="fadelabel">
-                    <description>Popup fadelabel</description>
-                    <posx>35</posx>
-                    <posy>215</posy>
+                </control>         
+                <control type="label" id="123">
+				<posx>185</posx>
+                    <posy>60</posy>
                     <width>400</width>
                     <height>40</height>
-                    <visible>true</visible>
-                    <pauseatend>2666</pauseatend>
-                    <info>Control.GetLabel(123)</info><!--Comingup-->
-                    <info>Control.GetLabel(124)</info><!--ShowTitle-->
-                    <!-- <info>Control.GetLabel(125)</info><!--ShowEpisode/Tagline -->
-                    <font>font12_Title</font>
-                    <scroll>false</scroll>
-                    <scrollout>false</scrollout>
-                    <textcolor>ff000000</textcolor>
-                    <align>center</align>
-                    <autoscroll time="2000" delay="0" repeat="0">Skin.HasSetting(AutoScroll)</autoscroll>
-                </control>           
-                <control type="label" id="123">
                     <description>ComingUp Title</description>
                     <font>font12_Title</font>
                     <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <label>Coming Up Next</label>
-                    <visible>false</visible>
+                    <textcolor>ff000000</textcolor>
+                    <label>Coming Up Next:</label>
+                    <visible>true</visible>
                 </control>           
                 <control type="label" id="124">
+				<posx>295</posx>
+                    <posy>120</posy>
+                    <height>40</height>
+					<scroll>true</scroll>
+					<width min="50" max="240">auto</width>
                     <description>Notification Title</description>
                     <font>font12_Title</font>
-                    <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <visible>false</visible>
+                    <align>left</align>
+                    <textcolor>ff000000</textcolor>
+				 <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>50</scrollspeed>
+                    <scrollsuffix> - </scrollsuffix>
+                    <visible>true</visible>
                 </control>              
                 <control type="label" id="125">
+				<posx>295</posx>
+                    <posy>230</posy>
+                    <width>220</width>
+                    <height>40</height>
+					<scroll>true</scroll>
+					<width min="50" max="200">auto</width>
                     <description>Notification Episode/Tagline</description>
                     <font>font12_Title</font>
                     <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <visible>false</visible>
+                    <textcolor>ff000000</textcolor>
+					 <wrapmultiline>true</wrapmultiline>
+                    <scrollspeed>50</scrollspeed>
+                    <scrollsuffix> - </scrollsuffix>
+                    <visible>true</visible>
                 </control>  
             </control>
         </control>
