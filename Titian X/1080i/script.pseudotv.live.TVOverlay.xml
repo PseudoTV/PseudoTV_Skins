@@ -927,7 +927,7 @@
             </control>
             <!--line 1 -->
             <control type="grouplist">
-                <posx>400</posx>
+                <posx>420</posx>
                 <posy>810</posy>
                 <width>1220</width>
                 <orientation>horizontal</orientation>
@@ -1098,9 +1098,9 @@
      <visible>false</visible>
  </control>
  <control type="textbox">
- 				  <visible>!VideoPlayer.Content(Movies)</visible>
+ 				<visible>!VideoPlayer.Content(Movies)</visible>
 				<visible>!VideoPlayer.Content(Episodes)</visible>
-   	<posx>420</posx>
+				<posx>430</posx>
             	<posy>880</posy>
             	<width>1220</width>
             	<height>120</height>
@@ -1518,9 +1518,9 @@
                 </control>
                 <control type="fadelabel">
                     <description>Popup fadelabel</description>
-                    <posx>35</posx>
+                    <posx>60</posx>
                     <posy>215</posy>
-                    <width>400</width>
+                    <width>335</width>
                     <height>40</height>
                     <visible>true</visible>
                     <pauseatend>2666</pauseatend>
