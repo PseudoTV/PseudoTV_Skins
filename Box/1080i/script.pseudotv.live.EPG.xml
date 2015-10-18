@@ -387,7 +387,7 @@
         </control>
         <!--Channel List-->
         <control type="grouplist">            
-            <posx>440</posx>
+            <posx>460</posx>
             <posy>127</posy>
             <itemgap>25</itemgap>
             <orientation>vertical</orientation>
@@ -398,7 +398,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-             <align>right</align>
+             <align>center</align>
                 <aligny>bottom</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(321),)</visible>
@@ -420,7 +420,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>right</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(322),)</visible>
@@ -442,7 +442,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>right</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(323),)</visible>
@@ -464,7 +464,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>right</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(324),)</visible>
@@ -486,7 +486,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>right</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(325),)</visible>
@@ -508,7 +508,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font14</font>
-                <align>right</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(326),)</visible>
@@ -701,7 +701,7 @@
             <width>150</width>
             <height>150</height>
             <aspectratio>keep</aspectratio>
-            <visible>true</visible>
+            <visible>false</visible>
             <texture>$INFO[Window(10000).Property(EPG.isNew)]</texture>
         </control>
         <!--line 1 -->

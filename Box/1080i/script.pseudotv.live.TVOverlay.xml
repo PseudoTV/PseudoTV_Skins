@@ -845,7 +845,7 @@
                 <width>150</width>
                 <height>150</height>
                 <aspectratio>keep</aspectratio>
-                <visible>true</visible>
+                <visible>false</visible>
                 <texture>$INFO[Window(10000).Property(OVERLAY.isNew)]</texture>
             </control>
 			
@@ -1122,8 +1122,8 @@
             <control type="group">       
                 <control type="image" id="122">
                     <description>Dynamic art3 - Popup</description>
-                    <posx>67</posx>
-                    <posy>47</posy>
+                    <posx>40</posx>
+                    <posy>780</posy>
                     <width>330</width>      
                     <height>170</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
@@ -1133,8 +1133,8 @@
                 </control>
                 <control type="fadelabel">
                     <description>Popup fadelabel</description>
-                    <posx>35</posx>
-                    <posy>215</posy>
+                    <posx>15</posx>
+                    <posy>995</posy>
                     <width>400</width>
                     <height>40</height>
                     <visible>true</visible>
@@ -1145,7 +1145,7 @@
                     <font>font12_Title</font>
                     <scroll>false</scroll>
                     <scrollout>false</scrollout>
-                    <textcolor>ff000000</textcolor>
+                    <textcolor>FFFFFFFF</textcolor>
                     <align>center</align>
                     <autoscroll time="2000" delay="0" repeat="0">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>           
@@ -1177,15 +1177,6 @@
         <control type="group" id="119">
             <posx>0</posx>
             <posy>0</posy>
-            <control type="image">
-                <texture flipy="true">fadeh.png</texture>
-                <posx>292</posx>
-                <posy>0</posy>
-                <width>1625</width>
-                <height>1080</height>
-                <animation effect="fade" end="85" time="5">VisibleChange</animation>
-                <visible>Control.IsVisible(119)</visible>
-            </control>
             <control type="image">
                 <description>Background Image</description>
                 <width>1920</width>
