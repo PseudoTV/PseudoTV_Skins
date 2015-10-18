@@ -1133,9 +1133,9 @@
                 </control>
                 <control type="fadelabel">
                     <description>Popup fadelabel</description>
-                    <posx>15</posx>
+                    <posx>35</posx>
                     <posy>995</posy>
-                    <width>400</width>
+                    <width>340</width>
                     <height>40</height>
                     <visible>true</visible>
                     <pauseatend>2666</pauseatend>
