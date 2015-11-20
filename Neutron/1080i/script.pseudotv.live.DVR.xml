@@ -1,0 +1,318 @@
+<window>
+    <allowoverlay>yes</allowoverlay>   
+    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload>
+    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+    <onunload>ActivateWindow(12005)</onunload>
+    <onload>SetProperty(PTVL.DVR_Opened,true,10000)</onload>
+    <onunload>SetProperty(PTVL.DVR_Opened,false,10000)</onunload>
+    <zorder>1</zorder>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+<!--     <animation effect="fade" time="5">WindowOpen</animation>
+    <animation effect="fade" time="5">WindowClose</animation> -->
+    <controls>
+        <control type="image">
+            <description>DVR Background</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture>220.png</texture>
+            <colordiffuse>FFFFFFFF</colordiffuse>
+        </control> 
+		<!-- PANEL 1 -->
+		<control type="image">
+            <texture>video2.png</texture>
+            <posx>49</posx>
+            <posy>845</posy>
+            <width>393</width>
+            <height>230</height>
+            <visible>true</visible>
+        </control>
+        <!-- VideoWindow Box --> 
+        <!-- #### Skinners Include Everything for videowindow patch to work #### -->
+        <!-- PATCH START --> 
+        <control type="videowindow">
+            <description>video</description>
+			<posx>53</posx>
+            <posy>855</posy>
+            <width>382</width>      
+            <height>210</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture diffuse="video_diffuse.png"></texture>
+            <visible>true</visible>
+        </control>
+        <!-- PATCH END -->
+        <!-- ################################################################## -->
+		<control type="image">
+            <texture>230.png</texture>
+            <posx>59</posx>
+            <posy>920</posy>
+            <width>375</width>
+            <height>160</height>
+            <visible>true</visible>
+        </control>
+		<control type="label">
+			<posx>55</posx>
+			<posy>1035</posy>
+            <width>360</width>       
+            <height>24</height>
+            <font>font12_Title</font>
+            <textcolor>ffffa500</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>Now Playing</label>
+        </control>
+        <!-- Panel 2 -->
+		<control type="image">
+            <texture>video2.png</texture>
+            <posx>524</posx>
+            <posy>846</posy>
+            <width>393</width>
+            <height>228</height>
+            <visible>true</visible>
+        </control>
+        <control type="image">
+		    <posx>533</posx>
+            <posy>820</posy>
+            <width>375</width>      
+            <height>282</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <texture background="true">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</texture>
+            <fadetime>2000</fadetime>
+        </control>
+		<control type="image">
+            <texture>230.png</texture>
+            <posx>532</posx>
+            <posy>920</posy>
+            <width>377</width>
+            <height>160</height>
+            <visible>true</visible>
+            </control>
+		<control type="label">
+			<posx>540</posx>
+			<posy>1037</posy>
+            <width>360</width>       
+            <height>24</height>
+            <font>font12_Title</font>
+            <textcolor>ffffa500</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>Recently added Videos</label>
+        </control> 
+        <!-- Panel 3 -->
+		<control type="image">
+            <texture>video2.png</texture>
+            <posx>1006</posx>
+            <posy>845</posy>
+            <width>393</width>
+            <height>230</height>
+            <visible>true</visible>
+        </control>
+        <control type="image">
+			<posx>1015</posx>
+            <posy>820</posy>
+            <width>375</width>      
+            <height>282</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <texture fallback="">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</texture>
+            <fadetime>1500</fadetime>
+        </control>
+		<control type="image">
+            <texture>230.png</texture>
+            <posx>1015</posx>
+            <posy>920</posy>
+            <width>375</width>
+            <height>160</height>
+            <visible>true</visible>
+        </control>
+		<control type="label">
+		    <posx>1010</posx>
+            <posy>1035</posy>
+            <width>370</width>       
+            <height>24</height>
+            <font>font12_Title</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>In Progress TVShows</label>
+            <textcolor>ffffa500</textcolor>
+            <fadetime>1500</fadetime>
+        </control>
+        <!-- Panel 4 -->
+		<control type="image">
+            <texture>video2.png</texture>
+            <posx>1485</posx>
+            <posy>845</posy>
+            <width>393</width>
+            <height>230</height>
+            <visible>true</visible>
+        </control>
+        <control type="image">
+		    <posx>1495</posx>
+            <posy>815</posy>
+            <width>375</width>      
+            <height>290</height>
+			<align>center</align>
+            <aligny>center</aligny>
+            <aspectratio>keep</aspectratio>
+            <texture fallback="">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</texture>
+			<visible>true</visible>
+            <fadetime>1000</fadetime>
+        </control>
+		<control type="image">
+            <texture>230.png</texture>
+            <posx>1500</posx>
+            <posy>920</posy>
+            <width>370</width>
+            <height>160</height>
+            <visible>true</visible>
+        </control>
+		<control type="label">
+		    <posx>1485</posx>
+            <posy>1040</posy>
+            <width>360</width>       
+            <height>24</height>
+            <font>font12_Title</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>Unwatched Movies</label>
+            <textcolor>ffffa500</textcolor>
+            <fadetime>1000</fadetime>
+        </control>
+      <!-- Epg/Recordings/OnDemand/Applications -->
+        <control type="grouplist">              
+            <posx>150</posx>
+            <posy>20</posy>
+            <itemgap>230</itemgap>
+            <orientation>horizontal</orientation>
+		<control type="label" id="215">
+            <description>EPG Label</description>            
+            <width>273</width>
+            <height>38</height>
+            <label>TV Guide</label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>               
+        <control type="label" id="216">
+            <description>DVR Label</description>              
+            <width>273</width>
+            <height>38</height>
+            <label>Recordings</label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+		</control>               
+        <control type="label" id="217">
+            <description>OnDemand Label</description>               
+            <width>273</width>
+            <height>38</height>
+            <label>OnDemand</label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>               
+        <control type="label" id="218">
+            <description>Apps Label</description>        
+            <width>273</width>
+            <height>38</height>
+            <label>Applications</label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>   
+        </control>
+		<!-- Epg/Recordings/OnDemand/Applications Colors -->
+		<control type="grouplist">            
+            <posx>100</posx>
+            <posy>5</posy>
+            <itemgap>475</itemgap>
+            <orientation>horizontal</orientation>
+        <control type="label">
+            <description>Sep Label</description>      
+            <width>13</width>
+            <height>64</height>
+            <label>|</label>
+            <align>left</align>
+            <aligny>center</aligny>
+            <font>font14</font>
+            <textcolor>red</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+        <control type="label">
+            <description>Channel 2 Sep Label</description>      
+            <width>18</width>
+            <height>64</height>
+            <label>|</label>
+            <align>left</align>
+            <aligny>center</aligny>
+            <font>font14</font>
+            <textcolor>green</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+        <control type="label">
+            <description>Channel 3 Sep Label</description>      
+            <width>18</width>
+            <height>64</height>
+            <label>|</label>
+            <align>left</align>
+            <aligny>center</aligny>
+            <font>font14</font>
+            <textcolor>yellow</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+        <control type="label">
+            <description>Channel 4 Sep Label</description>      
+            <width>13</width>
+            <height>64</height>
+            <label>|</label>
+            <align>left</align>
+            <aligny>center</aligny>
+            <font>font14</font>
+            <textcolor>blue</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+        </control>
+		<!-- Epg/Recordings/OnDemand/Applications Backgrounds -->
+		<control type="image">
+            <texture>pstvlButtonNoFocus.png</texture>
+            <posx>10</posx>
+            <posy>5</posy>
+            <width>1980</width>
+            <height>74</height>
+            <visible>true</visible>
+        </control>
+		<control type="image">
+            <texture>pstvlButtonFocus.png</texture>
+            <posx>10</posx>
+            <posy>5</posy>
+            <width>1980</width>
+            <height>74</height>
+            <visible>true</visible>
+        </control>
+      <!-- Background Panels -->
+		<control type="image">
+            <texture>pstvlButtonNoFocus.png</texture>
+            <posx>10</posx>
+            <posy>831</posy>
+            <width>1980</width>
+            <height>325</height>
+            <visible>true</visible>
+        </control>
+    </controls>
+</window>
