@@ -78,10 +78,10 @@
 			 <!-- Now playing banner --> 
 		<control type="image">
             <description>Info Background</description>
-            <posx>1430</posx>
+            <posx>1425</posx>
             <posy>640</posy>
-            <width>80</width>
-            <height>80</height>
+            <width>90</width>
+            <height>90</height>
             <texture>now playing banner.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
@@ -660,7 +660,7 @@
             <align>center</align>
             <aspectratio>keep</aspectratio>
 			<visible>false</visible>
-            <texture fallback="landscape.jpg">$INFO[Window(10000).Property(EPG.type1ART)]</texture>
+            <texture fallback="">$INFO[Window(10000).Property(EPG.type1ART)]</texture>
             <animation effect="fade" start="75" end="75" condition="True">Conditional</animation>
         </control>
         <control type="image" id="510">
@@ -673,7 +673,7 @@
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
             <visible>true</visible>
-            <texture fallback="poster.jpg">$INFO[Window(10000).Property(EPG.type2ART)]</texture>
+            <texture fallback="">$INFO[Window(10000).Property(EPG.type2ART)]</texture>
             <animation effect="fade" start="75" end="75" condition="True">Conditional</animation>
         </control>          
         <control type="image" id="511">
@@ -717,7 +717,7 @@
             <control type="label" id="500">
                 <description>Show Title Label</description>
                 <width min="5" max="1000">auto</width>
-                <height>30</height>
+                <height>60</height>
                 <font>font30_Title</font>
                 <textcolor>FF0297eb</textcolor>
                 <scroll>true</scroll>
@@ -758,7 +758,7 @@
 		 <control type="label" id="501">
                 <description>Show Episode/Tagline</description>
 				<posx>380</posx>
-            <posy>700</posy>
+            <posy>720</posy>
                 <width min="5" max="1000">auto</width>
                 <height>30</height>
                 <font>font13_Title</font>
