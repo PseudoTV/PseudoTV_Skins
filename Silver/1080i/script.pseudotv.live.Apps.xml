@@ -1,17 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <window>
-    <allowoverlay>yes</allowoverlay>  
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload>
+    <allowoverlay>no</allowoverlay>  
+    <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
     <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+    <onunload>ActivateWindow(12005)</onunload>
     <onload>SetProperty(PTVL.APPS_Opened,true,10000)</onload>
     <onunload>SetProperty(PTVL.APPS_Opened,false,10000)</onunload>
-    <!-- <onunload>ActivateWindow(12005)</onunload> -->
+    <zorder>1</zorder>
     <coordinates>
         <system>1</system>
         <posx>0</posx>
         <posy>0</posy>
     </coordinates>
-    <animation effect="fade" time="500">WindowOpen</animation>
-    <animation effect="fade" time="250">WindowClose</animation>
     <controls>
         <control type="image">
             <description>EPG Background</description>
@@ -40,7 +40,7 @@
             <texture>210.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control> 
-              <!-- Now watching label --> 
+            <!-- Now watching label --> 
      
 			 <control type="image">
             <description>video window overlay</description>
@@ -86,7 +86,7 @@
                 <label>Now Watching:</label>
                 <aligny>left</aligny>
             </control>
-			 <control type="label">
+        <control type="label">
 			   	<posx>60</posx>
 				<posy>320</posy>
                 <width>300</width>       
@@ -275,9 +275,8 @@
             <font>font30_Title</font>           
             <align>center</align>               
             <textcolor>ff000000</textcolor>     
-        </control>   
-      
-        <!-- todo -->
+        </control>
+		  <!-- todo -->
        	<control type ="group">
 			<visible>VideoPlayer.Content(episodes)</visible>
 			<control type="image">
@@ -313,8 +312,7 @@
                 <label>Now Watching:</label>
                 <aligny>left</aligny>
             </control>
-
-		  <!-- Top Line -->
+        <!-- Top Line -->
 		   <control type="image">
             <description>EPG Background</description>
 			<posx>400</posx>
@@ -371,6 +369,11 @@
                  <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
      <autoscroll time="4000" delay="4000" repeat="8000">True</autoscroll>
  </control>
+			
+      
+             
+      
+     
         <!--line 2 -->
         <control type="grouplist">
             <posx>400</posx>
@@ -428,5 +431,115 @@
                 <font>font12</font>
             </control> 
         </control>  
+        <!-- Panel -->
+        <control type="group">
+            <posy>0</posy>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="zoom" start="80" end="100" center="960,540" delay="500" tween="back" time="240" />
+                <effect type="fade" delay="500" end="100" time="240" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="240" />
+                <effect type="fade" start="100" end="0" time="240" />
+            </animation>
+            <control description="Panel" id="500" type="panel">
+                <viewtype label="Panel">Panel</viewtype>   
+                <posx>925</posx>
+                <posy>300</posy> 
+                <width>992</width>
+                <height>700</height>
+                <orientation>vertical</orientation>
+                <onleft>655</onleft>
+                <onright>655</onright>
+                <onup>655</onup>
+                <ondown>655</ondown>
+                <preloaditems>4</preloaditems>
+                <pagecontrol>60</pagecontrol>
+                <itemlayout height="260" width="273">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>270</width>
+                        <height min="5" max="370">auto</height>
+                        <bordersize>-18</bordersize>
+                        <texture border="8">folder-focus.png</texture>
+                        <visible>ListItem.IsSelected</visible>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>260</width>
+                        <height min="5" max="347">auto</height>
+                        <texture background="true">$INFO[ListItem.Art(thumb)]</texture>
+                        <aspectratio aligny="top">keep</aspectratio>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="260" width="273">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>270</width>
+                        <height min="5" max="370">auto</height>
+                        <bordersize>-18</bordersize>
+                        <texture border="8">folder-focus.png</texture>
+                        <visible>ListItem.IsSelected</visible>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>260</width>
+                        <height min="5" max="347">auto</height>
+                        <texture background="true">$INFO[ListItem.Art(thumb)]</texture>
+                        <aspectratio aligny="top">keep</aspectratio>
+                    </control>
+                </focusedlayout>
+            </control>   
+            <control description="SideInfo" type="grouplist">
+                <posx>430</posx>
+                <posy>340</posy>
+                <itemgap>10</itemgap>
+                <orientation>vertical</orientation>
+                <control description="FanArt" type="multiimage">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>360</width>      
+                    <height>180</height>
+                    <fadetime>500</fadetime>
+                    <imagepath background="true">$INFO[Container(500).ListItem.Property(Fanart_Image)]</imagepath>
+                    <aspectratio aligny="top">keep</aspectratio>
+                </control>
+                <control description="Title Label" type="label">
+                    <posx>30</posx>
+                    <posy>0</posy>
+                    <width>360</width>      
+                    <height>30</height>
+                    <fadetime>500</fadetime>
+                    <aligny>center</aligny>
+                    <align>center</align>
+					<font>font12_Title</font>
+                    <textcolor>ff000000</textcolor>
+                    <wrapmultiline>False</wrapmultiline>
+                    <label>$INFO[Container(500).ListItem.Label]</label>
+                </control>
+            </control>
+            <control type="image">
+                <texture flipy="true">fade.png</texture>
+                <posx>0</posx>
+                <posy>298</posy>
+                <width>1920</width>
+                <height>100</height>
+                <animation effect="fade" end="100" time="360">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+            </control>
+            <control type="image">
+                <texture>fade.png</texture>
+                <posx>0</posx>
+                <posy>980</posy>
+                <width>1920</width>
+                <height>100</height>
+                <animation effect="fade" end="100" time="360">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+            </control>
+        </control>
     </controls>
 </window>

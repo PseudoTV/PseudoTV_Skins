@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <allowoverlay>yes</allowoverlay>   
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload>
+    <allowoverlay>no</allowoverlay>   
+    <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
     <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
     <onunload>ActivateWindow(12005)</onunload>
     <onload>SetProperty(PTVL.OnDemand_Opened,true,10000)</onload>
-    <onunload>SetProperty(PTVL.OnDemand_Opened_Opened,false,10000)</onunload>
+    <onunload>SetProperty(PTVL.OnDemand_Opened,false,10000)</onunload>
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
         <posx>0</posx>
         <posy>0</posy>
     </coordinates>
-    <animation effect="fade" time="50">WindowOpen</animation>
-    <animation effect="fade" time="5">WindowClose</animation>
     <controls>
-       <control type="image">
+         <control type="image">
             <description>EPG Background</description>
             <posx>-20</posx>
             <posy>-20</posy>
@@ -88,7 +86,7 @@
                 <label>Now Watching:</label>
                 <aligny>left</aligny>
             </control>
-			 <control type="label">
+        <control type="label">
 			   	<posx>60</posx>
 				<posy>320</posy>
                 <width>300</width>       
@@ -278,9 +276,7 @@
             <align>center</align>               
             <textcolor>ff000000</textcolor>     
         </control>
-
-      
-       <!-- todo -->
+		  <!-- todo -->
        	<control type ="group">
 			<visible>VideoPlayer.Content(episodes)</visible>
 			<control type="image">
@@ -316,8 +312,7 @@
                 <label>Now Watching:</label>
                 <aligny>left</aligny>
             </control>
-
-		  <!-- Top Line -->
+        <!-- Top Line -->
 		   <control type="image">
             <description>EPG Background</description>
 			<posx>400</posx>
@@ -374,7 +369,12 @@
                  <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
      <autoscroll time="4000" delay="4000" repeat="8000">True</autoscroll>
  </control>
-      <!--line 2 -->
+			
+      
+             
+      
+     
+        <!--line 2 -->
         <control type="grouplist">
             <posx>400</posx>
             <posy>250</posy>
@@ -433,4 +433,3 @@
         </control>  
     </controls>
 </window>
-
