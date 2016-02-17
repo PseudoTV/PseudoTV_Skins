@@ -683,7 +683,7 @@
                 <description>Show Title Label</description>
 				<posx>380</posx>
 				<posy>650</posy>
-                <width min="5" max="1080">auto</width>
+                <width min="5" max="980">auto</width>
                 <height>60</height>
                 <font>font30_Title</font>
                 <textcolor>FF0297eb</textcolor>
@@ -700,9 +700,9 @@
                 <description>Show Title Label</description>
 				<posx>380</posx>
 				<posy>720</posy>
-                <width min="5" max="1100">auto</width>
+                <width min="5" max="980">auto</width>
                 <height>30</height>
-                <font>font24_Title</font>
+                <font>font13_Title</font>
                 <textcolor>FF0297eb</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <scroll>true</scroll>

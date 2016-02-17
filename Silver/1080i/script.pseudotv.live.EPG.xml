@@ -579,9 +579,9 @@
                 <width>270</width>
                 <height>55</height>
                 <label></label>
-                <font>font14</font>
+                <font>font12</font>
              <align>center</align>
-                <aligny>bottom</aligny>
+                <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(321),)</visible>
                 <scroll>true</scroll>
@@ -601,8 +601,8 @@
                 <width>270</width>
                 <height>55</height>
                 <label></label>
-                <font>font14</font>
-                <align>left</align>
+                <font>font12</font>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(322),)</visible>
@@ -623,8 +623,8 @@
                 <width>270</width>
                 <height>55</height>
                 <label></label>
-                <font>font14</font>
-                <align>left</align>
+                <font>font12</font>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(323),)</visible>
@@ -645,8 +645,8 @@
                 <width>270</width>
                 <height>55</height>
                 <label></label>
-                <font>font14</font>
-                <align>left</align>
+                <font>font12</font>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(324),)</visible>
@@ -667,8 +667,8 @@
                 <width>270</width>
                 <height>55</height>
                 <label></label>
-                <font>font14</font>
-                <align>left</align>
+                <font>font12</font>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(325),)</visible>
@@ -689,8 +689,8 @@
                 <width>270</width>
                 <height>55</height>
                 <label></label>
-                <font>font14</font>
-                <align>left</align>
+                <font>font12</font>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(326),)</visible>

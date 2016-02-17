@@ -435,7 +435,7 @@
                 <itemgap>5</itemgap>
                 <control type="label">
                     <description>Show Title Label</description>
-                    <width min="5" max="1100">auto</width>
+                    <width min="5" max="1200">auto</width>
                     <height>30</height>
                     <font>font30_Title</font>
                     <textcolor>FF0297eb</textcolor>

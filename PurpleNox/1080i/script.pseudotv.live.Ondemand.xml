@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <allowoverlay>yes</allowoverlay>   
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload>
+    <allowoverlay>no</allowoverlay>   
+    <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
     <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
     <onunload>ActivateWindow(12005)</onunload>
     <onload>SetProperty(PTVL.OnDemand_Opened,true,10000)</onload>
-    <onunload>SetProperty(PTVL.OnDemand_Opened_Opened,false,10000)</onunload>
+    <onunload>SetProperty(PTVL.OnDemand_Opened,false,10000)</onunload>
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
         <posx>0</posx>
         <posy>0</posy>
     </coordinates>
-    <animation effect="fade" time="50">WindowOpen</animation>
-    <animation effect="fade" time="5">WindowClose</animation>
     <controls>
-         <control type="image">
+      <control type="image">
             <description>EPG Background</description>
             <posx>0</posx>
             <posy>0</posy>
@@ -43,7 +41,7 @@
             <texture>220.png</texture>
             <colordiffuse colordiffuse="$VAR[DialogColorVar]">purple</colordiffuse>
         </control>
-       <!-- Now watching label --> 
+		<!-- Now watching label --> 
        <control type="label">
 			   	<posx>20</posx>
 				<posy>100</posy>
@@ -65,7 +63,7 @@
             <control type="videowindow">
                 <description>video</description>
 				<posx>55</posx>
-                <posy>145</posy>
+                <posy>165</posy>
                 <width>400</width>      
                 <height>270</height>
                 <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
@@ -74,14 +72,37 @@
             </control>
             <!-- PATCH END -->
             <!-- ################################################################## -->
-				
-      
-      <control type="image">
+			 <!-- todo -->
+       	<control type ="group">
+			<visible>VideoPlayer.Content(episodes)</visible>
+			<control type="image">
+				<posx>55</posx>
+				<posy>65</posy>
+				<width>400</width>
+				<height>100</height>
+				<texture background="true">$INFO[Player.FolderPath]../banner.jpg</texture>
+				<aspectratio align="right" aligny="center">keep</aspectratio>
+			</control>		
+		</control>	
+		<control type ="group">
+			<visible>VideoPlayer.Content(movies)</visible>
+			<control type="image">
+				<posx>55</posx>
+				<posy>70</posy>
+				<width>400</width>
+				<height>100</height>
+				<texture background="true">$INFO[Player.FolderPath]banner.jpg</texture>
+				<aspectratio align="right" aligny="center">keep</aspectratio>
+			</control>		
+		</control>
+		       
+		<control type="image">
             <posx>510</posx>
             <posy>70</posy>
             <width>210</width>
             <height>88</height>
-            <aspectratio align="center">keep</aspectratio> 
+            <aspectratio align="center">keep</aspectratio>
+			
             <texture>222.png</texture>  
         </control> 
 		 <control type="image">
@@ -90,7 +111,7 @@
             <width>210</width>
             <height>88</height>
             <aspectratio align="center">keep</aspectratio>
-            
+      
             <texture>222.png</texture>  
         </control> 
 		 <control type="image">
@@ -161,30 +182,17 @@
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-        </control>   
-      
-        <!--line 1 -->
-       <control type="grouplist">
+        </control>
+		 <control type="grouplist">
             <posx>500</posx>
-            <posy>160</posy>
+            <posy>170</posy>
             <width>1600</width>
-            <orientation>horizontal</orientation>
-            <itemgap>5</itemgap>
-            <control type="label" id="516">
-                <description>Now Watching/ComingUp Label</description>
-                <width min="5" max="300">auto</width>
-                <height>30</height>
-                <label>Now Playing</label>
-                <font>font14</font>
-                <align>left</align>
-                <aligny>center</aligny>
-                <textcolor>C0C0C0C0</textcolor>
-                <visible>false</visible>
-            </control>  
-            <control type="label" id="500">
+            <orientation>vertical</orientation>
+            <itemgap>25</itemgap>
+            <control type="label">
                 <description>Show Title Label</description>
                 <width min="5" max="1100">auto</width>
-                <height>60</height>
+                <height>30</height>
                 <font>font30_Title</font>
                 <textcolor>orange</textcolor>
                 <scroll>true</scroll>
@@ -193,73 +201,47 @@
                 <wrapmultiline>false</wrapmultiline>
                 <scrollspeed>40</scrollspeed>
                 <scrollsuffix> - </scrollsuffix>
-                <visible>true</visible>
+                <label>$INFO[Window(10000).Property(EPG.Title)]</label>
             </control>
-            <control type="label">
-                <description>Showtitle Sep Label</description>
-                <width>10</width>
+			 <control type="label">
+                <description>Show Title Label</description>
+                <width min="5" max="1100">auto</width>
                 <height>30</height>
-                <label>-</label>
-                <align>left</align>
-                <aligny>center</aligny>
-                <font>font14</font>
-                <visible>!IsEmpty(Control.GetLabel(501))</visible>
-                <textcolor>FF0297eb</textcolor>
-                <visible>false</visible>
-            </control>
-            <control type="label" id="300">
-                <description>Channel Name</description>
-                <width min="5" max="150">auto</width>
-                <height>30</height>
-                <font>font16</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <scroll>true</scroll>
-                <align>left</align>
-                <aligny>center</aligny>
-                <scrollspeed>40</scrollspeed>
-                <scrollsuffix> - </scrollsuffix>
-                <visible>IsEmpty(Control.GetLabel(501))</visible>
-                <visible>false</visible>
-            </control> 
-        </control>
-		 <control type="label" id="501">
-                <description>Show Episode/Tagline</description>
-				<posx>500</posx>
-            <posy>230</posy>
-                <width min="5" max="1440">auto</width>
-                <height>30</height>
-                <font>font13_Title</font>
+                <font>font12_Title</font>
                 <textcolor>orange</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>
                 <aligny>center</aligny>
+                <wrapmultiline>false</wrapmultiline>
                 <scrollspeed>40</scrollspeed>
                 <scrollsuffix> - </scrollsuffix>
-                <visible>true</visible>
+                <label>$INFO[Window(10000).Property(EPG.SEtitle)]</label>
             </control>
-        <!--line 2 -->
+        </control>
+		
         <control type="grouplist">
-		<visible>false</visible>
-            <posx>430</posx>
-            <posy>240r</posy>
-            <width>1400</width>
+            <posx>500</posx>
+            <posy>290</posy>
+            <width>1900</width>
             <orientation>vertical</orientation>
             <itemgap>4</itemgap>
            <control type="image">
                 <description>Seekbar Line</description>
+                <posx>0</posx>
+                <posy>0</posy> 
                 <width>1400</width>
-                <height>4</height>
-                <texture>seek/progress_mid.png</texture>
+                <height>2</height>
+                <texture border="0">seek/progress_mid.png</texture>
                 <align>center</align>
                 <aligny>center</aligny>
-                <visible>!Control.IsVisible(515)</visible>
+                <visible>false</visible>
             </control>
-            <control type="group" id="515">  
+            <control type="group" id="5008">  
                 <control type="progress">
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>1400</width>
-                    <height>4</height>
+                    <height>2</height>
                     <texturebg>seek/progress_back.png</texturebg>
                     <lefttexture border="0">seek/progresscache_left.png</lefttexture>
                     <midtexture border="0">seek/progresscache_mid.png</midtexture>
@@ -267,12 +249,13 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <info>Player.ProgressCache</info>
+					<visible>false</visible>
                 </control>
                 <control type="progress">
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>1400</width>
-                    <height>4</height>
+                    <height>2</height>
                     <texturebg>seek/progresscache_back.png</texturebg>
                     <lefttexture border="0">seek/progress_left.png</lefttexture>
                     <midtexture border="0">seek/progress_mid.png</midtexture>
@@ -280,21 +263,35 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <info>Player.Progress</info>
+					<visible>false</visible>
                 </control> 
             </control>  
-        </control> 	
-    <!--Plot-->
-		  <control type="label" id="502">
-                <description>Show Description</description>
-				<posx>500</posx>
-            <posy>280</posy>
-                <width>1100</width>
-                <height>600</height>
-                <align>left</align>
-                <aligny>bottom</aligny>
-                <wrapmultiline>true</wrapmultiline>
-                <textcolor>FFFFFFFF</textcolor>
-                <font>font12_Title</font>
-            </control>	
+           <control type="label">
+            <description>Show Description</description>
+			<posx>500</posx>
+            <posy>290</posy>
+            <width>1000</width>
+            <height>600</height>
+            <align>left</align>
+            <aligny>bottom</aligny>
+            <wrapmultiline>true</wrapmultiline>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+            <font>font10_Title</font>
+			<visible>false</visible>
+        </control>
+		<control type="textbox">
+			<posx>500</posx>
+            <posy>290</posy>
+            <width>1100</width>
+            <height>600</height>
+			<align>left</align>
+			<aligny>top</aligny>
+			<font>font12_Title</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<label>$INFO[Window(10000).Property(EPG.Description)]</label>
+			<autoscroll time="4000" delay="7000" repeat="8000">True</autoscroll>
+		</control>
+        </control>
     </controls>
 </window>
