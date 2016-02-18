@@ -794,13 +794,14 @@
             <font>font12</font>
             <align>center</align>
             <aligny>center</aligny>
+			<visible>false</visible>
         </control>
         <control type="image" id="5007">
             <description>Timebar line</description>
             <posx>420</posx>
             <posy>160</posy>
             <width>2</width>
-            <height>452</height>
+            <height>472</height>
             <aspectratio>keep</aspectratio>
         </control> 
         <control type="image">
@@ -938,6 +939,7 @@
 		</control>
         </control> 
         <control type="grouplist">
+		<visible>false</visible>
             <posx>10</posx>
             <posy>60r</posy>
             <align>left</align>

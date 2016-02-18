@@ -15,7 +15,7 @@
     <!-- Set EPG props -->
     <onload>SetProperty(EPG.rowCount,6,10000)</onload>
     <onload>SetProperty(EPG.shadowColor,0xFF000000,10000)</onload>
-    <onload>SetProperty(EPG.focused_textColor,0xff000000,10000)</onload>
+    <onload>SetProperty(EPG.focused_textColor,0xffffa500,10000)</onload>
     <onload>SetProperty(EPG.textColor,0xFFFFFFFF,10000)</onload>
     <onload>SetProperty(EPG.textFont,font12_Title,10000)</onload>
     <!-- Overlay controls -->

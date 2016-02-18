@@ -450,7 +450,7 @@
             <description>Channel Overlay</description>
             <posx>395</posx>                      
             <posy>330</posy>                     
-            <width>250</width>                  
+            <width>280</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texture>2.png</texture>
@@ -459,7 +459,7 @@
             <description>Channel Overlay</description>
             <posx>395</posx>                      
             <posy>405</posy>                    
-            <width>250</width>                  
+            <width>280</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texture>2.png</texture>
@@ -468,7 +468,7 @@
             <description>Channel Overlay</description>
             <posx>395</posx>                      
             <posy>480</posy>                    
-            <width>250</width>                  
+            <width>280</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texture>2.png</texture>
@@ -477,7 +477,7 @@
             <description>Channel Overlay</description>
             <posx>395</posx>                      
             <posy>555</posy>                    
-            <width>250</width>                  
+            <width>280</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texture>2.png</texture>
@@ -486,7 +486,7 @@
             <description>Channel Overlay</description>
             <posx>395</posx>                      
             <posy>630</posy>                    
-            <width>250</width>                  
+            <width>280</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texture>2.png</texture>
@@ -495,7 +495,7 @@
             <description>Channel Overlay</description>
             <posx>395</posx>                      
             <posy>705</posy>                    
-            <width>250</width>                  
+            <width>280</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texture>2.png</texture>
@@ -569,23 +569,23 @@
         </control>
         <!--Channel List-->
         <control type="grouplist">            
-            <posx>410</posx>
+            <posx>450</posx>
             <posy>338</posy>
             <itemgap>20</itemgap>
             <orientation>vertical</orientation>
             <!--CHANNEL Name/Icon-->
             <control type="label" id="301">
                 <description>Channel 1 Name</description>
-                <width>270</width>
+                <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12</font>
-             <align>center</align>
+                <font>font12_Title</font>
+             <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(321),)</visible>
                 <scroll>true</scroll>
-                <scrollspeed>40</scrollspeed>
+                <scrollspeed>20</scrollspeed>
             </control>
             <control type="image" id="321">
                 <description>Channel 1 Icon</description>              
@@ -598,16 +598,16 @@
             </control>
             <control type="label" id="302">
                 <description>Channel 2 Name</description>
-                <width>270</width>
+                <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12</font>
-                <align>center</align>
+                <font>font12_Title</font>
+                <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(322),)</visible>
                 <scroll>true</scroll>
-                <scrollspeed>40</scrollspeed>
+                <scrollspeed>20</scrollspeed>
             </control>
             <control type="image" id="322">
                 <description>Channel 2 Icon</description>
@@ -620,16 +620,16 @@
             </control>
             <control type="label" id="303">
                 <description>Channel 3 Name</description>
-                <width>270</width>
+                <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12</font>
-                <align>center</align>
+                <font>font12_Title</font>
+                <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(323),)</visible>
                 <scroll>true</scroll>
-                <scrollspeed>40</scrollspeed>
+                <scrollspeed>20</scrollspeed>
             </control>
             <control type="image" id="323">
                 <description>Channel 3 Icon</description>
@@ -642,16 +642,16 @@
             </control>
             <control type="label" id="304">
                 <description>Channel 4 Name</description>
-                <width>270</width>
+                <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12</font>
-                <align>center</align>
+                <font>font12_Title</font>
+                <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(324),)</visible>
                 <scroll>true</scroll>
-                <scrollspeed>40</scrollspeed>
+                <scrollspeed>20</scrollspeed>
             </control>
             <control type="image" id="324">
                 <description>Channel 4 Icon</description>
@@ -664,16 +664,16 @@
             </control>
             <control type="label" id="305">
                 <description>Channel 5 Name</description>
-                <width>270</width>
+                <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12</font>
-                <align>center</align>
+                <font>font12_Title</font>
+                <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(325),)</visible>
                 <scroll>true</scroll>
-                <scrollspeed>40</scrollspeed>
+                <scrollspeed>20</scrollspeed>
             </control>
             <control type="image" id="325">
                 <description>Channel 5 Icon</description>
@@ -686,16 +686,16 @@
             </control>  
             <control type="label" id="306">
                 <description>Channel 6 Name</description>
-                <width>270</width>
+                <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12</font>
-                <align>center</align>
+                <font>font12_Title</font>
+                <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(326),)</visible>
                 <scroll>true</scroll>
-                <scrollspeed>40</scrollspeed>
+                <scrollspeed>20</scrollspeed>
             </control>
             <control type="image" id="326">
                 <description>Channel 6 Icon</description>
@@ -710,37 +710,37 @@
 		 
         <!--SHOW LISTINGS-->
         <control type="group" id="111">
-            <posx>650</posx>
+            <posx>680</posx>
             <posy>330</posy>
             <width>1266</width>
             <height>70</height>
         </control>
         <control type="group" id="112">
-            <posx>650</posx>
+            <posx>680</posx>
             <posy>405</posy>
             <width>1266</width>
             <height>70</height>
         </control>
         <control type="group" id="113">
-            <posx>650</posx>
+            <posx>680</posx>
             <posy>480</posy>
             <width>1266</width>
             <height>70</height>
         </control>
         <control type="group" id="114">
-            <posx>650</posx>
+            <posx>680</posx>
             <posy>555</posy>
             <width>1266</width>
             <height>70</height>
         </control>
         <control type="group" id="115">
-            <posx>650</posx>
+            <posx>680</posx>
             <posy>630</posy>
             <width>1266</width>
             <height>70</height>
         </control>
         <control type="group" id="116">
-            <posx>650</posx>
+            <posx>680</posx>
             <posy>705</posy>
             <width>1266</width>
             <height>70</height>

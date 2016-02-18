@@ -327,7 +327,7 @@
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
                     <texture>$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
-                    <colordiffuse></colordiffuse>
+                    <colordiffuse>ff000000</colordiffuse>
                     <visible>!IsEmpty(VideoPlayer.VideoResolution)</visible>
                 </control>  
                 <control type="image">
@@ -340,7 +340,7 @@
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
                     <texture>$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
-                    <colordiffuse></colordiffuse>
+                    <colordiffuse>ff000000</colordiffuse>
                     <visible>![substring(VideoPlayer.VideoCodec,div,left) | stringcompare(VideoPlayer.VideoCodec,dx50)]</visible>
                 </control>
                 <control type="image">
@@ -353,7 +353,7 @@
                     <aligny>center</aligny>
                     <aspectratio>keep</aspectratio>
                     <texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
-                    <colordiffuse></colordiffuse>
+                    <colordiffuse>ff000000</colordiffuse>
                     <visible>!IsEmpty(VideoPlayer.AudioChannels)</visible>
                 </control>
 			   <control type="image">
@@ -366,7 +366,7 @@
                 <aligny>bottom</aligny>
                 <aspectratio>keep</aspectratio>
                 <texture>$INFO[VideoPlayer.VideoAspect,flags\aspectratio\,.png]</texture>
-                <colordiffuse>white</colordiffuse>
+                <colordiffuse>ff000000</colordiffuse>
                 <visible>!IsEmpty(VideoPlayer.VideoAspect)</visible>
             </control>
 			<control type="image">
@@ -970,7 +970,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png" colordiffuse="ffffffff">$INFO[Window(10000).Property(OVERLAY.Rating),flags/mpaa/,.png]</texture>
+                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png" colordiffuse="ff000000">$INFO[Window(10000).Property(OVERLAY.Rating),flags/mpaa/,.png]</texture>
                     </control>
                     <control type="image">
                         <width>100</width>
@@ -978,7 +978,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="flags/rating/0.0.png" colordiffuse="ffffffff">$INFO[VideoPlayer.Rating,flags/rating/,.png]</texture>
+                        <texture fallback="flags/rating/0.0.png" colordiffuse="ff000000">$INFO[VideoPlayer.Rating,flags/rating/,.png]</texture>
                     </control>
                     <control type="image">
                         <description>Sickbeard/Couchpotato image</description>      
@@ -995,7 +995,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
+                        <texture colordiffuse="ff000000">$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
                     </control>
                     <control type="image">
                         <width>100</width>
@@ -1003,7 +1003,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+                        <texture colordiffuse="ff000000">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
                     </control>
                     <control type="image">
                         <width>100</width>
@@ -1011,7 +1011,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+                        <texture colordiffuse="ff000000">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
                     </control>
                     <control type="image">
                         <width>100</width>
@@ -1019,7 +1019,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+                        <texture colordiffuse="ff000000">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
                     </control>
                     <control type="image">
                         <width>100</width>
@@ -1027,7 +1027,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.AudioChannels,flags/channels/,.png]</texture>
+                        <texture colordiffuse="ff000000">$INFO[VideoPlayer.AudioChannels,flags/channels/,.png]</texture>
                     </control>
                     <control type="image">
                         <width>100</width>
@@ -1035,7 +1035,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.AudioLanguage,flags/language/,.png]</texture>
+                        <texture colordiffuse="ff000000">$INFO[VideoPlayer.AudioLanguage,flags/language/,.png]</texture>
                     </control>       
                     <control type="image">
                         <width>100</width>
@@ -1043,7 +1043,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.Country,flags/language/,.png]</texture>
+                        <texture colordiffuse="ff000000">$INFO[VideoPlayer.Country,flags/language/,.png]</texture>
                     </control>
                 </control>
                 <control type="grouplist">
@@ -1073,13 +1073,13 @@
                         <height>250</height>
                         <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 						<texture diffuse="video_diffuse.png"></texture>
-                        <texture fallback="">$INFO[Window(10000).Property(OVERLAY.NEXT.landscape)]</texture>
+                        <texture fallback="">$INFO[Window(10000).Property(OVERLAY.NEXT.poster)]</texture>
                         <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
                     </control>
                     <control type="fadelabel">
                         <description>Popup fadelabel</description>
-                        <posx>60</posx>
-                        <posy>215</posy>
+                        <posx>230</posx>
+                        <posy>115</posy>
                         <width>335</width>
                         <height>40</height>
                         <visible>true</visible>
