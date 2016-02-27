@@ -1,0 +1,90 @@
+<window>
+    <allowoverlay>no</allowoverlay>   
+    <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
+    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+    <onunload>ActivateWindow(12005)</onunload>
+    <onload>SetProperty(PTVL.DVR_Opened,true,10000)</onload>
+    <onunload>SetProperty(PTVL.DVR_Opened,false,10000)</onunload>
+    <zorder>1</zorder>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+    <controls>
+	 <!-- VideoWindow Box --> 
+            <!-- #### Skinners Include Everything for videowindow patch to work #### -->
+            <!-- PATCH START -->
+            <control type="videowindow">
+                <description>video</description>
+				<posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>      
+                <height>1080</height>
+                <visible>true</visible>
+            </control>
+            <!-- PATCH END -->
+            <!-- ################################################################## -->
+ <control type="image">
+                <texture flipy="true">fadeh.png</texture>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>3920</width>
+                <height>70</height>
+                <animation effect="fade" end="85" time="5">VisibleChange</animation>
+                <visible></visible>
+            </control>
+		 <control type="label" id="215">
+                <description>EPG Label</description>
+				<posx>510</posx>
+                <posy>15</posy>
+                <width>223</width>
+                <height>38</height>
+                <label>EPG</label>
+                <font>font12_Title</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffffa500</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>               
+        <control type="label" id="216">
+                <description>DVR Label</description>
+				<posx>740</posx>
+                <posy>15</posy>
+                <width>273</width>
+                <height>38</height>
+                <label>DVR</label>
+                <font>font12_Title</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffffa500</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>               
+        <control type="label" id="217">
+                <description>OnDemand Label</description>
+				<posx>1040</posx>
+                <posy>15</posy>
+                <width>173</width>
+                <height>38</height>
+                <label>OnDemand</label>
+                <font>font12_Title</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffffa500</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>               
+        <control type="label" id="218">
+                <description>Apps Label</description>
+				<posx>1240</posx>
+                <posy>15</posy>
+                <width>273</width>
+                <height>38</height>
+                <label>Apps</label>
+                <font>font12_Title</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffffa500</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>   
+    </controls>
+</window>
