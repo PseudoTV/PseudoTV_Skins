@@ -2,9 +2,8 @@ Please place current PseudoTV Live skins here and sort outdated skins under _Out
 
 All skins must contain its own referenced media, no Kodi skin dependences.
 
-Please fillout skin.xml, version number should match the PTVL_SKINVER value found here: https://github.com/PseudoTV/PseudoTV_Live/blob/master/resources/lib/Globals.py#L43
-
-Besure to fillout all skin.xml info, and include up to four screenshot.png in the same folder as skin.xml.
+Please fillout skin.xml info, version number should match the PTVL_SKINVER value found here: https://github.com/PseudoTV/PseudoTV_Live/blob/master/resources/lib/Globals.py#L43
+Include up to four screenshot.png in the same folder as skin.xml and a zip for user download.
 proper screenshot formating 1920x1080 png file, named screenshot01.png,screenshot02.png,screenshot03.png,screenshot04.png
 
 Help Wanted:
