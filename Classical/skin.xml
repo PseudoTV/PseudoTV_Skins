@@ -1,0 +1,11 @@
+<skin>
+  <defaultresolution>1080i</defaultresolution>
+  <defaultresolutionwide>1080i</defaultresolutionwide>
+  <version>0.7.4</version>
+  <!-- amount to zoom skin to remove overscan compensation -->
+  <zoom>0</zoom>
+  <credits>
+    <skinname>Classical</skinname>
+    <name>Darkonaut,Lunatixz,Marshall,Tromyl</name>
+  </credits>
+</skin>
