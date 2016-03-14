@@ -595,13 +595,13 @@
         </control>  
         <control type="image" id="5004"> 
             <description>Timebar Optional past fade</description>
-            <posx>411</posx>
-            <posy>340</posy>
+            <posx>350</posx>
+            <posy>160</posy>
             <width>-1</width>
-            <height>448</height>
+            <height>470</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeP.png</texture>
-			<visible>false</visible>
+			<visible>true</visible>
         </control>  
         <control type="image" id="5005"> 
             <description>Timebar Optional future fade</description>
@@ -615,7 +615,7 @@
         </control>  
         <control type="label" id="5006">
             <description>Timebar Current Time Button</description>
-            <posx>420</posx>
+            <posx>360</posx>
             <posy>110</posy>
             <width min="128" max="400">auto</width>
             <height>38</height>
@@ -628,10 +628,10 @@
         </control>
         <control type="image" id="5007">
             <description>Timebar line</description>
-            <posx>320</posx>
-            <posy>160</posy>
+            <posx>350</posx>
+            <posy>158</posy>
             <width>2</width>
-            <height>460</height>
+            <height>474</height>
             <aspectratio>keep</aspectratio>
         </control> 
         <control type="image">
@@ -656,7 +656,7 @@
             <height>430</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
-            <texture fallback="">$INFO[Window(10000).Property(EPG.poster)]</texture>
+            <texture fallback="poster.png">$INFO[Window(10000).Property(EPG.poster)]</texture>
             <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
         </control>          
         <control type="image">

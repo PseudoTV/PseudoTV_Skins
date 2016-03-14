@@ -404,7 +404,7 @@
                 <height>240</height>
               <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
-                <texture fallback="">$INFO[Window(10000).Property(OVERLAY.landscape)]</texture>
+                <texture fallback="landscape.png">$INFO[Window(10000).Property(OVERLAY.landscape)]</texture>
                 <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
             </control>        
             <control type="image">
