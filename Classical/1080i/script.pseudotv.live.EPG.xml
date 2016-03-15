@@ -432,7 +432,7 @@
             <height>448</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeP.png</texture>
-			<visible>false</visible>
+			<visible>true</visible>
         </control>  
         <control type="image" id="5005"> 
             <description>Timebar Optional future fade</description>
@@ -442,7 +442,7 @@
             <height>448</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeF.png</texture>
-            <visible>false</visible>
+            <visible>true</visible>
         </control>  
         <control type="label" id="5006">
             <description>Timebar Current Time Button</description>
@@ -461,7 +461,7 @@
             <description>Timebar line</description>
             <posx>388</posx>
          <posy>278</posy>
-         <width>2</width>
+         <width>30</width>
          <height>488</height>
          <aspectratio>keep</aspectratio>
         </control>
@@ -474,7 +474,7 @@
             <height>180</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
-            <texture fallback="">$INFO[Window(10000).Property(EPG.landscape)]</texture>
+            <texture fallback="poster.png">$INFO[Window(10000).Property(EPG.landscape)]</texture>
             <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
         </control>     
 		 <!-- TIME/WEATHER -->

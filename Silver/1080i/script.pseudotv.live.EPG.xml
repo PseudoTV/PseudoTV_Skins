@@ -753,7 +753,7 @@
             <height>448</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeP.png</texture>
-			<visible>false</visible>
+			<visible>true</visible>
         </control>  
         <control type="image" id="5005"> 
             <description>Timebar Optional future fade</description>
@@ -763,7 +763,7 @@
             <height>448</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeF.png</texture>
-            <visible>false</visible>
+            <visible>true</visible>
         </control>  
         <control type="label" id="5006">
             <description>Timebar Current Time Button</description>
@@ -782,7 +782,7 @@
             <description>Timebar line</description>
             <posx>320</posx>
             <posy>330</posy>
-            <width>18</width>
+            <width>30</width>
             <height>440</height>
             <aspectratio>keep</aspectratio>
         </control>

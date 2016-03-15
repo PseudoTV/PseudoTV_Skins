@@ -611,7 +611,7 @@
             <height>448</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeF.png</texture>
-            <visible>false</visible>
+            <visible>true</visible>
         </control>  
         <control type="label" id="5006">
             <description>Timebar Current Time Button</description>
@@ -630,7 +630,7 @@
             <description>Timebar line</description>
             <posx>350</posx>
             <posy>158</posy>
-            <width>2</width>
+            <width>30</width>
             <height>474</height>
             <aspectratio>keep</aspectratio>
         </control> 

@@ -698,17 +698,17 @@
          
         <control type="image" id="5004"> 
             <description>Timebar Optional past fade</description>
-            <posx>411</posx>
-            <posy>340</posy>
+            <posx>355</posx>
+            <posy>525</posy>
             <width>-1</width>
-            <height>448</height>
+            <height>463</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeP.png</texture>
-			<visible>false</visible>
+			<visible>true</visible>
         </control>  
         <control type="image" id="5005"> 
             <description>Timebar Optional future fade</description>
-            <posx>411</posx>
+            <posx>380</posx>
             <posy>340</posy>
             <width>-1</width>
             <height>448</height>

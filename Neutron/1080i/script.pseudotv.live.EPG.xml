@@ -80,12 +80,11 @@
         </control>
         <control type="image">
 		    <posx>533</posx>
-            <posy>820</posy>
+            <posy>855</posy>
             <width>375</width>      
-            <height>282</height>
-            <align>center</align>
-            <aligny>center</aligny>
-            <aspectratio>keep</aspectratio>
+            <height>212</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture diffuse="video_diffuse.png"></texture>
             <texture background="true">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</texture>
             <fadetime>2000</fadetime>
         </control>
@@ -119,13 +118,12 @@
         </control>
         <control type="image">
 			<posx>1015</posx>
-            <posy>820</posy>
+            <posy>855</posy>
             <width>375</width>      
-            <height>282</height>
-            <align>center</align>
-            <aligny>center</aligny>
-            <aspectratio>keep</aspectratio>
-            <texture fallback="">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</texture>
+            <height>212</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture diffuse="video_diffuse.png"></texture>
+            <texture fallback="">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground.landscape)]</texture>
             <fadetime>1500</fadetime>
         </control>
 		<control type="image">
@@ -159,13 +157,12 @@
         </control>
         <control type="image">
 		    <posx>1495</posx>
-            <posy>815</posy>
+            <posy>855</posy>
             <width>375</width>      
-            <height>290</height>
-			<align>center</align>
-            <aligny>center</aligny>
-            <aspectratio>keep</aspectratio>
-            <texture fallback="">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</texture>
+            <height>212</height>
+			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+			<texture diffuse="video_diffuse.png"></texture>
+            <texture fallback="">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground.landscape)]</texture>
 			<visible>true</visible>
             <fadetime>1000</fadetime>
         </control>
@@ -311,7 +308,7 @@
         </control>
 		<!-- Epg/Recordings/OnDemand/Applications Backgrounds -->
 		<control type="image">
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>pstvlButtonFocus.png</texture>
             <posx>10</posx>
             <posy>5</posy>
             <width>1980</width>
@@ -319,7 +316,7 @@
             <visible>true</visible>
         </control>
 		<control type="image">
-            <texture>pstvlButtonFocus.png</texture>
+            <texture>pstvlButtonNoFocus.png</texture>
             <posx>10</posx>
             <posy>85</posy>
             <width>1980</width>
@@ -764,13 +761,13 @@
         </control>    
         <control type="image" id="5004"> 
             <description>Timebar Optional past fade</description>
-            <posx>411</posx>
-            <posy>340</posy>
+            <posx>320</posx>
+            <posy>170</posy>
             <width>-1</width>
-            <height>448</height>
+            <height>470</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeP.png</texture>
-			<visible>false</visible>
+			<visible>true</visible>
         </control>  
         <control type="image" id="5005"> 
             <description>Timebar Optional future fade</description>
@@ -780,7 +777,7 @@
             <height>448</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeF.png</texture>
-            <visible>false</visible>
+            <visible>true</visible>
         </control>  
         <control type="label" id="5006">
             <description>Timebar Current Time Button</description>
@@ -794,13 +791,13 @@
             <font>font12</font>
             <align>center</align>
             <aligny>center</aligny>
-			<visible>false</visible>
+			<visible>true</visible>
         </control>
         <control type="image" id="5007">
             <description>Timebar line</description>
             <posx>420</posx>
             <posy>160</posy>
-            <width>2</width>
+            <width>30</width>
             <height>472</height>
             <aspectratio>keep</aspectratio>
         </control> 
