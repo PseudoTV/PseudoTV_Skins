@@ -15,6 +15,28 @@
     <animation effect="fade" time="5">WindowOpen</animation>
     <!-- <animation effect="fade" time="5">WindowClose</animation> -->
     <controls>
+	 <control type="fadelabel" id="505">
+                <description>PTVL RSS Feed Label</description>  
+                <width>370</width>
+                <height>35</height>
+                <font>font10</font>
+                <aligny>center</aligny>
+                <align>left</align>
+                <scroll>true</scroll>
+                <scrollout>true</scrollout>
+                <pauseatend>900000</pauseatend>
+                <angle>90</angle>
+                <scrollspeed>40</scrollspeed>
+                <textcolor>C0C0C0C0</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <textoffsetx>20</textoffsetx>
+                <resetonlabelchange>true</resetonlabelchange>
+                <label>$INFO[Window(10000).Property(twitter.1.label)]</label>
+                <label>$INFO[Window(10000).Property(twitter.2.label)]</label>
+                <label>$INFO[Window(10000).Property(twitter.3.label)]</label>
+                <label>$INFO[Window(10000).Property(twitter.4.label)]</label>
+				<visible>false</visible>
+            </control>           
         <control type="group">  
             <posx>-20</posx>
             <posy>-20</posy>
@@ -236,7 +258,7 @@
             <width>335</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>222.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -245,7 +267,7 @@
             <width>335</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>222.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -254,7 +276,7 @@
             <width>335</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>222.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -263,7 +285,7 @@
             <width>335</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>222.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -272,7 +294,7 @@
             <width>335</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>222.png</texture>
         </control>                              
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -281,7 +303,7 @@
             <width>335</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>222.png</texture>
         </control>
          <!--CHANNEL Number-->
         <control type="grouplist">            

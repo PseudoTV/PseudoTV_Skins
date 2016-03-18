@@ -34,7 +34,7 @@
 			<posy>10</posy>
 			<width>1570</width>
 			<height>100</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>SIDE Top Bar</description>
@@ -42,7 +42,7 @@
 			<posy>10</posy>
 			<width>340</width>
 			<height>100</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>BOTTOM SIDE Bar</description>
@@ -50,7 +50,7 @@
 			<posy>970</posy>
 			<width>340</width>
 			<height>100</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>side Bar</description>
@@ -58,7 +58,7 @@
 			<posy>120</posy>
 			<width>340</width>
 			<height>200</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>side Bar 2</description>
@@ -66,7 +66,7 @@
 			<posy>330</posy>
 			<width>340</width>
 			<height>630</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
 		 <control type="label">
                 <description>pltv Label</description> 
@@ -189,7 +189,7 @@
             <width>235</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>300.png</texture>
         </control> 
 		<control type="image" id="1">
 		  <description>backround channel</description>
@@ -197,7 +197,7 @@
 			<posy>120</posy>
 			<width>97</width>
 			<height>70</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -206,7 +206,7 @@
             <width>235</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>300.png</texture>
         </control>
 			<control type="image" id="1">
 		  <description>Second Line</description>
@@ -214,7 +214,7 @@
 			<posy>200</posy>
 			<width>97</width>
 			<height>70</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -223,7 +223,7 @@
             <width>235</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>300.png</texture>
         </control> 
 		<control type="image" id="1">
 		  <description>Second Line</description>
@@ -231,7 +231,7 @@
 			<posy>280</posy>
 			<width>97</width>
 			<height>70</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -240,7 +240,7 @@
             <width>235</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>300.png</texture>
         </control> 
 		<control type="image" id="1">
 		  <description>Second Line</description>
@@ -248,7 +248,7 @@
 			<posy>360</posy>
 			<width>97</width>
 			<height>70</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -257,7 +257,7 @@
             <width>235</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>300.png</texture>
         </control>
 			<control type="image" id="1">
 		  <description>Second Line</description>
@@ -265,7 +265,7 @@
 			<posy>440</posy>
 			<width>97</width>
 			<height>70</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
         <control type="image">                  
             <description>Channel Overlay</description>
@@ -274,7 +274,7 @@
             <width>235</width>                  
             <height>70</height>                 
             <colordiffuse>FFFFFFFF</colordiffuse>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>300.png</texture>
         </control>
 		<control type="image" id="1">
 		  <description>Second Line</description>
@@ -282,7 +282,7 @@
 			<posy>520</posy>
 			<width>97</width>
 			<height>70</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
         <!--CHANNEL Number-->
         <control type="grouplist">            
@@ -626,7 +626,7 @@
 			<posy>780</posy>
 			<width>1570</width>
 			<height>290</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>bottom Bar 2</description>
@@ -634,7 +634,7 @@
 			<posy>600</posy>
 			<width>1570</width>
 			<height>170</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
         <control type="image">
             <description>Dynamic art1</description>

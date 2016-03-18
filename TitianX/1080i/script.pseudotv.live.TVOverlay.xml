@@ -362,7 +362,7 @@
             <posy>10</posy>
             <width>180</width>
             <height>68</height>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>222.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control> 
 		  <control type="image">
@@ -371,7 +371,7 @@
             <posy>110</posy>
             <width>180</width>
             <height>68</height>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>222.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>  
 		

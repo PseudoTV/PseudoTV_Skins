@@ -98,7 +98,7 @@
 			<posy>825</posy>
 			<width>240</width>
 			<height>120</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>bottom left Bar</description>
@@ -106,7 +106,7 @@
 			<posy>955</posy>
 			<width>240</width>
 			<height>120</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>middle  Bar</description>
@@ -114,7 +114,7 @@
 			<posy>825</posy>
 			<width>1230</width>
 			<height>250</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		<control type="image" id="1">
 		  <description>right  Bar</description>
@@ -122,7 +122,7 @@
 			<posy>825</posy>
 			<width>430</width>
 			<height>250</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
         <control type="group" id="104"> 
 			<posx>-30</posx>
@@ -133,7 +133,7 @@
 			<posy>825</posy>
 			<width>240</width>
 			<height>120</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 			<description>bottom left Bar</description>
@@ -141,7 +141,7 @@
 			<posy>955</posy>
 			<width>240</width>
 			<height>120</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		<control type="image" id="1">
 			<description>middle  Bar</description>
@@ -149,7 +149,7 @@
 			<posy>825</posy>
 			<width>1230</width>
 			<height>250</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		<control type="image" id="1">
 			<description>right  Bar</description>
@@ -157,7 +157,7 @@
 			<posy>825</posy>
 			<width>430</width>
 			<height>250</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
 		
                 <control type="grouplist">
@@ -351,7 +351,7 @@
 			<posy>575</posy>
 			<width>410</width>
 			<height>250</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>bottom left Bar</description>
@@ -359,7 +359,7 @@
 			<posy>835</posy>
 			<width>410</width>
 			<height>240</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>middle top  Bar</description>
@@ -367,7 +367,7 @@
 			<posy>575</posy>
 			<width>1500</width>
 			<height>250</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>middle center Bar</description>
@@ -375,7 +375,7 @@
 			<posy>835</posy>
 			<width>1200</width>
 			<height>80</height>
-			<texture>pstvlButtonNoFocus.png</texture>
+			<texture>300.png</texture>
 	 	</control>
 		 <control type="image" id="1">
 		  <description>middle bottom Bar</description>
@@ -383,7 +383,7 @@
 			<posy>925</posy>
 			<width>1200</width>
 			<height>150</height>
-			<texture>pstvlButtonFocus.png</texture>
+			<texture>200.png</texture>
 	 	</control>
            
             <control type="grouplist">

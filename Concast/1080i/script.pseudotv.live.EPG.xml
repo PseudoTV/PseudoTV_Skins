@@ -297,78 +297,42 @@
          </control>
       </control>
       <!--SHOW LISTINGS-->
-      <control type="image">
-         <description>CH BACKGROUND</description>
-         <posx>388</posx>
-         <posy>534</posy>
-         <width>1532</width>
-         <height>91</height>
-      </control>
+     
       <control type="group" id="111">
          <posx>388</posx>
          <posy>534</posy>
          <width>1532</width>
          <height>91</height>
       </control>
-      <control type="image">
-         <description>CH BACKGROUND</description>
-         <posx>388</posx>
-         <posy>625</posy>
-         <width>1532</width>
-         <height>91</height>
-      </control>
+     
       <control type="group" id="112">
          <posx>388</posx>
          <posy>625</posy>
          <width>1532</width>
          <height>91</height>
       </control>
-      <control type="image">
-         <description>CH BACKGROUND</description>
-         <posx>388</posx>
-         <posy>716</posy>
-         <width>1532</width>
-         <height>91</height>
-      </control>
+     
       <control type="group" id="113">
          <posx>388</posx>
          <posy>716</posy>
          <width>1532</width>
          <height>91</height>
       </control>
-      <control type="image">
-         <description>CH BACKGROUND</description>
-         <posx>4110</posx>
-         <posy>807</posy>
-         <width>1532</width>
-         <height>91</height>
-      </control>
+     
       <control type="group" id="114">
          <posx>388</posx>
          <posy>807</posy>
          <width>1532</width>
          <height>91</height>
       </control>
-      <control type="image">
-         <description>CH BACKGROUND</description>
-         <posx>388</posx>
-         <posy>898</posy>
-         <width>1532</width>
-         <height>91</height>
-      </control>
+     
       <control type="group" id="115">
          <posx>388</posx>
          <posy>898</posy>
          <width>1532</width>
          <height>91</height>
       </control>
-      <control type="image">
-         <description>CH BACKGROUND</description>
-         <posx>388</posx>
-         <posy>989</posy>
-         <width>1532</width>
-         <height>91</height>
-      </control>
+      
       <control type="group" id="116">
          <posx>388</posx>
          <posy>989</posy>

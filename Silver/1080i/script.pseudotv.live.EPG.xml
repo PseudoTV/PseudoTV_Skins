@@ -118,7 +118,7 @@
             <posy>60</posy>
             <width>1060</width>
             <height>1</height>
-            <texture>pstvlButtonNoFocus.png</texture>
+            <texture>211.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
 			 <control type="label">
