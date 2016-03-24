@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <allowoverlay>no</allowoverlay>
+    <zorder>1</zorder>
+    <!-- Set artwork -->
+    <onload>SetProperty(OVERLAY.type1,landscape,10000)</onload>
+    <onload>SetProperty(OVERLAY.type2,poster,10000)</onload>
+    <onload>SetProperty(OVERLAY.type3,logo,10000)</onload>
+    <onload>SetProperty(OVERLAY.type4,fanart,10000)</onload>
+    <onload>SetProperty(OVERLAY.ONNOW_TYPE,fanart,10000)</onload>
+    <onload>SetProperty(EPG.type1,landscape,10000)</onload>
+    <onload>SetProperty(EPG.type2,poster,10000)</onload>
+    <onload>Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onload>
+    <!-- Set EPG props -->
+    <onload>SetProperty(EPG.rowCount,6,10000)</onload>
+    <onload>SetProperty(EPG.shadowColor,0xff000000,10000)</onload>
+    <onload>SetProperty(EPG.focused_textColor,0xFFFFFFFF,10000)</onload>
+    <onload>SetProperty(EPG.textColor,0xFFFFFFFF,10000)</onload>
+    <onload>SetProperty(EPG.textFont,font12_Title,10000)</onload>
+    <!-- Overlay controls -->
+    <controls>   
+        <control type="image" id="203">
+            <description>Corner Channel Bug</description>
+            <posx>350r</posx>
+            <posy>188r</posy>
+            <width>150</width>
+            <height>150</height>
+            <aspectratio>keep</aspectratio>
+            <texture>NA.png</texture>
+            <visible>!Control.IsVisible(101)</visible>
+            <animation effect="fade" start="25" end="25" condition="True">Conditional</animation>
+        </control>
+        <control type="group" id="102">            
+            <posx>0</posx>
+            <posy>800</posy>             
+           <animation type="WindowOpen" reversible="false">
+			<effect type="zoom" start="80" end="100" center="960,540" tween="back" time="240" />
+			<effect type="fade" end="100" time="240" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="240" />
+			<effect type="fade" start="100" end="0" time="240" />
+		</animation>
+            <visible>Player.HasVideo + !Window.IsActive(videoosd)</visible>
+			 <control type="image">
+				<left>20</left>
+				<top>-10</top>
+				<width>1885</width>
+				<height>285</height>
+				<texture>back2.png</texture>
+			</control>
+			<control type="multiimage">
+			<randomize>true</randomize>
+			<timeperimage>12000</timeperimage>
+			<fadetime>4000</fadetime>
+			<pauseatend>0</pauseatend>
+			<loop>true</loop>
+			<posx>20</posx>
+			<posy>-10</posy>
+			<width>1885</width>
+			<height>285</height>
+			<imagepath background="true">Estuary</imagepath>
+			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
+        	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
+        	<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">Visible</animation>
+        	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
+		</control>
+           <control type="image">
+				<left>10</left>
+				<top>-20</top>
+				<width>335</width>
+				<height>300</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+			 <control type="image">
+				<left>310</left>
+				<top>-20</top>
+				<width>1602</width>
+				<height>300</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+            <control type="group" id="104">               
+                <control type="grouplist">
+                    <posx>-50</posx>
+                    <posy>-70</posy>
+                    <itemgap>5</itemgap>
+                    <orientation>horizontal</orientation>
+                    <control type="label">
+                        <width>336</width>
+                        <height>75</height>
+                        <description>StarOver Label</description>
+                        <label>[B]To Start Over | Press[/B]</label>
+                        <font>font12</font>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                    </control>
+                    <control type="image">
+                        <width>35</width>
+                        <height>75</height>
+                        <description>StarOver SEL image</description> 
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture>sel.png</texture>
+                        <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+                    </control>
+                </control>   
+            </control>                
+            <control type="image">
+                <description>isManaged Art</description>   
+                <posx>345</posx>
+                <posy>120r</posy>         
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>keep</aspectratio>
+                <visible>false</visible>
+                <texture>$INFO[Window(10000).Property(OVERLAY.Managed)]</texture>
+            </control> 
+            <control type="image">
+                <description>isNew Art</description>         
+                <posx>40</posx>
+                <posy>70</posy>  
+                <width>50</width>
+                <height>50</height>
+                <aspectratio>keep</aspectratio>
+                <visible>false</visible>
+                <texture>$INFO[Window(10000).Property(OVERLAY.isNew)]</texture>
+            </control>
+			 <control type="grouplist">
+            <posx>400</posx>
+            <posy>5</posy>
+            <width>1480</width>
+            <height>52</height>
+            <itemgap>5</itemgap>
+            <orientation>horizontal</orientation>
+				<control type="label">
+                    <description>Show Title Label</description>
+                    <width min="5" max="1300">auto</width>
+                    <height>50</height>
+                    <font>font24_Title</font>
+                    <textcolor>ffffffff</textcolor>
+                    <scroll>true</scroll>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <wrapmultiline>false</wrapmultiline>
+                    <scrollspeed>40</scrollspeed>
+                    <scrollsuffix> - </scrollsuffix>
+                    <label>[COLOR=FF0084ff]$INFO[Window(10000).Property(OVERLAY.Title)][/COLOR][COLOR=ffffffff] • [/COLOR]$INFO[Window(10000).Property(OVERLAY.SEtitle)]</label>
+                </control>
+			</control>
+			<control type="label" id="517">
+                        <description>Seekbar start+offset time</description>
+                        <posx>400</posx>
+                        <posy>215</posy>
+                        <width>200</width>
+                        <height>30</height>
+                        <fadetime>250</fadetime>
+                        <textcolor>FF0084ff</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12_Title</font>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <label fallback="">$INFO[VideoPlayer.Time]</label>
+                    </control>
+					<control type="label" id="517">
+                        <description>Seekbar start+offset time</description>
+                        <posx>1590</posx>
+                        <posy>210</posy>
+                        <width>200</width>
+                        <height>30</height>
+                        <fadetime>250</fadetime>
+                        <textcolor>FF0084ff</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12_Title</font>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <label fallback="">$INFO[VideoPlayer.Duration]</label>
+                    </control>
+			
+         <control type="grouplist">
+            <posx>40</posx>
+            <posy>10</posy>
+            <width>480</width>
+            <height>52</height>
+            <itemgap>0</itemgap>
+            <orientation>horizontal</orientation>
+            <control type="label">
+               <posy></posy>
+               <width>48</width>
+               <height>45</height>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>font24_Title</font>
+               <textcolor>FF0084ff</textcolor>
+               <label>$INFO[Window(10000).Property(OVERLAY.Chnum)]</label>
+            </control>
+            <control type="label">
+               <posy></posy>
+               <width>220</width>
+               <height>45</height>
+               <align>center</align>
+               <aligny>center</aligny>
+               <font>font12_Title</font>
+               <textcolor>ffffffff</textcolor>
+			   <wrapmultiline>false</wrapmultiline>
+               <scrollspeed>40</scrollspeed>
+               <scrollsuffix> - </scrollsuffix>
+			   <scroll>true</scroll>
+               <label>$INFO[Window(10000).Property(OVERLAY.Chname)]</label>
+            </control>
+         </control>
+		  <control type="image">
+				<left>40</left>
+				<top>55</top>
+				<width>270</width>
+				<height>2</height>
+				<texture>3333.png</texture>
+				 <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
+			</control>
+			 <control type="image">
+				<left>340</left>
+				<top>55</top>
+				<width>1540</width>
+				<height>2</height>
+				<texture>3333.png</texture>
+				 <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
+			</control>
+						 <control type="image">
+            <description>CH LOGO</description>
+            <posx>1695</posx>
+            <posy>60</posy>
+            <width>168</width>
+            <height>168</height>
+            <aspectratio>keep</aspectratio>
+			<texture>$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
+         </control>
+		 
+		  <control type="image">
+                <description>Dynamic artwork</description>
+                <animation effect="fade" time="500">VisibleChange</animation> 
+                <posx>40</posx>
+                <posy>70</posy>  
+                <width>270</width>      
+                <height>175</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="video_diffuse.png"></texture>
+                <texture fallback="">$INFO[Window(10000).Property(OVERLAY.landscape)]</texture>
+                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+            </control>
+				 <control type="label">
+                <description>Show Description</description>
+				<posx>400</posx>
+            <posy>80</posy>
+                <width>1200</width>
+                <height>200</height>
+                <align>left</align>
+                <aligny>bottom</aligny>
+                <wrapmultiline>true</wrapmultiline>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <font>font12_Title</font>
+                <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+            </control> 
+         <!-- TIME/WEATHER -->
+		 <control type="label">
+            <description>TIME</description>
+            <posx>1730</posx>
+            <posy>8</posy>
+            <width>150</width>
+            <height>45</height>
+            <label>$INFO[System.Time]</label>
+            <font>font24_Title</font>
+            <align>center</align>
+            <textcolor>FF0084ff</textcolor>
+         </control>
+            <control type="grouplist">
+            <posx>530</posx>
+            <posy>227</posy>
+            <width>1480</width>
+            <height>92</height>
+            <itemgap>0</itemgap>
+            <orientation>horizontal</orientation>
+                <control type="group"> 
+                    <visible></visible>
+					 <control type="progress">
+                        <posx>0</posx>
+                        <posy>0</posy> 
+                        <width>1000</width>
+                        <height>8</height>
+                        <texturebg border="0">seek/progress_back.png</texturebg>
+                        <lefttexture border="0">seek/progresscache_left.png</lefttexture>
+                        <midtexture border="0">seek/progresscache_mid.png</midtexture>
+                        <righttexture border="0">seek/progresscache_right.png</righttexture>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>Player.ProgressCache</info>
+                        <visible>Control.IsVisible(5007)</visible>
+                    </control>
+                    <control type="progress" id="5007">
+                        <posx>0</posx>
+                        <posy>0</posy> 
+                        <width>1000</width>
+                        <height>8</height>
+                        <texturebg border="0">seek/progresscache_back.png</texturebg>
+                        <lefttexture border="0">seek/progress_left.png</lefttexture>
+                        <midtexture border="0">seek/progress_mid.png</midtexture>
+                        <righttexture border="0">seek/progress_right.png</righttexture>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>Player.Progress</info>
+						 <visible>true</visible>
+                    </control>
+                </control>
+				
+				
+			
+
+				
+                
+
+            </control> 
+        </control> 
+        <!-- MOREINFO -->
+        <control type="group" id="222">
+            <posx>0</posx>
+            <posy>600</posy>     
+            <control type="image">
+				<left>20</left>
+				<top>-10</top>
+				<width>1885</width>
+				<height>480</height>
+				<texture>back2.png</texture>
+			</control>
+			<control type="multiimage">
+			<randomize>true</randomize>
+			<timeperimage>12000</timeperimage>
+			<fadetime>4000</fadetime>
+			<pauseatend>0</pauseatend>
+			<loop>true</loop>
+			<posx>20</posx>
+			<posy>-10</posy>
+			<width>1885</width>
+			<height>480</height>
+			<imagepath background="true">Estuary</imagepath>
+			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
+        	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
+        	<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">Visible</animation>
+        	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
+		</control>
+		
+           <control type="image">
+				<left>10</left>
+				<top>-20</top>
+				<width>355</width>
+				<height>500</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+			<control type="image">
+				<left>1585</left>
+				<top>55</top>
+				<width>335</width>
+				<height>425</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+			 <control type="image">
+				<left>330</left>
+				<top>-20</top>
+				<width>1590</width>
+				<height>110</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+			 <control type="image">
+				<left>330</left>
+				<top>55</top>
+				<width>1290</width>
+				<height>230</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+			 <control type="image">
+				<left>330</left>
+				<top>250</top>
+				<width>1290</width>
+				<height>230</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+            <control type="grouplist">
+                <description>Context buttons</description>
+                <posx>1630</posx>
+                <posy>120</posy>
+                <width>250</width>
+                <orientation>vertical</orientation>
+                <itemgap>5</itemgap>
+                <control type="button" id="1012">
+                    <description>More Info</description>
+                    <width>250</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1015</onup>
+                    <ondown>1013</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1012))</visible>
+                </control>
+                <control type="button" id="1013">
+                    <description>Find Similar</description>
+                    <width>250</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1012</onup>
+                    <ondown>1014</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1013))</visible>
+                </control>
+                <control type="button" id="1014">
+                    <description>Record Show</description>
+                    <width>250</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1013</onup>
+                    <ondown>1015</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1014))</visible>
+                </control>
+                <control type="button" id="1015">
+                    <description>Set Reminder</description>
+                    <width>250</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1014</onup>
+                    <ondown>1012</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1014))</visible>
+                </control>
+            </control>
+            <control type="image">
+                <description>Dynamic artwork - MoreInfo</description>
+                <posx>30</posx>
+                <posy>0</posy>  
+                <width>310</width> 
+                <height>460</height>
+                <texture fallback="">$INFO[Window(10000).Property(OVERLAY.poster)]</texture>
+                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+            </control>
+
+            <control type="image">
+                <description>isManaged Art</description>   
+                <posx>345</posx>
+                <posy>120r</posy>         
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>keep</aspectratio>
+				<visible>false</visible>
+                <texture>$INFO[Window(10000).Property(OVERLAY.Managed)]</texture>
+            </control>             
+            <control type="image">
+                <description>Unaired "NEW" image</description>         
+                <posx>65</posx>
+                <posy>485r</posy>  
+                <width>50</width>
+                <height>50</height>
+                <aspectratio>keep</aspectratio>
+				<visible>false</visible>
+                <texture>$INFO[Window(10000).Property(OVERLAY.isNew)]</texture>
+            </control>
+            <control type="grouplist">
+                <posx>400</posx>
+                <posy>15</posy>
+                <width>1800</width>
+                <orientation>horizontal</orientation>
+                <itemgap>5</itemgap>
+                <control type="label">
+                    <description>Show Title Label</description>
+                    <width min="5" max="1800">auto</width>
+                    <height>30</height>
+                    <font>font24_Title</font>
+                    <textcolor>FF0084ff</textcolor>
+                    <scroll>true</scroll>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <wrapmultiline>false</wrapmultiline>
+                    <scrollspeed>40</scrollspeed>
+                    <scrollsuffix> - </scrollsuffix>
+                    <label>$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0] • [/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR]</label>
+                </control>
+            </control>
+            <control type="grouplist">
+			<visible>false</visible>
+                <posx>430</posx>
+                <posy>380</posy>
+                <width>1400</width>
+                <orientation>vertical</orientation>
+                <itemgap>8</itemgap>
+                <control type="image">
+                    <description>Seekbar Line</description>
+                    <width>1400</width>
+                    <height>4</height>
+                    <texture>seek/progress_mid.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <visible>!Control.IsVisible(5007)</visible>
+                </control>
+                <control type="group" id="5007">  
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <control type="progress">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1400</width>
+                        <height>28</height>
+                        <texturebg>seek/progress_back.png</texturebg>
+                        <lefttexture border="0">seek/progresscache_left.png</lefttexture>
+                        <midtexture border="0">seek/progresscache_mid.png</midtexture>
+                        <righttexture border="0">seek/progresscache_right.png</righttexture>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>Player.ProgressCache</info>
+						<visible>false</visible>
+                    </control>
+                    <control type="progress">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1400</width>
+                        <height>28</height>
+                        <texturebg>seek/progresscache_back.png</texturebg>
+                        <lefttexture border="0">seek/progress_left.png</lefttexture>
+                        <midtexture border="0">seek/progress_mid.png</midtexture>
+                        <righttexture border="0">seek/progress_right.png</righttexture>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>Player.Progress</info>
+						<visible>false</visible>
+                    </control> 
+                </control> 
+            </control>
+			 <control type="grouplist">
+                    <posx>400</posx>
+                    <posy>50</posy>
+                    <width>500</width>
+                    <orientation>vertical</orientation>
+                    <itemgap>18</itemgap>
+					<visible>false</visible>
+                    <control type="label" id="517">
+                        <description>Seekbar start+offset time</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>550</width>
+                        <height>30</height>
+                        <fadetime>250</fadetime>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12</font>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label fallback="">[B]$INFO[System.Time, Time: ] $INFO[Player.StartTime, Started: ][/B]</label>
+                        <visible>false</visible>
+                    </control>
+                    <control type="label" id="516">
+                        <description>Seekbar Elapsed Time Button</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>550</width>
+                        <height>30</height>
+                        <fadetime>250</fadetime>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12</font>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>[B]$INFO[Player.Time][/B]</label>
+                        <visible>false</visible>
+                        <!-- <visible>Player.HasDuration</visible> -->
+                    </control>
+					 <control type="label" id="518">"
+                        <description>Seekbar time</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>550</width>
+                        <height>30</height>
+                        <fadetime>250</fadetime>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>      [B]  $INFO[Player.Duration,[COLOR=FF0084ff]Duration:     [/COLOR]][/B]</label>
+                        <visible>Player.HasDuration</visible>
+                    </control> 
+                    <control type="label" id="516">
+                        <description>Seekbar Elapsed Time Button</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>550</width>
+                        <height>30</height>
+                        <fadetime>250</fadetime>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>      [B] $INFO[Player.Time,[COLOR=FF0084ff]   Elapsed:    [/COLOR] ][/B]</label>
+                        <visible>Player.HasDuration</visible>
+                    </control> 
+					 <control type="label" id="516">
+                        <description>Seekbar Elapsed Time Button</description>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>550</width>
+                        <height>30</height>
+                        <fadetime>250</fadetime>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label> [B]$INFO[Player.TimeRemaining,[COLOR=FF0084ff]   Remaining:   [/COLOR] ][/B]</label>
+                        <visible>Player.HasDuration</visible>
+                    </control>
+                   
+                </control> 
+			<control type="grouplist">  
+                    <posx>380</posx>
+                    <posy>270</posy> 
+                    <orientation>vertical</orientation>
+					<itemgap>12</itemgap>
+					 <control type="label">
+                        <description>Show Info</description>
+                        <posx>0</posx>
+                        <posy>0</posy> 
+                        <width>550</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <wrapmultiline>true</wrapmultiline>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12_Title</font>
+                        <label>  $INFO[Window(10000).Property(OVERLAY.Year),[COLOR=FF0084ff]   Year: [/COLOR] ]</label>
+                    </control>
+					<control type="label">
+                        <description>Show Info</description>
+                        <posx>0</posx>
+                        <posy>0</posy> 
+                        <width>550</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12_Title</font>
+                        <label>    $INFO[VideoPlayer.Rating,[COLOR=FF0084ff]IMBD:  [/COLOR]]</label>
+                    </control>
+                    <control type="label">
+                        <description>Show Info</description>
+                        <posx>0</posx>
+                        <posy>0</posy> 
+                        <width>550</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <wrapmultiline>true</wrapmultiline>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12_Title</font>
+                        <label>$INFO[Window(10000).Property(OVERLAY.Genre),[COLOR=FF0084ff]   Genre: [/COLOR] ]</label>
+                    </control>
+					<control type="label">
+                        <description>Show Info</description>
+                        <posx>0</posx>
+                        <posy>0</posy> 
+                        <width>550</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <font>font12_Title</font>
+                        <label>  $INFO[VideoPlayer.Studio,[COLOR=FF0084ff]Studio:  [/COLOR]]</label>
+                    </control>
+                </control>  
+			 <control type="label">
+                    <description>Show Description</description>
+                    <posx>400</posx>
+                    <posy>110</posy>
+                    <width>1100</width>
+                    <height>90</height>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <wrapmultiline>true</wrapmultiline>
+                    <textcolor>ffffffff</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+                    <font>font12_Title</font>
+                    <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+                </control>
+             <!-- line 4 -->
+                <control type="grouplist">
+                    <posx>850</posx>
+                    <posy>100r</posy>
+                    <width>1500</width>
+                    <orientation>horizontal</orientation>
+                    <itemgap>38</itemgap>
+                    <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.VideoCodec,flags/source/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+                    </control>
+					</control>
+					 <control type="grouplist">
+                    <posx>850</posx>
+                    <posy>190r</posy>
+                    <width>1500</width>
+                    <orientation>horizontal</orientation>
+                    <itemgap>38</itemgap>
+					
+                    <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.AudioChannels,flags/channels/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.AudioLanguage,flags/language/,.png]</texture>
+                    </control>       
+                    <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.Country,flags/language/,.png]</texture>
+                    </control>
+					 <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png" colordiffuse="ffffffff">$INFO[Window(10000).Property(OVERLAY.Rating),flags/mpaa/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture fallback="flags/rating/0.0.png" colordiffuse="ffffffff">$INFO[VideoPlayer.Rating,flags/rating/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <description>Sickbeard/Couchpotato image</description>      
+                        <width>100</width>
+                        <height>62</height>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[Control.GetLabel(511)]</texture>
+                    </control> 
+            </control>
+            </control>
+            <control type="group" id="120">
+                <posx>0</posx>
+                <posy>50</posy>
+                <control type="image">
+				<left>20</left>
+				<top>-10</top>
+				<width>340</width>
+				<height>225</height>
+				<texture>back2.png</texture>
+			</control>
+			<control type="multiimage">
+			<randomize>true</randomize>
+			<timeperimage>12000</timeperimage>
+			<fadetime>4000</fadetime>
+			<pauseatend>0</pauseatend>
+			<loop>true</loop>
+			<posx>20</posx>
+			<posy>-10</posy>
+			<width>340</width>
+			<height>225</height>
+			<imagepath background="true">Estuary</imagepath>
+			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
+        	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
+        	<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">Visible</animation>
+        	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
+		</control>
+           <control type="image">
+				<left>20</left>
+				<top>-20</top>
+				<width>340</width>
+				<height>215</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+                <control type="group">       
+                    <control type="image">
+                        <description>Coming Up artwork</description>
+                        <posx>45</posx>
+                        <posy>5</posy>
+                        <width>290</width>      
+                        <height>165</height>
+                        <align>center</align>
+                        <aspectratio>stretch</aspectratio>
+                        <texture fallback="">$INFO[Window(10000).Property(OVERLAY.NEXT.landscape)]</texture>
+                        <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+                    </control>
+                    <control type="fadelabel">
+                        <description>Popup fadelabel</description>
+                        <posx>25</posx>
+                        <posy>175</posy>
+                        <width>320</width>
+                        <height>40</height>
+                        <visible>true</visible>
+                        <pauseatend>2700</pauseatend>
+                        <label>Coming Up Next</label>
+                        <label>Coming Up Next</label>
+                        <label>$INFO[Window(10000).Property(OVERLAY.NEXT.Title)]</label>
+                        <font>font12_Title</font>
+                        <scroll>false</scroll>
+                        <scrollout>false</scrollout>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <align>center</align>
+                        <autoscroll time="2000" delay="0" repeat="0">Skin.HasSetting(AutoScroll)</autoscroll>
+                    </control>                    
+                </control>
+            </control>
+        <control type="group" id="119">
+            <description>Sidebar Menu</description>
+            <posx>-5</posx>
+            <posy>0</posy>
+			 <control type="image">
+                <width>275</width>
+                <height>1080</height>
+                <description>EPG Background</description>
+                <texture>back.png</texture>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+           <control type="multiimage">
+			<randomize>true</randomize>
+			<timeperimage>12000</timeperimage>
+			<fadetime>4000</fadetime>
+			<pauseatend>0</pauseatend>
+			<loop>true</loop>
+			<posx>-5</posx>
+			<posy>0</posy>
+			<width>280</width>
+			<height>1080</height>
+			<imagepath background="true">Estuary</imagepath>
+			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
+        	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
+        	<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">Visible</animation>
+        	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">Hidden</animation>
+		</control>
+		 <control type="image">
+				<left>-10</left>
+				<top>-15</top>
+				<width>300</width>
+				<height>1110</height>
+				<texture border="40">button-nofo.png</texture>
+			</control>
+            <control type="image" id="130">
+                <description>Background Image</description>
+                <width>400</width>
+                <height>1080</height>
+                <texture>back.png</texture>
+                <animation effect="slide" end="0,0" time="500">VisibleChange</animation>
+                <animation effect="slide" end="0,0" time="50">VisibleChange</animation>
+            </control>   
+            <control type="image">
+                <description>Sidebar - Logo</description>
+                <posx>27</posx>
+                <posy>0</posy>
+                <width>225</width>
+                <height>180</height>
+                <aspectratio>keep</aspectratio>
+                <align>center</align>
+                <aligny>center</aligny>
+                <visible>Control.IsVisible(119)</visible>
+				<visible>!Control.IsVisible(130)</visible>
+                <texture>logo.png</texture>
+            </control>      
+            <control type="image">
+                <description>Onnow Art</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>400</width>      
+                <height>250</height>
+                <aspectratio>stretch</aspectratio>
+                <visible>Control.IsVisible(130)</visible>
+                <texture fallback="landscape.jpg">$INFO[Window(10000).Property(OVERLAY.ONNOW_ART)]</texture>
+                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+            </control>
+            <control type="label" id="132">
+                <description>Onnow Controls</description>
+                <posx>0</posx>
+                <posy>250</posy>
+                <width>391</width>
+                <height>1180</height>
+                <label>260</label>
+                <visible>false</visible>
+            </control>
+            <control type="grouplist">
+				<visible>!Control.IsVisible(130)</visible>
+                <posx>27</posx>
+                <posy>170</posy>
+                <width>225</width>
+                <orientation>vertical</orientation>
+                <itemgap>0</itemgap>
+                <control type="button" id="1000">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1011</onup>
+                    <ondown>1001</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1000))</visible>
+                </control>
+                <control type="button" id="1001">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1000</onup>
+                    <ondown>1002</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1001))</visible>
+                </control>
+                <control type="button" id="1002">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1001</onup>
+                    <ondown>1003</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1002))</visible>
+                </control>
+                <control type="button" id="1003">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1002</onup>
+                    <ondown>1004</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1003))</visible>
+                </control>
+                <control type="button" id="1004">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1003</onup>
+                    <ondown>1005</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1004))</visible>
+                </control>
+                <control type="button" id="1005">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1004</onup>
+                    <ondown>1006</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1005))</visible>
+                </control>
+                <control type="button" id="1006">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1005</onup>
+                    <ondown>1007</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1006))</visible>
+                </control>
+                <control type="button" id="1007">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1006</onup>
+                    <ondown>1008</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1007))</visible>
+                </control>
+                <control type="button" id="1008">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1007</onup>
+                    <ondown>1009</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1008))</visible>
+                </control>
+                <control type="button" id="1009">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1008</onup>
+                    <ondown>1010</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1009))</visible>
+                </control>
+                <control type="button" id="1010">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1009</onup>
+                    <ondown>1011</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1010))</visible>
+                </control>
+                <control type="button" id="1011">
+                    <width>225</width>
+                    <height>72</height>
+                    <label></label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_Title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>pstvlButtonFocus.png</texturefocus>
+                    <texturenofocus>.png</texturenofocus>
+                    <onup>1010</onup>
+                    <ondown>1000</ondown>
+                    <visible>!IsEmpty(Control.GetLabel(1010))</visible>
+                </control>
+            </control>
+        </control>
+        <control type="group" id="101">    
+            <visible></visible>
+            <control type="image">
+                <description>Loading Background Image</description>
+                <width>1920</width>
+                <height>1080</height>
+                <texture>maskmain.png</texture>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="image">
+                <description>Loading Background Logo</description>
+                <posx>725</posx>
+                <posy>350</posy>
+                <width>480</width>
+                <height>270</height>
+                <aspectratio>keep</aspectratio>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
+                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+            </control>
+        </control>
+    </controls>     
+</window>
