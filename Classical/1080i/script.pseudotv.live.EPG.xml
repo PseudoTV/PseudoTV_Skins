@@ -125,7 +125,22 @@
             <colordiffuse>C0C0C0C0</colordiffuse>
             <texture>right.png</texture>
 			<visible>false</visible>
+        </control>
+		 <control type="image" id="5009">     
+            <description>Optional Channel Focus Highlight</description>         
+            <posx>40</posx>  
+            <width>323</width>
+            <height>77</height>
+            <texture>pstvlHighlight.png</texture>
         </control> 
+		 <control type="image" id="5010">     
+            <description>Optional Channel Playing Highlight</description>         
+            <posx>40</posx>  
+            <width>323</width>
+            <height>77</height>
+            <texture>pstvlHighlightAlt2.png</texture>
+			<colordiffuse colordiffuse="$VAR[DialogColorVar]">blue</colordiffuse>
+        </control>
          <!--CH NUMBER-->
       <control type="grouplist">
          <posx>5</posx>
@@ -258,9 +273,9 @@
       <control type="image" id="321">
          <description>CH 1 ICO</description>
          <posx>58</posx>
-         <posy>278</posy>
-         <width>338</width>
-         <height>75</height>
+         <posy>282</posy>
+         <width>300</width>
+         <height>65</height>
          <align>center</align>
          <aligny>center</aligny>
          <aspectratio>keep</aspectratio>
@@ -282,8 +297,8 @@
          <description>CH 2 ICO</description>
          <posx>58</posx>
          <posy>365</posy>
-         <width>338</width>
-         <height>75</height>
+         <width>300</width>
+         <height>65</height>
          <align>center</align>
          <aligny>center</aligny>
          <aspectratio>keep</aspectratio>
@@ -304,9 +319,9 @@
       <control type="image" id="323">
          <description>CH 3 ICO</description>
          <posx>58</posx>
-         <posy>447</posy>
-         <width>338</width>
-         <height>75</height>
+         <posy>450</posy>
+         <width>300</width>
+         <height>65</height>
          <align>center</align>
          <aligny>center</aligny>
          <aspectratio>keep</aspectratio>
@@ -327,9 +342,9 @@
       <control type="image" id="324">
          <description>CH 4 ICO</description>
          <posx>58</posx>
-         <posy>528</posy>
-         <width>338</width>
-         <height>75</height>
+         <posy>530</posy>
+         <width>300</width>
+         <height>65</height>
          <align>center</align>
          <aligny>center</aligny>
          <aspectratio>keep</aspectratio>
@@ -350,9 +365,9 @@
       <control type="image" id="325">
          <description>CH 5 ICO</description>
          <posx>58</posx>
-         <posy>611</posy>
-         <width>338</width>
-         <height>75</height>
+         <posy>613</posy>
+         <width>300</width>
+         <height>65</height>
          <align>center</align>
          <aligny>center</aligny>
          <aspectratio>keep</aspectratio>
@@ -373,9 +388,9 @@
       <control type="image" id="326">
          <description>CH 6 ICO</description>
          <posx>58</posx>
-         <posy>692</posy>
-         <width>338</width>
-         <height>75</height>
+         <posy>695</posy>
+         <width>300</width>
+         <height>65</height>
          <align>center</align>
          <aligny>center</aligny>
          <aspectratio>keep</aspectratio>
@@ -510,7 +525,16 @@
          <textcolor>FFFFFFFF</textcolor>
          <visible>!Control.IsVisible(800)</visible>
       </control>
-	  <control type="label" id="215">
+	   <control type="button" id="6000">
+            <description>Filter Button</description>     
+            <posx>0</posx>
+            <posy>258</posy>   
+            <width>410</width>
+            <height>38</height>
+            <texturenofocus>NA.png</texturenofocus>
+            <texturefocus>pstvlButtonFocusAlt.png</texturefocus>
+        </control> 
+	  <control type="button" id="6001">
                 <description>EPG Label</description>
 				<posx>1215</posx>
                 <posy>105</posy>
@@ -520,10 +544,12 @@
                 <font>font10_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>.png</texturenofocus>
+                <texturefocus>.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
         </control>               
-        <control type="label" id="216">
+        <control type="button" id="6002">
                 <description>DVR Label</description>
 				<posx>1355</posx>
                 <posy>105</posy>
@@ -533,12 +559,14 @@
                 <font>font10_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>.png</texturenofocus>
+                <texturefocus>.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
         </control>               
-        <control type="label" id="217">
+        <control type="button" id="6003">
                 <description>OnDemand Label</description>
-				<posx>1555</posx>
+				<posx>1615</posx>
                 <posy>95</posy>
                 <width min="5" max="200">auto</width>
                 <height>38</height>
@@ -546,11 +574,12 @@
                 <font>font10_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
-				<wrapmultiline>true</wrapmultiline>
+				<texturenofocus>.png</texturenofocus>
+                <texturefocus>.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
         </control>               
-        <control type="label" id="218">
+        <control type="button" id="6004">
                 <description>Apps Label</description>
 				<posx>1680</posx>
                 <posy>100</posy>
@@ -560,6 +589,8 @@
                 <font>font10_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>.png</texturenofocus>
+                <texturefocus>.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
         </control>   
