@@ -5,7 +5,6 @@
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
     <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload>    
     <onunload>ActivateWindow(12005)</onunload>
-    <!-- <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
@@ -13,7 +12,6 @@
         <posy>0</posy>
     </coordinates>
     <animation effect="fade" time="5">WindowOpen</animation>
-    <!-- <animation effect="fade" time="5">WindowClose</animation> -->
     <controls>
 	<control type="group">  
             <posx>0</posx>
@@ -112,9 +110,9 @@
          <shadowcolor>FF000000</shadowcolor>
         </control>
 		<control type="image">
-				<left>100</left>
+				<left>90</left>
 				<top>255</top>
-				<width>300</width>
+				<width>315</width>
 				<height>2</height>
 				<texture>3333.png</texture>
 				 <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
@@ -180,10 +178,25 @@
             <colordiffuse>C0C0C0C0</colordiffuse>
             <texture>right.png</texture>
 			<visible>false</visible>
+        </control>
+		 <control type="image" id="5009">     
+            <description>Optional Channel Focus Highlight</description>         
+            <posx>90</posx>  
+            <width>315</width>
+            <height>70</height>
+            <texture>pstvlButtonFocus.png</texture>
         </control> 
+         <control type="image" id="5010">     
+            <description>Optional Channel Playing Highlight</description>         
+            <posx>90</posx>  
+            <width>315</width>
+            <height>70</height>
+            <texture>pstvlHighlightAlt2.png</texture>
+			<colordiffuse colordiffuse="$VAR[DialogColorVar]">blue</colordiffuse>
+        </control>
          <!--CH NUMBER-->
       <control type="grouplist">
-         <posx>50</posx>
+         <posx>60</posx>
          <posy>250</posy>
          <itemgap>0</itemgap>
          <orientation>vertical</orientation>
@@ -248,7 +261,7 @@
          <description>CH 1 NAME</description>
          <posx>150</posx>
          <posy>258</posy>
-         <width>300</width>
+         <width>250</width>
          <height>63</height>
          <font>font12_Title</font>
          <align>left</align>
@@ -258,7 +271,7 @@
       </control>
       <control type="image" id="321">
          <description>CH 1 ICO</description>
-         <posx>80</posx>
+         <posx>90</posx>
          <posy>268</posy>
          <width>338</width>
          <height>45</height>
@@ -271,7 +284,7 @@
          <description>CH 2 NAME</description>
          <posx>150</posx>
          <posy>333</posy>
-         <width>300</width>
+         <width>250</width>
          <height>63</height>
          <font>font12_Title</font>
          <align>left</align>
@@ -281,7 +294,7 @@
       </control>
       <control type="image" id="322">
          <description>CH 2 ICO</description>
-         <posx>80</posx>
+         <posx>90</posx>
          <posy>345</posy>
          <width>338</width>
          <height>45</height>
@@ -294,7 +307,7 @@
          <description>CH 3 NAME</description>
          <posx>150</posx>
          <posy>410</posy>
-         <width>300</width>
+         <width>250</width>
          <height>63</height>
          <font>font12_Title</font>
          <align>left</align>
@@ -304,7 +317,7 @@
       </control>
       <control type="image" id="323">
          <description>CH 3 ICO</description>
-         <posx>80</posx>
+         <posx>90</posx>
          <posy>422</posy>
          <width>338</width>
          <height>45</height>
@@ -317,7 +330,7 @@
          <description>CH 4 NAME</description>
          <posx>150</posx>
          <posy>485</posy>
-         <width>300</width>
+         <width>250</width>
          <height>63</height>
          <font>font12_Title</font>
          <align>left</align>
@@ -327,7 +340,7 @@
       </control>
       <control type="image" id="324">
          <description>CH 4 ICO</description>
-         <posx>80</posx>
+         <posx>90</posx>
          <posy>495</posy>
          <width>338</width>
          <height>45</height>
@@ -340,7 +353,7 @@
          <description>CH 5 NAME</description>
          <posx>150</posx>
          <posy>560</posy>
-         <width>300</width>
+         <width>250</width>
          <height>63</height>
          <font>font12_Title</font>
          <align>left</align>
@@ -350,7 +363,7 @@
       </control>
       <control type="image" id="325">
          <description>CH 5 ICO</description>
-         <posx>80</posx>
+         <posx>90</posx>
          <posy>570</posy>
          <width>338</width>
          <height>45</height>
@@ -363,7 +376,7 @@
          <description>CH 6 NAME</description>
          <posx>150</posx>
          <posy>637</posy>
-         <width>300</width>
+         <width>250</width>
          <height>63</height>
          <font>font12_Title</font>
          <align>left</align>
@@ -373,7 +386,7 @@
       </control>
       <control type="image" id="326">
          <description>CH 6 ICO</description>
-         <posx>80</posx>
+         <posx>90</posx>
          <posy>650</posy>
          <width>338</width>
          <height>45</height>
@@ -587,52 +600,72 @@
 							<height>70</height>
 							<texture>dialog-bg.png</texture>
 						</control>
-						 <control type="image">
+						
+		 <control type="button" id="6000">
+            <description>Filter Button</description>     
+            <posx>0</posx>
+            <posy>258</posy>   
+            <width>410</width>
+            <height>38</height>
+            <texturenofocus>NA.png</texturenofocus>
+            <texturefocus>pstvlButtonFocusAlt.png</texturefocus>
+        </control>    
+		<control type="button" id="6001">
                 <description>EPG Label</description>
 				<posx>1398</posx>
                 <posy>132</posy>
                 <width>43</width>
                 <height>48</height>
-                <texture>guide.png</texture>
+				<label></label>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>guide.png</texturenofocus>
+                <texturefocus>guide.png</texturefocus>
                 <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
                 <shadowcolor>ff000000</shadowcolor>
         </control> 
-        <control type="image">
+		<control type="button" id="6002">
                 <description>DVR Label</description>
 				<posx>1500</posx>
-                <posy>130</posy>
+                <posy>132</posy>
                 <width>43</width>
                 <height>48</height>
-                <texture>recordings.png</texture>
-                <font>font10_Title</font>
+				<label></label>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>recordings.png</texturenofocus>
+                <texturefocus>recordings.png</texturefocus>
                 <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
-        </control>               
-        <control type="image">
+                <shadowcolor>ff000000</shadowcolor>
+        </control>
+		<control type="button" id="6003">
                 <description>OnDemand Label</description>
 				<posx>1600</posx>
-                <posy>130</posy>
+                <posy>132</posy>
                 <width>43</width>
                 <height>48</height>
-                <texture>media.png</texture>
+				<label></label>
                 <align>center</align>
                 <aligny>center</aligny>
-				<colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
-        </control>               
-        <control type="image">
+				<texturenofocus>media.png</texturenofocus>
+                <texturefocus>media.png</texturefocus>
+                <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>  
+		<control type="button" id="6004">
                 <description>Apps Label</description>
 				<posx>1700</posx>
-                <posy>130</posy>
+                <posy>132</posy>
                 <width>43</width>
                 <height>48</height>
-                <texture>add-ons.png</texture>
+				<label></label>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>add-ons.png</texturenofocus>
+                <texturefocus>add-ons.png</texturefocus>
                 <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
-        </control> 
+                <shadowcolor>ff000000</shadowcolor>
+        </control>   
 		<control type="image">
 				<left>460</left>
 				<top>795</top>
