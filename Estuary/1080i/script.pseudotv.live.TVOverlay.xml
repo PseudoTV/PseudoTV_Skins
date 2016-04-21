@@ -742,7 +742,7 @@
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <aspectratio>keep</aspectratio>
-                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+                        <texture colordiffuse="ffffffff">$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]</texture>
                     </control>
 					</control>
 					 <control type="grouplist">
