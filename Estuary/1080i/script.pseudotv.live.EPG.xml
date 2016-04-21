@@ -192,7 +192,7 @@
             <width>315</width>
             <height>70</height>
             <texture>pstvlHighlightAlt2.png</texture>
-			<colordiffuse colordiffuse="$VAR[DialogColorVar]">blue</colordiffuse>
+			<colordiffuse></colordiffuse>
         </control>
          <!--CH NUMBER-->
       <control type="grouplist">
@@ -620,9 +620,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>guide.png</texturenofocus>
-                <texturefocus>guide.png</texturefocus>
-                <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
-                <shadowcolor>ff000000</shadowcolor>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
         </control> 
 		<control type="button" id="6002">
                 <description>DVR Label</description>
@@ -634,9 +632,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>recordings.png</texturenofocus>
-                <texturefocus>recordings.png</texturefocus>
-                <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
-                <shadowcolor>ff000000</shadowcolor>
+                <texturefocus>DVRbuttonFocus.png</texturefocus>
         </control>
 		<control type="button" id="6003">
                 <description>OnDemand Label</description>
@@ -648,9 +644,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>media.png</texturenofocus>
-                <texturefocus>media.png</texturefocus>
-                <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
-                <shadowcolor>ff000000</shadowcolor>
+                <texturefocus>DemandbuttonFocus.png</texturefocus>
         </control>  
 		<control type="button" id="6004">
                 <description>Apps Label</description>
@@ -662,9 +656,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>add-ons.png</texturenofocus>
-                <texturefocus>add-ons.png</texturefocus>
-                <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
-                <shadowcolor>ff000000</shadowcolor>
+                <texturefocus>add-onsbuttonFocus.png</texturefocus>
         </control>   
 		<control type="image">
 				<left>460</left>

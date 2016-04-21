@@ -1123,7 +1123,7 @@
             </control>
         </control>
         <control type="group" id="101">    
-            <visible></visible>
+            <visible>false</visible>
             <control type="image">
                 <description>Loading Background Image</description>
                 <width>1920</width>
@@ -1144,6 +1144,17 @@
                 <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
                 <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
             </control>
+			 <control type="label">
+                    <description>Loading Background Text</description>
+                    <width>1280</width>
+                    <height>40</height>
+                    <font>font30</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT)]</label>
+                </control> 
         </control>
 		  <control type="group" id="7000"> 
             <posx>0</posx>
