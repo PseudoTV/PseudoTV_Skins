@@ -144,7 +144,7 @@
                 <description>EPG Label</description>
 				<posx>510</posx>
                 <posy>95</posy>
-                <width>223</width>
+                <width>210</width>
                 <height>38</height>
                 <label>EPG</label>
                 <font>font12_Title</font>
@@ -157,9 +157,9 @@
         </control>               
         <control type="button" id="6002">
                 <description>DVR Label</description>
-				<posx>740</posx>
+				<posx>770</posx>
                 <posy>95</posy>
-                <width>273</width>
+                <width>210</width>
                 <height>38</height>
                 <label>DVR</label>
                 <font>font12_Title</font>
@@ -172,9 +172,9 @@
         </control>               
         <control type="button" id="6003">
                 <description>OnDemand Label</description>
-				<posx>1040</posx>
+				<posx>1030</posx>
                 <posy>95</posy>
-                <width>173</width>
+                <width>205</width>
                 <height>38</height>
                 <label>OnDemand</label>
                 <font>font12_Title</font>
@@ -187,9 +187,9 @@
         </control>               
         <control type="button" id="6004">
                 <description>Apps Label</description>
-				<posx>1240</posx>
+				<posx>1280</posx>
                 <posy>95</posy>
-                <width>273</width>
+                <width>205</width>
                 <height>38</height>
                 <label>Apps</label>
                 <font>font12_Title</font>
