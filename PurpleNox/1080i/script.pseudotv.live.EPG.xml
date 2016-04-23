@@ -108,6 +108,24 @@
             <orientation>horizontal</orientation>
             <itemgap>1</itemgap>  
         </control>
+		 <control type="image" id="5009">
+			 <visible></visible>
+            <description>Optional Channel Focus Highlight</description>         
+            <posx>45</posx>  
+            <width>300</width>
+            <height>70</height>
+            <texture>pstvlHighlight.png</texture>
+        </control> 
+		 <control type="image" id="5010">
+		 <visible></visible>
+            <description>Optional Channel Playing Highlight</description>         
+            <posx>45</posx>  
+            <width>300</width>
+            <height>70</height>
+            <texture>pstvlHighlightAlt2.png</texture>
+			<colordiffuse></colordiffuse>
+        </control>
+		
         <!--Date-->
         <control type="label" id="5001">
             <description>Date Label</description>
@@ -157,7 +175,16 @@
             <aspectratio align="center">keep</aspectratio>
             <texture>222.png</texture>  
         </control>
-        <control type="label" id="215">
+			 <control type="button" id="6000">
+            <description>Filter Button</description>     
+            <posx>0</posx>
+            <posy>258</posy>   
+            <width>410</width>
+            <height>38</height>
+            <texturenofocus>NA.png</texturenofocus>
+            <texturefocus>pstvlButtonFocusAlt.png</texturefocus>
+        </control> 
+        <control type="button" id="6001">
                 <description>EPG Label</description>
 				<posx>510</posx>
                 <posy>95</posy>
@@ -167,10 +194,12 @@
                 <font>font12_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
         </control>               
-        <control type="label" id="216">
+        <control type="button" id="6002">
                 <description>DVR Label</description>
 				<posx>740</posx>
                 <posy>95</posy>
@@ -180,10 +209,12 @@
                 <font>font12_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
         </control>               
-        <control type="label" id="217">
+        <control type="button" id="6003">
                 <description>OnDemand Label</description>
 				<posx>1040</posx>
                 <posy>95</posy>
@@ -193,10 +224,12 @@
                 <font>font12_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
         </control>               
-        <control type="label" id="218">
+        <control type="button" id="6004">
                 <description>Apps Label</description>
 				<posx>1240</posx>
                 <posy>95</posy>
@@ -206,6 +239,8 @@
                 <font>font12_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
         </control>   
@@ -698,10 +733,10 @@
          
         <control type="image" id="5004"> 
             <description>Timebar Optional past fade</description>
-            <posx>355</posx>
-            <posy>525</posy>
+            <posx>350</posx>
+            <posy>523</posy>
             <width>-1</width>
-            <height>463</height>
+            <height>465</height>
             <aspectratio>scale</aspectratio>
             <texture>pstvlTimeFadeP.png</texture>
 			<visible>true</visible>
@@ -732,9 +767,9 @@
         <control type="image" id="5007">
             <description>Timebar line</description>
             <posx>320</posx>
-            <posy>525</posy>
+            <posy>523</posy>
             <width>2</width>
-            <height>460</height>
+            <height>465</height>
             <aspectratio>keep</aspectratio>
         </control>
 		
