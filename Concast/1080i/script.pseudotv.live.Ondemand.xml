@@ -35,6 +35,58 @@
                 <aspectratio>keep</aspectratio>
                 <visible>StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)</visible>
             </control>
+				<control type="button" id="6001">
+            <description>EPG Label</description>
+            <posx>490</posx>
+            <posy>100</posy>
+            <width>120</width>
+            <height>110</height>
+            <label></label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+			<texturenofocus>epgfocus.png</texturenofocus>
+            <texturefocus>epgnofocus.png</texturefocus>
+        </control>               
+        <control type="button" id="6002">
+            <description>DVR Label</description>
+			<posx>660</posx>
+            <posy>120</posy>
+            <width>60</width>
+            <height>58</height>
+            <label></label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+			<texturenofocus>recordfocus.png</texturenofocus>
+            <texturefocus>record.png</texturefocus>
+		</control>               
+        <control type="button" id="6003">
+            <description>OnDemand Label</description>
+			<posx>800</posx>
+            <posy>115</posy>
+            <width>63</width>
+            <height>68</height>
+            <label></label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+			<texturenofocus>ondemandfocus.png</texturenofocus>
+            <texturefocus>ondemandnofocus.png</texturefocus>
+        </control>               
+        <control type="button" id="6004">
+            <description>Apps Label</description>
+			<posx>900</posx>
+            <posy>90</posy>
+            <width>133</width>
+            <height>118</height>
+            <label></label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+			<texturenofocus>appsbuttonnofocus.png</texturenofocus>
+            <texturefocus>appsbuttonfocus.png</texturefocus>
+        </control>   
 			 <control type="grouplist">
             <posx>25</posx>
             <posy>210</posy>

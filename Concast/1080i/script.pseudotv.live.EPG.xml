@@ -112,7 +112,24 @@
             <colordiffuse>C0C0C0C0</colordiffuse>
             <texture>right.png</texture>
 			<visible>false</visible>
+        </control>
+		 <control type="image" id="5009">
+			 <visible></visible>
+            <description>Optional Channel Focus Highlight</description>         
+            <posx>0</posx>  
+            <width>372</width>
+            <height>88</height>
+            <texture>pstvlHighlight.png</texture>
         </control> 
+		 <control type="image" id="5010">
+		 <visible></visible>
+            <description>Optional Channel Playing Highlight</description>         
+            <posx>0</posx>  
+            <width>372</width>
+            <height>88</height>
+            <texture>pstvlHighlightAlt2.png</texture>
+			<colordiffuse></colordiffuse>
+        </control>
          <!--CH NUMBER-->
       <control type="grouplist">
          <posx>5</posx>
@@ -380,8 +397,70 @@
          <width>30</width>
          <height>558</height>
          <aspectratio>keep</aspectratio>
-        </control> 
-    
+        </control>
+		
+		 <control type="button" id="6000">
+            <description>Filter Button</description>     
+            <posx>0</posx>
+            <posy>258</posy>   
+            <width>410</width>
+            <height>38</height>
+            <texturenofocus>NA.png</texturenofocus>
+            <texturefocus>pstvlButtonFocusAlt.png</texturefocus>
+        </control>
+     <!-- Epg/Recordings/OnDemand/Applications -->
+		<control type="button" id="6001">
+            <description>EPG Label</description>
+            <posx>490</posx>
+            <posy>100</posy>
+            <width>120</width>
+            <height>110</height>
+            <label></label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+			<texturenofocus>epgfocus.png</texturenofocus>
+            <texturefocus>epgnofocus.png</texturefocus>
+        </control>               
+        <control type="button" id="6002">
+            <description>DVR Label</description>
+			<posx>660</posx>
+            <posy>120</posy>
+            <width>60</width>
+            <height>58</height>
+            <label></label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+			<texturenofocus>recordfocus.png</texturenofocus>
+            <texturefocus>record.png</texturefocus>
+		</control>               
+        <control type="button" id="6003">
+            <description>OnDemand Label</description>
+			<posx>800</posx>
+            <posy>115</posy>
+            <width>63</width>
+            <height>68</height>
+            <label></label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+			<texturenofocus>ondemandfocus.png</texturenofocus>
+            <texturefocus>ondemandnofocus.png</texturefocus>
+        </control>               
+        <control type="button" id="6004">
+            <description>Apps Label</description>
+			<posx>900</posx>
+            <posy>90</posy>
+            <width>133</width>
+            <height>118</height>
+            <label></label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+			<texturenofocus>appsbuttonnofocus.png</texturenofocus>
+            <texturefocus>appsbuttonfocus.png</texturefocus>
+        </control>   
         <control type="grouplist">
             <posx>25</posx>
             <posy>210</posy>
