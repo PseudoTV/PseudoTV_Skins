@@ -101,52 +101,60 @@
             <itemgap>1</itemgap>  
         </control>
 		 <!-- todo -->
-        <control type="grouplist">              
-            <posx>60</posx>
+       <control type="grouplist">              
+            <posx>10</posx>
             <posy>400</posy>
             <itemgap>90</itemgap>
             <orientation>vertical</orientation>
-            <control type="label" id="215">
+            <control type="button" id="6001">
                 <description>EPG Label</description>            
-                <width>373</width>
-                <height>38</height>
+                <width>338</width>
+                <height>68</height>
                 <label>TV Listings</label>
                 <font>font24_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
             </control>               
-            <control type="label" id="216">
+            <control type="button" id="6002">
                 <description>DVR Label</description>              
-                <width>373</width>
-                <height>38</height>
+                <width>338</width>
+                <height>68</height>
                 <label>Recordings</label>
                 <font>font24_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
             </control>               
-            <control type="label" id="217">
+            <control type="button" id="6003">
                 <description>OnDemand Label</description>               
-                <width>373</width>
-                <height>38</height>
+                <width>338</width>
+                <height>68</height>
                 <label>OnDemand</label>
                 <font>font24_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
             </control>               
-            <control type="label" id="218">
+            <control type="button" id="6004">
                 <description>Apps Label</description>        
-                <width>373</width>
-                <height>38</height>
+                <width>338</width>
+                <height>68</height>
                 <label>Applications</label>
                 <font>font24_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
             </control>   
