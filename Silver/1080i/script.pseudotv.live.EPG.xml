@@ -168,18 +168,29 @@
                  <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
      <autoscroll time="4000" delay="4000" repeat="8000">True</autoscroll>
  </control>
-  <control type="label">
-			   	<posx>60</posx>
-				<posy>320</posy>
-                <width>300</width>       
-                <height>50</height>
-                <font>font13_Title</font>
-                <textcolor>ff000000</textcolor>
-                <align>center</align>
-                <label>TV Guide</label>
-                <aligny>left</aligny>
-            </control>
-			 <control type="image">
+ <control type="button" id="6000">
+            <description>Filter Button</description>     
+            <posx>0</posx>
+            <posy>258</posy>   
+            <width>410</width>
+            <height>38</height>
+            <texturenofocus>NA.png</texturenofocus>
+            <texturefocus>pstvlButtonFocusAlt.png</texturefocus>
+        </control>
+		<control type="button" id="6001">
+			<posx>14</posx>
+			<posy>312</posy>
+            <width>359</width>       
+            <height>64</height>
+            <font>font13_Title</font>
+            <textcolor>ff000000</textcolor>
+            <align>center</align>
+            <label>TV Guide</label>
+            <aligny>left</aligny>
+			<texturenofocus>NA.png</texturenofocus>
+            <texturefocus>EPGbuttonFocus.png</texturefocus>
+        </control>
+		<control type="image">
             <description> overlay</description>
             <posx>10</posx>
             <posy>310</posy>
@@ -188,8 +199,7 @@
             <texture>video2.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 
-		  <control type="image">
+		<control type="image">
             <description>EPG Background</description>
 			<posx>0</posx>
             <posy>310</posy>
@@ -216,21 +226,20 @@
             <texture>record.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 <control type="label">
-			   	<posx>120</posx>
-				<posy>455</posy>
-                <width>200</width>       
-                <height>50</height>
+		<control type="button" id="6002">
+			   	<posx>14</posx>
+				<posy>447</posy>
+                <width>359</width>       
+                <height>64</height>
                 <font>font13_Title</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>Recordings</label>
                 <aligny>left</aligny>
-            </control>
-		
-		
-		
-		 <control type="image">
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
+		</control>
+			<control type="image">
             <description> overlay</description>
             <posx>10</posx>
             <posy>585</posy>
@@ -239,15 +248,17 @@
             <texture>video2.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 <control type="label">
-			   	<posx>120</posx>
-				<posy>595</posy>
-                <width>200</width>       
-                <height>50</height>
+		<control type="button" id="6003">
+			   	<posx>14</posx>
+				<posy>588</posy>
+                <width>359</width>       
+                <height>64</height>
                 <font>font13_Title</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>On Demand</label>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <aligny>left</aligny>
             </control>
 		 <control type="image">
@@ -269,15 +280,17 @@
             <texture>video2.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 <control type="label">
-			   	<posx>120</posx>
-				<posy>735</posy>
-                <width>200</width>       
-                <height>50</height>
+		 <control type="button" id="6004">
+			   	<posx>14</posx>
+				<posy>728</posy>
+                <width>359</width>       
+                <height>64</height>
                 <font>font13_Title</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>Applications</label>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <aligny>left</aligny>
             </control>
 			<control type="image">
@@ -500,9 +513,24 @@
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texture>2.png</texture>
         </control>
+		 <control type="image" id="5009">     
+            <description>Optional Channel Focus Highlight</description>         
+            <posx>395</posx>  
+            <width>280</width>
+            <height>70</height>
+            <texture>pstvlButtonFocus.png</texture>
+        </control> 
+         <control type="image" id="5010">     
+            <description>Optional Channel Playing Highlight</description>         
+            <posx>395</posx>  
+            <width>280</width>
+            <height>70</height>
+            <texture>pstvlHighlightAlt2.png</texture>
+			<colordiffuse></colordiffuse>
+        </control>
          <!--CHANNEL Number-->
         <control type="grouplist">  
-            <posx>370</posx>
+            <posx>360</posx>
             <posy>330</posy>
             <itemgap>6</itemgap>
             <orientation>vertical</orientation>
@@ -569,7 +597,7 @@
         </control>
         <!--Channel List-->
         <control type="grouplist">            
-            <posx>450</posx>
+            <posx>440</posx>
             <posy>338</posy>
             <itemgap>20</itemgap>
             <orientation>vertical</orientation>
@@ -580,7 +608,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font12_Title</font>
-             <align>left</align>
+             <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(321),)</visible>
@@ -592,7 +620,7 @@
                 <width>270</width>
                 <height>55</height>
                 <align>center</align>
-                <aligny>bottom</aligny>
+                <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>      
                 <visible>!StringCompare(Control.GetLabel(321),)</visible>
             </control>
@@ -602,7 +630,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font12_Title</font>
-                <align>left</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(322),)</visible>
@@ -614,7 +642,7 @@
                 <width>270</width>
                 <height>55</height>
                 <align>center</align>
-                <aligny>bottom</aligny>
+                <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>
                 <visible>!StringCompare(Control.GetLabel(322),)</visible>
             </control>
@@ -624,7 +652,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font12_Title</font>
-                <align>left</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(323),)</visible>
@@ -636,7 +664,7 @@
                 <width>270</width>
                 <height>55</height>
                 <align>center</align>
-                <aligny>bottom</aligny>
+                <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>
                 <visible>!StringCompare(Control.GetLabel(323),)</visible>
             </control>
@@ -646,7 +674,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font12_Title</font>
-                <align>left</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(324),)</visible>
@@ -658,7 +686,7 @@
                 <width>270</width>
                 <height>55</height>
                 <align>center</align>
-                <aligny>bottom</aligny>
+                <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>
                 <visible>!StringCompare(Control.GetLabel(324),)</visible>
             </control>
@@ -668,7 +696,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font12_Title</font>
-                <align>left</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(325),)</visible>
@@ -680,7 +708,7 @@
                 <width>270</width>
                 <height>55</height>
                 <align>center</align>
-                <aligny>bottom</aligny>
+                <aligny>center</aligny>
                 <aspectratio>keep</aspectratio> 
                 <visible>!StringCompare(Control.GetLabel(325),)</visible>
             </control>  
@@ -690,7 +718,7 @@
                 <height>55</height>
                 <label></label>
                 <font>font12_Title</font>
-                <align>left</align>
+                <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
                 <visible>StringCompare(Control.GetLabel(326),)</visible>
@@ -702,7 +730,7 @@
                 <width>270</width>
                 <height>55</height>
                 <align>center</align>
-                <aligny>bottom</aligny>
+                <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>  
                 <visible>!StringCompare(Control.GetLabel(326),)</visible>
             </control>   

@@ -85,18 +85,20 @@
                 <label>Now Watching:</label>
                 <aligny>left</aligny>
             </control>
-        <control type="label">
-			   	<posx>60</posx>
-				<posy>320</posy>
-                <width>300</width>       
-                <height>50</height>
-                <font>font13_Title</font>
-                <textcolor>ff000000</textcolor>
-                <align>center</align>
-                <label>TV Guide</label>
-                <aligny>left</aligny>
-            </control>
-			 <control type="image">
+       		<control type="button" id="6001">
+			<posx>14</posx>
+			<posy>312</posy>
+            <width>359</width>       
+            <height>64</height>
+            <font>font13_Title</font>
+            <textcolor>ff000000</textcolor>
+            <align>center</align>
+            <label>TV Guide</label>
+            <aligny>left</aligny>
+			<texturenofocus>NA.png</texturenofocus>
+            <texturefocus>EPGbuttonFocus.png</texturefocus>
+        </control>
+		<control type="image">
             <description> overlay</description>
             <posx>10</posx>
             <posy>310</posy>
@@ -105,8 +107,7 @@
             <texture>video2.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 
-		  <control type="image">
+		<control type="image">
             <description>EPG Background</description>
 			<posx>0</posx>
             <posy>310</posy>
@@ -133,21 +134,20 @@
             <texture>record.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 <control type="label">
-			   	<posx>120</posx>
-				<posy>455</posy>
-                <width>200</width>       
-                <height>50</height>
+		<control type="button" id="6002">
+			   	<posx>14</posx>
+				<posy>447</posy>
+                <width>359</width>       
+                <height>64</height>
                 <font>font13_Title</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>Recordings</label>
                 <aligny>left</aligny>
-            </control>
-		
-		
-		
-		 <control type="image">
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
+		</control>
+			<control type="image">
             <description> overlay</description>
             <posx>10</posx>
             <posy>585</posy>
@@ -156,15 +156,17 @@
             <texture>video2.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 <control type="label">
-			   	<posx>120</posx>
-				<posy>595</posy>
-                <width>200</width>       
-                <height>50</height>
+		<control type="button" id="6003">
+			   	<posx>14</posx>
+				<posy>588</posy>
+                <width>359</width>       
+                <height>64</height>
                 <font>font13_Title</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>On Demand</label>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <aligny>left</aligny>
             </control>
 		 <control type="image">
@@ -186,15 +188,17 @@
             <texture>video2.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 <control type="label">
-			   	<posx>120</posx>
-				<posy>735</posy>
-                <width>200</width>       
-                <height>50</height>
+		 <control type="button" id="6004">
+			   	<posx>14</posx>
+				<posy>728</posy>
+                <width>359</width>       
+                <height>64</height>
                 <font>font13_Title</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>Applications</label>
+				<texturenofocus>NA.png</texturenofocus>
+                <texturefocus>EPGbuttonFocus.png</texturefocus>
                 <aligny>left</aligny>
             </control>
 			<control type="image">
