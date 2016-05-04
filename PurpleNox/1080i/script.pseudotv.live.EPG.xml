@@ -1,7 +1,7 @@
 <window>
     <allowoverlay>no</allowoverlay>   
     <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for 9506 starting paused -->
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
 	<onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
     <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload>    

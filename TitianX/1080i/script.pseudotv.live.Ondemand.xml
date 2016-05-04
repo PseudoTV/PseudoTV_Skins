@@ -2,7 +2,7 @@
 <window>
     <allowoverlay>no</allowoverlay>   
     <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for 9506 starting paused -->
     <onunload>ActivateWindow(12005)</onunload>
     <onload>SetProperty(PTVL.OnDemand_Opened,true,10000)</onload>
     <onunload>SetProperty(PTVL.OnDemand_Opened,false,10000)</onunload>
@@ -57,42 +57,47 @@
             <posy>268</posy>
             <itemgap>260</itemgap>
             <orientation>horizontal</orientation>
-		  <control type="image">
+		  <control type="button" id="6001">
             <description>EPG Background</description>
 			<posx>400</posx>
             <posy>25</posy>
             <width>140</width>
             <height>40</height>
             <texture>epg.png</texture>
+			<texturenofocus>epg.png</texturenofocus>
+            <texturefocus>epg.png</texturefocus>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 <control type="image">
+		 <control type="button" id="6002">
             <description>DVR  Background</description>
 			<posx>720</posx>
             <posy>25</posy>
             <width>140</width>
             <height>40</height>
-            <texture>dvr.png</texture>
+			<texturenofocus>dvr.png</texturenofocus>
+            <texturefocus>dvr.png</texturefocus>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control> 
-		 <control type="image">
+		<control type="button" id="6003">
             <description>on demand Background</description>
 			<posx>1060</posx>
             <posy>25</posy>
             <width>140</width>
             <height>40</height>
-            <texture>on demand 2.png</texture>
+			<texturenofocus>on demand 2.png</texturenofocus>
+            <texturefocus>on demand 2.png</texturefocus>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-			<control type="image">
+			<control type="button" id="6004">
             <description>apps Background</description>
 			<posx>1340</posx>
             <posy>25</posy>
             <width>140</width>
             <height>40</height>
-            <texture>addon.png</texture>
+			<texturenofocus>addon.png</texturenofocus>
+			<texturefocus>addon.png</texturefocus>
             <colordiffuse>FFFFFFFF</colordiffuse>
-        </control>
+        </control>    
         </control>
        <control type="image">
             <description>Background</description>

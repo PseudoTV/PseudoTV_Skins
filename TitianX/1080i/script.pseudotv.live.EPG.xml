@@ -1,7 +1,7 @@
 <window>
     <allowoverlay>no</allowoverlay>   
     <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for 9506 starting paused -->
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
     <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload>    
     <onunload>ActivateWindow(12005)</onunload>
@@ -127,6 +127,23 @@
 			<texture>333.png</texture>
 			<aspectratio align="center" aligny="center">stretch</aspectratio>
 	 	</control>
+		 <control type="image" id="5009">
+			 <visible></visible>
+            <description>Optional Channel Focus Highlight</description>         
+            <posx>4</posx>  
+            <width>335</width>
+            <height>70</height>
+            <texture>pstvlHighlight.png</texture>
+        </control> 
+		 <control type="image" id="5010">
+		 <visible></visible>
+            <description>Optional Channel Playing Highlight</description>         
+            <posx>4</posx>  
+            <width>330</width>
+            <height>70</height>
+            <texture>pstvlHighlightAlt2.png</texture>
+			<colordiffuse></colordiffuse>
+        </control>
    
 		  <!-- Top Line -->
 		  <control type="image">
@@ -138,40 +155,45 @@
             <texture>pltvlabel.png</texture>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control> 
-		  <control type="image">
+		  <control type="button" id="6001">
             <description>EPG Background</description>
 			<posx>400</posx>
             <posy>25</posy>
             <width>140</width>
             <height>40</height>
             <texture>epg.png</texture>
+			<texturenofocus>epg.png</texturenofocus>
+            <texturefocus>epg.png</texturefocus>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-		 <control type="image">
+		 <control type="button" id="6002">
             <description>DVR  Background</description>
 			<posx>720</posx>
             <posy>25</posy>
             <width>140</width>
             <height>40</height>
-            <texture>dvr.png</texture>
+			<texturenofocus>dvr.png</texturenofocus>
+            <texturefocus>dvr.png</texturefocus>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control> 
-		 <control type="image">
+		<control type="button" id="6003">
             <description>on demand Background</description>
 			<posx>1060</posx>
             <posy>25</posy>
             <width>140</width>
             <height>40</height>
-            <texture>on demand 2.png</texture>
+			<texturenofocus>on demand 2.png</texturenofocus>
+            <texturefocus>on demand 2.png</texturefocus>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>
-			<control type="image">
+			<control type="button" id="6004">
             <description>apps Background</description>
 			<posx>1340</posx>
             <posy>25</posy>
             <width>140</width>
             <height>40</height>
-            <texture>addon.png</texture>
+			<texturenofocus>addon.png</texturenofocus>
+			<texturefocus>addon.png</texturefocus>
             <colordiffuse>FFFFFFFF</colordiffuse>
         </control>    
         <!--Date-->
@@ -453,7 +475,7 @@
                 <font>font12_Title</font>
              <align>left</align>
                 <aligny>bottom</aligny>
-                <textcolor>FF0297eb</textcolor>
+                <textcolor>ff000000</textcolor>
                 <visible>StringCompare(Control.GetLabel(321),)</visible>
                 <scroll>true</scroll>
                 <scrollspeed>20</scrollspeed>
@@ -475,7 +497,7 @@
                 <font>font12_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
-                <textcolor>FF0297eb</textcolor>
+                <textcolor>ff000000</textcolor>
                 <visible>StringCompare(Control.GetLabel(322),)</visible>
                 <scroll>true</scroll>
                 <scrollspeed>20</scrollspeed>
@@ -497,7 +519,7 @@
                 <font>font12_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
-                <textcolor>FF0297eb</textcolor>
+                <textcolor>ff000000</textcolor>
                 <visible>StringCompare(Control.GetLabel(323),)</visible>
                 <scroll>true</scroll>
                 <scrollspeed>20</scrollspeed>
@@ -519,7 +541,7 @@
                 <font>font12_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
-                <textcolor>FF0297eb</textcolor>
+                <textcolor>ff000000</textcolor>
                 <visible>StringCompare(Control.GetLabel(324),)</visible>
                 <scroll>true</scroll>
                 <scrollspeed>20</scrollspeed>
@@ -541,7 +563,7 @@
                 <font>font12_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
-                <textcolor>FF0297eb</textcolor>
+                <textcolor>ff000000</textcolor>
                 <visible>StringCompare(Control.GetLabel(325),)</visible>
                 <scroll>true</scroll>
                 <scrollspeed>20</scrollspeed>
@@ -563,7 +585,7 @@
                 <font>font12_Title</font>
                 <align>left</align>
                 <aligny>center</aligny>
-                <textcolor>FF0297eb</textcolor>
+                <textcolor>ff000000</textcolor>
                 <visible>StringCompare(Control.GetLabel(326),)</visible>
                 <scroll>true</scroll>
                 <scrollspeed>20</scrollspeed>
