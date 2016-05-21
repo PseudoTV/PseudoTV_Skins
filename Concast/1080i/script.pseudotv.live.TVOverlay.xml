@@ -154,6 +154,20 @@
                <shadowcolor>FF000000</shadowcolor>
                <label>[B]$INFO[VideoPlayer.Genre, ,  ] $INFO[VideoPlayer.mpaa,,  ][/B]</label>
             </control>
+			<control type="label" id="5006">
+                <description>Timebar Progressbar Time Button</description>
+                <posx>-1600</posx><!-- #should match 5007 -->
+                <posy>-1025</posy>
+                <width>-130</width>
+                <height>-20</height>
+                <fadetime>250</fadetime>
+                <textcolor>blue</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <font>font10</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <visible>!Control.IsVisible(102)</visible>
+            </control>
             <control type="grouplist">
                 <posx>425</posx>
                 <posy>865</posy>
