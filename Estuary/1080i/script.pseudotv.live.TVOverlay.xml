@@ -227,7 +227,7 @@
 				<texture>3333.png</texture>
 				 <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
 			</control>
-						 <control type="image">
+			<control type="image">
             <description>CH LOGO</description>
             <posx>1695</posx>
             <posy>60</posy>
@@ -266,9 +266,9 @@
          <!-- TIME/WEATHER -->
 		 <control type="label">
             <description>TIME</description>
-            <posx>1730</posx>
+            <posx>1700</posx>
             <posy>8</posy>
-            <width>150</width>
+            <width>200</width>
             <height>45</height>
             <label>$INFO[System.Time]</label>
             <font>font24_Title</font>
