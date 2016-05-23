@@ -91,6 +91,16 @@
                 <visible>!Control.IsVisible(104)</visible>
     		    <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>         
             </control>
+			 <control type="image" id="1">
+				<left>0</left>
+				<top>765</top>
+				<width>1980</width>
+				<height>315</height>
+				<fadetime>200</fadetime>
+				<texture background="true">tile.png</texture>
+				<visible>!Control.IsVisible(104)</visible>
+			  <colordiffuse>D9FFFFFF</colordiffuse>
+		  </control>
             <control type="group" id="104"> 
 				<posx>0</posx>
                 <posy>0</posy>
@@ -108,7 +118,7 @@
                     <itemgap>-10</itemgap>
                     <orientation>horizontal</orientation>
                     <control type="label">
-                        <width>306</width>
+                        <width>280</width>
                         <height>75</height>
                         <description>StarOver Label</description>
                         <label>To Start Over | Press </label>
@@ -129,19 +139,37 @@
                         <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
                     </control>
                 </control>   
-            </control>                
-            <control type="image">
-                <description>Dynamic artwork</description>
-                <animation effect="fade" time="500">VisibleChange</animation> 
-                <posx>30</posx>
-                <posy>600</posy>  
-                <width>310</width>      
-                <height>440</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="poster_diffuse.png"></texture>
-                <texture fallback="poster.png">$INFO[Window(10000).Property(OVERLAY.poster)]</texture>
-                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
-            </control>        
+            </control>
+			<control type="group">
+
+		<control type="image" id="1">
+						<left>30</left>
+						<top>600</top>
+						<width>300</width>
+						<height>430</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+						<texture background="true" diffuse="poster_diffuse.png">thumb_back.png</texture>
+						<fadetime>800</fadetime>
+					</control>
+				 <control type="image" id="1">
+						<left>30</left>
+						<top>600</top>
+						<width>300</width>
+						<height>430</height>
+						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="fallback_poster_tp.png" diffuse="poster_diffuse.png">$INFO[Window(10000).Property(OVERLAY.poster)]</texture>
+						<fadetime>800</fadetime>
+				 </control>
+				 <control type="image" id="1">
+						<left>20</left>
+						<top>590</top>
+						<width>320</width>
+						<height>450</height>
+						<texture background="true">poster_overlay_noglass</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+						<fadetime>800</fadetime>
+				 </control>
+				 </control>    
             <control type="image">
                 <description>isManaged Art</description>   
                 <posx>345</posx>
@@ -221,7 +249,7 @@
             </control>	
             <control type="grouplist">
                 <posx>400</posx>
-                <posy>290r</posy>
+                <posy>280r</posy>
                 <width>1400</width>
                 <orientation>horizontal</orientation>
                 <itemgap>5</itemgap>

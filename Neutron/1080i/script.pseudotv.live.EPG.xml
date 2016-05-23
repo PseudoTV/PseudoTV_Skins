@@ -1,11 +1,10 @@
 <window>
-    <allowoverlay>no</allowoverlay>   
-    <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
+    <allowoverlay>no</allowoverlay>
     <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for 9506 starting paused -->
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
+	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,30)</onload>
     <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload>    
     <onunload>ActivateWindow(12005)</onunload>
-    <!-- <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
@@ -13,7 +12,6 @@
         <posy>0</posy>
     </coordinates>
     <animation effect="fade" time="5">WindowOpen</animation>
-    <!-- <animation effect="fade" time="5">WindowClose</animation> -->
     <controls>
         <control type="group">  
             <posx>0</posx>
