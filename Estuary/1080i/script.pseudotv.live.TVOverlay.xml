@@ -3,14 +3,14 @@
     <allowoverlay>no</allowoverlay>
     <zorder>1</zorder>
     <!-- Set artwork -->
-    <onload>SetProperty(OVERLAY.type1,landscape,10000)</onload>
+    <onload>SetProperty(OVERLAY.PROGBAR_TYPE,landscape,10000)</onload>
+    <onload>SetProperty(OVERLAY.type1,Player.Time ,10000)</onload>
     <onload>SetProperty(OVERLAY.type2,poster,10000)</onload>
-    <onload>SetProperty(OVERLAY.type3,logo,10000)</onload>
+    <onload>SetProperty(OVERLAY.type3,landscape,10000)</onload>
     <onload>SetProperty(OVERLAY.type4,fanart,10000)</onload>
     <onload>SetProperty(OVERLAY.ONNOW_TYPE,fanart,10000)</onload>
     <onload>SetProperty(EPG.type1,landscape,10000)</onload>
     <onload>SetProperty(EPG.type2,poster,10000)</onload>
-    <onload>Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onload>
     <!-- Set EPG props -->
     <onload>SetProperty(EPG.rowCount,6,10000)</onload>
     <onload>SetProperty(EPG.shadowColor,0xff000000,10000)</onload>
@@ -33,23 +33,16 @@
         <control type="group" id="102">            
             <posx>0</posx>
             <posy>800</posy>             
-           <animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="80" end="100" center="960,540" tween="back" time="240" />
-			<effect type="fade" end="100" time="240" />
-		</animation>
-		<animation type="WindowClose" reversible="false">
-			<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="240" />
-			<effect type="fade" start="100" end="0" time="240" />
-		</animation>
+			<animation effect="fade" start="0" end="100" time="300" condition="Control.IsVisible(102)">Conditional</animation>
             <visible>Player.HasVideo + !Window.IsActive(videoosd)</visible>
-			 <control type="image">
+		<control type="image">
 				<left>20</left>
 				<top>-10</top>
 				<width>1885</width>
 				<height>285</height>
 				<texture>back2.png</texture>
-			</control>
-			<control type="multiimage">
+		</control>
+		<control type="multiimage">
 			<randomize>true</randomize>
 			<timeperimage>12000</timeperimage>
 			<fadetime>4000</fadetime>
@@ -275,26 +268,26 @@
             <align>center</align>
             <textcolor>FF0084ff</textcolor>
          </control>
- <control type="label" id="5006">
+		<control type="label" id="5006">
                 <description>Timebar Progressbar Time Button</description>
-                <posx>600</posx><!-- #should match 5007 -->
-                <posy>-1025</posy>
-                <width>-130</width>
-                <height>-20</height>
+                <posx>530</posx><!-- #should match 5007 -->
+                <posy>-10</posy>
+                <width>130</width>
+                <height>20</height>
                 <fadetime>250</fadetime>
-                <textcolor>blue</textcolor>
+                <textcolor>ff000000</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font10</font>
+                <font>font12_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <visible>!Control.IsVisible(102)</visible>
+                <visible>!Control.IsVisible(101) | !Control.IsVisible(102) | !Control.IsVisible(5007)</visible>
             </control>
                 <control type="group"> 
                     <visible></visible>
 					  <control type="progress" id="1">
 					<description>Progressbar</description>
 					<left>530</left>
-					<top>60r</top>
+					<top>220</top>
 					<width>1000</width>
 					<height>30</height>
 					<info>Player.Progress</info>
@@ -309,7 +302,7 @@
 				<control type="progress" id="5007">
 					<description>Progressbar</description>
 					<left>530</left>
-					<top>60r</top>
+					<top>220</top>
 					<width>1000</width>
 					<height>30</height>
 					<info>Player.CacheLevel</info>
