@@ -1,0 +1,730 @@
+<window>
+    <allowoverlay>no</allowoverlay>   
+    <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
+    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10004)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+    <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
+	<onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
+    <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload>    
+    <onunload>ActivateWindow(12005)</onunload>
+    <!-- <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
+    <zorder>1</zorder>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+    <animation effect="fade" time="5">WindowOpen</animation>
+    <!-- <animation effect="fade" time="5">WindowClose</animation> -->
+    <controls>
+        <!-- VideoWindow Box --> 
+            <!-- #### Skinners Include Everything for videowindow patch to work #### -->
+            <!-- PATCH START -->
+            <control type="videowindow">
+                <description>video</description>
+				<posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>      
+                <height>1080</height>
+                <visible>true</visible>
+            </control>
+            <!-- PATCH END -->
+            <!-- ################################################################## -->
+			 <!-- todo -->
+			  <control type="image">
+                <texture flipy="true">fadeh.png</texture>
+                <posx>0</posx>
+                <posy>610</posy>
+                <width>3920</width>
+                <height>800</height>
+                <animation effect="fade" end="85" time="5">VisibleChange</animation>
+                <visible></visible>
+            </control>
+			 <control type="image">
+                <texture flipy="true">fadeh.png</texture>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>3920</width>
+                <height>70</height>
+                <animation effect="fade" end="85" time="5">VisibleChange</animation>
+                <visible></visible>
+            </control>
+        <!--Date-->
+        <control type="label" id="5001">
+            <description>Date Label</description>
+            <posx>340</posx>
+            <posy>630</posy>
+            <width min="162" max="400">auto</width>
+            <height>38</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>Current Date</label>
+            <font>font12_Title</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+        <control type="label" id="215">
+                <description>EPG Label</description>
+				<posx>510</posx>
+                <posy>15</posy>
+                <width>223</width>
+                <height>38</height>
+                <label>EPG</label>
+                <font>font12_Title</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffffa500</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>               
+        <control type="label" id="216">
+                <description>DVR Label</description>
+				<posx>740</posx>
+                <posy>15</posy>
+                <width>273</width>
+                <height>38</height>
+                <label>DVR</label>
+                <font>font12_Title</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffffa500</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>               
+        <control type="label" id="217">
+                <description>OnDemand Label</description>
+				<posx>1040</posx>
+                <posy>15</posy>
+                <width>173</width>
+                <height>38</height>
+                <label>OnDemand</label>
+                <font>font12_Title</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffffa500</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>               
+        <control type="label" id="218">
+                <description>Apps Label</description>
+				<posx>1240</posx>
+                <posy>15</posy>
+                <width>273</width>
+                <height>38</height>
+                <label>Apps</label>
+                <font>font12_Title</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffffa500</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+        </control>   
+        <control type="image" id="5002">
+            <description>Left Arrow</description>
+            <posx>370</posx>
+            <posy>470</posy>
+            <width>10</width>
+            <height>38</height>
+            <aspectratio align="center">keep</aspectratio>
+            <colordiffuse>C0C0C0C0</colordiffuse>
+            <texture>left.png</texture>
+			<visible>false</visible>
+        </control> 
+        <!--Time Bar 1/3-->
+        <control type="label" id="101">
+            <description>Time Left Label</description>
+            <posx>710</posx>
+            <posy>630</posy>
+            <width min="155" max="400">auto</width>
+            <height>38</height>
+            <label>Time 1</label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+        <!--Time Bar 2/3-->
+        <control type="label" id="102">
+            <description>Time Middle Label</description>
+            <posx>1235</posx>
+            <posy>630</posy>
+            <width min="150" max="400">auto</width>
+            <height>38</height>
+            <label>Time 2</label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+        <!--Time Bar 3/3-->
+        <control type="label" id="103">
+            <description>Time Right Label</description>
+            <posx>1790</posx>
+            <posy>630</posy>
+            <width min="150" max="400">auto</width>
+            <height>38</height>
+            <label>Time 3</label>
+            <font>font12_Title</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+        <control type="image" id="5003">
+            <description>Right Arrow</description>
+            <posx>1850</posx>
+            <posy>470</posy>
+            <width>10</width>
+            <height>38</height>
+            <aspectratio align="center">keep</aspectratio>
+            <colordiffuse>C0C0C0C0</colordiffuse>
+            <texture>right.png</texture>
+			<visible>false</visible>
+        </control>
+		<control type="image">                  
+            <description>DATE Overlay</description>
+            <posx>395</posx>                      
+            <posy>610</posy>                     
+            <width>300</width>                  
+            <height>80</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>
+		<control type="image">                  
+            <description>TOP Overlay</description>
+            <posx>0</posx>                      
+            <posy>0</posy>                     
+            <width>1920</width>                  
+            <height>70</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>
+		
+     <!--Dark Column-->
+                   <control type="image">                  
+            <description>Channel Overlay</description>
+            <posx>395</posx>                      
+            <posy>695</posy>                     
+            <width>300</width>                  
+            <height>60</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>  
+        <control type="image">                  
+            <description>Channel Overlay</description>
+            <posx>395</posx>                      
+            <posy>760</posy>                     
+            <width>300</width>                  
+            <height>60</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>                              
+        <control type="image">                  
+            <description>Channel Overlay</description>
+            <posx>395</posx>                      
+            <posy>825</posy>                    
+            <width>300</width>                  
+            <height>60</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>                              
+        <control type="image">                  
+            <description>Channel Overlay</description>
+            <posx>395</posx>                      
+            <posy>890</posy>                    
+            <width>300</width>                  
+            <height>60</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>
+        <control type="image">                  
+            <description>Channel Overlay</description>
+            <posx>395</posx>                      
+            <posy>955</posy>                    
+            <width>300</width>                  
+            <height>60</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>
+        <control type="image">                  
+            <description>Channel Overlay</description>
+            <posx>395</posx>                      
+            <posy>1020</posy>                    
+            <width>300</width>                  
+            <height>60</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>                              
+        <!--CHANNEL Number-->
+        <control type="grouplist">            
+            <posx>370</posx>
+            <posy>700</posy>
+            <itemgap>15</itemgap>
+            <orientation>vertical</orientation>
+            <control type="label" id="311">
+                <description>Channel 1 Number</description>
+                <width>75</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+            <control type="label" id="312">
+                <description>Channel 2 Number</description>
+                <width>75</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+            <control type="label" id="313">
+                <description>Channel 3 Number</description>
+                <width>75</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+            <control type="label" id="314">
+                <description>Channel 4 Number</description>
+                <width>75</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+            <control type="label" id="315">
+                <description>Channel 5 Number</description>
+                <width>75</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+            <control type="label" id="316">
+                <description>Channel 6 Number</description>
+                <width>75</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+        </control>
+        <!--Channel List-->
+        <control type="grouplist">            
+            <posx>460</posx>
+            <posy>700</posy>
+            <itemgap>15</itemgap>
+            <orientation>vertical</orientation>
+            <!--CHANNEL Name/Icon-->
+            <control type="label" id="301">
+                <description>Channel 1 Name</description>
+                <width>220</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                <visible>StringCompare(Control.GetLabel(321),)</visible>
+                <scroll>true</scroll>
+                <scrollspeed>20</scrollspeed>
+            </control>
+            <control type="image" id="321">
+                <description>Channel 1 Icon</description>              
+                <width>270</width>
+                <height>50</height>
+                <align>center</align>
+                <aligny>bottom</aligny>
+                <aspectratio>keep</aspectratio>      
+                <visible>!StringCompare(Control.GetLabel(321),)</visible>
+            </control>
+            <control type="label" id="302">
+                <description>Channel 2 Name</description>
+                <width>220</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                <visible>StringCompare(Control.GetLabel(322),)</visible>
+                <scroll>true</scroll>
+                <scrollspeed>20</scrollspeed>
+            </control>
+            <control type="image" id="322">
+                <description>Channel 2 Icon</description>
+                <width>270</width>
+                <height>50</height>
+                <align>center</align>
+                <aligny>bottom</aligny>
+                <aspectratio>keep</aspectratio>
+                <visible>!StringCompare(Control.GetLabel(322),)</visible>
+            </control>
+            <control type="label" id="303">
+                <description>Channel 3 Name</description>
+                <width>220</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                <visible>StringCompare(Control.GetLabel(323),)</visible>
+                <scroll>true</scroll>
+                <scrollspeed>20</scrollspeed>
+            </control>
+            <control type="image" id="323">
+                <description>Channel 3 Icon</description>
+                <width>270</width>
+                <height>50</height>
+                <align>center</align>
+                <aligny>bottom</aligny>
+                <aspectratio>keep</aspectratio>
+                <visible>!StringCompare(Control.GetLabel(323),)</visible>
+            </control>
+            <control type="label" id="304">
+                <description>Channel 4 Name</description>
+                <width>220</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                <visible>StringCompare(Control.GetLabel(324),)</visible>
+                <scroll>true</scroll>
+                <scrollspeed>20</scrollspeed>
+            </control>
+            <control type="image" id="324">
+                <description>Channel 4 Icon</description>
+                <width>270</width>
+                <height>50</height>
+                <align>center</align>
+                <aligny>bottom</aligny>
+                <aspectratio>keep</aspectratio>
+                <visible>!StringCompare(Control.GetLabel(324),)</visible>
+            </control>
+            <control type="label" id="305">
+                <description>Channel 5 Name</description>
+                <width>220</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                <visible>StringCompare(Control.GetLabel(324),)</visible>
+                <scroll>true</scroll>
+                <scrollspeed>20</scrollspeed>
+            </control>
+            <control type="image" id="325">
+                <description>Channel 5 Icon</description>
+                <width>270</width>
+                <height>50</height>
+                <align>center</align>
+                <aligny>bottom</aligny>
+                <aspectratio>keep</aspectratio>
+                <visible>!StringCompare(Control.GetLabel(324),)</visible>
+            </control>
+            <control type="label" id="306">
+                <description>Channel 6 Name</description>
+                <width>220</width>
+                <height>50</height>
+                <label></label>
+                <font>font12_Title</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                <visible>StringCompare(Control.GetLabel(324),)</visible>
+                <scroll>true</scroll>
+                <scrollspeed>20</scrollspeed>
+            </control>
+            <control type="image" id="326">
+                <description>Channel 6 Icon</description>
+                <width>270</width>
+                <height>50</height>
+                <align>center</align>
+                <aligny>bottom</aligny>
+                <aspectratio>keep</aspectratio>
+                <visible>!StringCompare(Control.GetLabel(324),)</visible>
+            </control>
+        </control>
+		<control type="image">                  
+            <description>TIME Overlay</description>
+            <posx>700</posx>                      
+            <posy>610</posy>                     
+            <width>1215</width>                  
+            <height>80</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>
+		<control type="image">                  
+            <description>TITLE Overlay</description>
+            <posx>0</posx>                      
+            <posy>610</posy>                     
+            <width>390</width>                  
+            <height>80</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>
+		<control type="image">                  
+            <description>PLOT Overlay</description>
+            <posx>0</posx>                      
+            <posy>695</posy>                     
+            <width>390</width>                  
+            <height>500</height>                 
+            <colordiffuse>FFFFFFFF</colordiffuse>
+            <texture>2222.png</texture>
+        </control>
+        <!--SHOW LISTINGS-->
+        <control type="group" id="111">
+            <posx>700</posx>
+            <posy>695</posy>
+            <width>1215</width>
+            <height>60</height>
+        </control>
+        <control type="group" id="112">
+            <posx>700</posx>
+            <posy>760</posy>
+            <width>1215</width>
+            <height>60</height>
+        </control>
+        <control type="group" id="113">
+            <posx>700</posx>
+            <posy>825</posy>
+            <width>1215</width>
+            <height>60</height>
+        </control>
+        <control type="group" id="114">
+            <posx>700</posx>
+            <posy>890</posy>
+            <width>1215</width>
+            <height>60</height>
+        </control>
+        <control type="group" id="115">
+            <posx>700</posx>
+            <posy>955</posy>
+            <width>1215</width>
+            <height>60</height>
+        </control>
+        <control type="group" id="116">
+            <posx>700</posx>
+            <posy>1020</posy>
+            <width>1215</width>
+            <height>60</height>
+        </control>
+
+         
+        <control type="image" id="5004"> 
+            <description>Timebar Optional past fade</description>
+            <posx>411</posx>
+            <posy>340</posy>
+            <width>-1</width>
+            <height>448</height>
+            <aspectratio>scale</aspectratio>
+            <texture>pstvlTimeFadeP.png</texture>
+			<visible>false</visible>
+        </control>  
+        <control type="image" id="5005"> 
+            <description>Timebar Optional future fade</description>
+            <posx>411</posx>
+            <posy>340</posy>
+            <width>-1</width>
+            <height>448</height>
+            <aspectratio>scale</aspectratio>
+            <texture>pstvlTimeFadeF.png</texture>
+            <visible>false</visible>
+        </control>  
+        <control type="label" id="5006">
+            <description>Timebar Current Time Button</description>
+            <posx>420</posx>
+            <posy>630</posy>
+            <width min="128" max="400">auto</width>
+            <height>35</height>
+            <fadetime>250</fadetime>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+            <font>font12</font>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="image" id="5007">
+            <description>Timebar line</description>
+            <posx>320</posx>
+            <posy>630</posy>
+            <width>2</width>
+            <height>210</height>
+            <aspectratio>keep</aspectratio>
+        </control>
+		
+        <control type="image">
+            <description>Dynamic art1</description>
+            <animation effect="fade" time="500">VisibleChange</animation> 
+            <posx>5</posx>
+            <posy>615</posy>  
+            <width>380</width>      
+            <height>65</height>
+			<visible>true</visible>
+			<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+			<texture diffuse="video_diffuse.png"></texture>
+            <texture fallback="">$INFO[Window(10000).Property(EPG.banner)]</texture>
+            <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+        </control>        
+        <control type="image">
+            <description>Dynamic art2</description>
+            <animation effect="fade" time="500">VisibleChange</animation> 
+            <posx>1470</posx>
+            <posy>665</posy>  
+            <width>360</width>      
+            <height>100</height>
+            <align>center</align>
+            <aspectratio>keep</aspectratio>
+            <visible>false</visible>
+            <texture fallback="">$INFO[Window(10000).Property(EPG.poster)]</texture>
+            <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+        </control>          
+        <control type="image">
+            <description>isManaged Art</description>   
+            <posx>345</posx>
+            <posy>120r</posy>         
+            <width>32</width>
+            <height>32</height>
+            <aspectratio>keep</aspectratio>
+            <visible>false</visible>
+            <texture>$INFO[Window(10000).Property(EPG.Managed)]</texture>
+        </control> 
+        <control type="image">
+            <description>isNew Art</description>         
+            <posx>35</posx>
+            <posy>280r</posy>  
+            <width>50</width>
+            <height>50</height>
+            <aspectratio>keep</aspectratio>
+            <visible>false</visible>
+            <texture>$INFO[Window(10000).Property(EPG.isNew)]</texture>
+        </control>
+        <control type="grouplist">
+            <posx>10</posx>
+            <posy>700</posy>
+            <width>370</width>
+            <orientation>vertical</orientation>
+            <itemgap>5</itemgap>
+            <control type="label">
+			<visible>true</visible>
+                <description>Show Title Label</description>
+                <width min="5" max="370">auto</width>
+                <height>30</height>
+                <font>font12_Title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <scroll>true</scroll>
+                <align>left</align>
+                <aligny>center</aligny>
+                <wrapmultiline>false</wrapmultiline>
+                <scrollspeed>20</scrollspeed>
+                <scrollsuffix> - </scrollsuffix>
+                <label>$INFO[Window(10000).Property(EPG.Title)]</label>
+            </control>
+			 <control type="label">
+                <description>Show Title Label</description>
+                <width min="5" max="370">auto</width>
+                <height>30</height>
+                <font>font10_Title</font>
+                <textcolor>ffffa500</textcolor>
+                <scroll>true</scroll>
+                <align>left</align>
+                <aligny>center</aligny>
+                <wrapmultiline>false</wrapmultiline>
+                <scrollspeed>20</scrollspeed>
+                <scrollsuffix> - </scrollsuffix>
+                <label>$INFO[Window(10000).Property(EPG.SEtitle)]</label>
+            </control>
+        </control>
+		
+        <control type="grouplist">
+            <posx>10</posx>
+            <posy>770</posy>
+            <width>450</width>
+            <orientation>vertical</orientation>
+            <itemgap>4</itemgap>
+           <control type="image">
+                <description>Seekbar Line</description>
+                <posx>0</posx>
+                <posy>0</posy> 
+                <width>1400</width>
+                <height>2</height>
+                <texture border="0">seek/progress_mid.png</texture>
+                <align>center</align>
+                <aligny>center</aligny>
+                <visible>false</visible>
+            </control>
+            <control type="group" id="5008">  
+                <control type="progress">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1400</width>
+                    <height>2</height>
+                    <texturebg>seek/progress_back.png</texturebg>
+                    <lefttexture border="0">seek/progresscache_left.png</lefttexture>
+                    <midtexture border="0">seek/progresscache_mid.png</midtexture>
+                    <righttexture border="0">seek/progresscache_right.png</righttexture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <info>Player.ProgressCache</info>
+					<visible>false</visible>
+                </control>
+                <control type="progress">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1400</width>
+                    <height>2</height>
+                    <texturebg>seek/progresscache_back.png</texturebg>
+                    <lefttexture border="0">seek/progress_left.png</lefttexture>
+                    <midtexture border="0">seek/progress_mid.png</midtexture>
+                    <righttexture border="0">seek/progress_right.png</righttexture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <info>Player.Progress</info>
+					<visible>false</visible>
+                </control> 
+            </control>  
+           <control type="label">
+            <description>Show Description</description>
+			<posx>0</posx>
+            <posy>770</posy>
+            <width>380</width>
+            <height>600</height>
+            <align>left</align>
+            <aligny>bottom</aligny>
+            <wrapmultiline>true</wrapmultiline>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+            <font>font10_Title</font>
+			<visible>false</visible>
+        </control>
+		<control type="textbox">
+			<posx>0</posx>
+            <posy>770</posy>
+            <width>380</width>
+            <height>250</height>
+			<align>left</align>
+			<aligny>top</aligny>
+			<font>font10_Title</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<label>$INFO[Window(10000).Property(EPG.Description)]</label>
+			<autoscroll time="4000" delay="7000" repeat="8000">True</autoscroll>
+		</control>
+        </control>
+		 
+    </controls>
+</window>
