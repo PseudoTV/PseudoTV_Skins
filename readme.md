@@ -13,23 +13,57 @@ Thank You
 
 ##Screenshots
 
+###Bello
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Bello/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Bello/screenshot02.png">
+
 ###Box
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Box/screenshot%201.png">
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Box/screenshot.png">
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Box/screenshot%202.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Box/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Box/screenshot02.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Box/screenshot03.png">
+
+###Classical
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Classical/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Classical/screenshot02.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Classical/screenshot03.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Classical/screenshot04.png">
+
+###Concast
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Concast/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Concast/screenshot02.png">
+
+###Confluence
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Confluence/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Confluence/screenshot02.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Confluence/screenshot03.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Confluence/screenshot04.png">
+
+###Cube (6-channel mod)
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Cube%20(6-channel%20mod)/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Cube%20(6-channel%20mod)/screenshot02.png">
+
+###Cube
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Cube/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Cube/screenshot02.png">
+
+###Estuary
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Estuary/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Estuary/screenshot02.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Estuary/screenshot03.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Estuary/screenshot04.png">
 
 ###Neutron
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Neutron/screenshot1.png">
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Neutron/screenshot2.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Neutron/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Neutron/screenshot02.png">
 
 ###PurpleNox
 <img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/PurpleNox/screenshot01.png">
 <img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/PurpleNox/screenshot02.png">
 
 ###Silver
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Silver/screenshot%201.png">
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Silver/screenshot%202.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Silver/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Silver/screenshot02.png">
 
 ###Titan X
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Titian%20X/screenshot%201.png">
-<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/Titian%20X/screenshot%202.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/TitianX/screenshot01.png">
+<img height="150" src="https://raw.githubusercontent.com/PseudoTV/PseudoTV_Skins/master/TitianX/screenshot02.png">
