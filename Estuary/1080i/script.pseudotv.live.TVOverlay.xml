@@ -584,6 +584,22 @@
                         <visible>false</visible>
                         <!-- <visible>Player.HasDuration</visible> -->
                     </control>
+					   <control type="button" id="5005">
+                <description>MoreInfo Progressbar Time Button</description>
+                <posx>430</posx><!-- #should match 5004 -->
+                <posy>435r</posy>
+                <width>165</width>
+                <height>30</height>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <font>font12</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>$INFO[Player.TimeRemaining]</label>
+                <texturefocus>pstvlButtonFocus.png</texturefocus>
+                <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
+                <visible>!Control.IsVisible(101) + [Control.IsVisible(5004)]</visible>
+</control>
 					 <control type="label" id="518">"
                         <description>Seekbar time</description>
                         <posx>0</posx>
