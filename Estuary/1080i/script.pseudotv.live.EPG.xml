@@ -84,12 +84,6 @@
 							<texture border="22">dialog-bg.png</texture>
 						</control>
         </control>
-			 <control type="grouplist">
-            <posx>85</posx>
-            <posy>745</posy>
-            <itemgap>10</itemgap>
-            <orientation>vertical</orientation>
-            <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
             <control type="label" id="9000"> 
                 <description>VideoWindow Box Label</description>
                 <width>360</width>       
@@ -100,12 +94,14 @@
                 <align>center</align>
                 <scroll>true</scroll>
                 <scrollspeed>40</scrollspeed>
-                <label>$INFO[Window(10000).Property(OVERLAY.Title)]</label>
-                <visible>false</visible>
+                <label></label>
+                <visible>true</visible>
                 <aligny>center</aligny>
             </control>
             <control type="videowindow">
                 <description>VideoWindow Box Art</description>
+				<posx>85</posx>
+				<posy>745</posy>
                 <width>325</width>      
                 <height>200</height>
                 <align>center</align>
@@ -113,7 +109,6 @@
                 <aspectratio>stretch</aspectratio>
                 <visible>Control.IsVisible(9000)</visible>
             </control>
-        </control>
 		 <control type="fadelabel" id="505">
                 <description>PTVL RSS Feed Label</description>  
                 <width>370</width>
