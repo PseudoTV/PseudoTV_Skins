@@ -3,7 +3,6 @@
     <allowoverlay>no</allowoverlay>
     <zorder>1</zorder>
     <!-- Set artwork -->
-     <onload>SetProperty(OVERLAY.PROGBAR_TYPE,landscape,10000)</onload>
     <onload>SetProperty(OVERLAY.type2,poster,10000)</onload>
     <onload>SetProperty(OVERLAY.type3,fanart,10000)</onload>
     <onload>SetProperty(OVERLAY.type4,landscape,10000)</onload>
@@ -33,7 +32,7 @@
             <animation effect="fade" start="25" end="25" condition="True">Conditional</animation>
         </control>
         <control type="group" id="101">    
-            <visible>false</visible>
+            <visible></visible>
             <control type="image">
                 <description>Loading Background Image</description>
                 <width>1920</width>
@@ -496,7 +495,7 @@
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>D9FFFFFF</shadowcolor>
                     <font>font12</font>
-                    <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+                    <label>$INFO[Window(10000).Property(OVERLAY.Time)] • $INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
 				</control>
 				
@@ -627,10 +626,10 @@
  
 				 <control type="button" id="5005">
                 <description>MoreInfo Progressbar Time Button</description>
-                <posx>460</posx><!-- #should match 5004 -->
-                <posy>435</posy>
-                <width>165</width>
-                <height>30</height>
+                <posx>410</posx><!-- #should match 5004 -->
+                <posy>210r</posy>
+                <width>105</width>
+                <height>20</height>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <font>font10</font>

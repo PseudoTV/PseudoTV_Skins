@@ -3,11 +3,9 @@
     <allowoverlay>no</allowoverlay>
     <zorder>1</zorder>
     <!-- Set artwork -->
-    <onload>SetProperty(OVERLAY.PROGBAR_TYPE,landscape,10000)</onload>
-    <onload>SetProperty(OVERLAY.type1,Player.Time ,10000)</onload>
-    <onload>SetProperty(OVERLAY.type2,poster,10000)</onload>
-    <onload>SetProperty(OVERLAY.type3,landscape,10000)</onload>
-    <onload>SetProperty(OVERLAY.type4,fanart,10000)</onload>
+    <onload>SetProperty(OVERLAY.type1,poster,10000)</onload>
+    <onload>SetProperty(OVERLAY.type2,landscape,10000)</onload>
+    <onload>SetProperty(OVERLAY.type3,fanart,10000)</onload>
     <onload>SetProperty(OVERLAY.ONNOW_TYPE,fanart,10000)</onload>
     <onload>SetProperty(EPG.type1,landscape,10000)</onload>
     <onload>SetProperty(EPG.type2,poster,10000)</onload>
@@ -245,7 +243,7 @@
 				 <control type="label">
                 <description>Show Description</description>
 				<posx>400</posx>
-            <posy>80</posy>
+				<posy>80</posy>
                 <width>1200</width>
                 <height>200</height>
                 <align>left</align>
@@ -254,7 +252,7 @@
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <font>font12_Title</font>
-                <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+                <label>[COLOR=FF0084ff][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
             </control>
          <!-- TIME/WEATHER -->
 		 <control type="label">
@@ -271,7 +269,7 @@
 		<control type="label" id="5006">
                 <description>Timebar Progressbar Time Button</description>
                 <posx>530</posx><!-- #should match 5007 -->
-                <posy>-10</posy>
+                <posy>230</posy>
                 <width>130</width>
                 <height>20</height>
                 <fadetime>250</fadetime>
@@ -280,7 +278,7 @@
                 <font>font12_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <visible>!Control.IsVisible(101) | !Control.IsVisible(102) | !Control.IsVisible(5007)</visible>
+                <visible>!Control.IsVisible(101) | !Control.IsVisible(5007)</visible>
             </control>
                 <control type="group"> 
                     <visible></visible>
@@ -719,7 +717,7 @@
                     <textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
                     <font>font12_Title</font>
-                    <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+                    <label>[COLOR=FF0084ff][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
              <!-- line 4 -->
                 <control type="grouplist">
@@ -1139,7 +1137,7 @@
             </control>
         </control>
         <control type="group" id="101">    
-            <visible>false</visible>
+            <visible></visible>
             <control type="image">
                 <description>Loading Background Image</description>
                 <width>1920</width>
@@ -1147,31 +1145,50 @@
                 <texture>pstvlBackground.png</texture>
                 <align>center</align>
                 <aligny>center</aligny>
-            </control>
-            <control type="image">
-                <description>Loading Background Logo</description>
-                <posx>725</posx>
-                <posy>350</posy>
-                <width>480</width>
-                <height>270</height>
-                <aspectratio>keep</aspectratio>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
-                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
-            </control>
-			 <control type="label">
+            </control> 
+            <control type="grouplist">   
+                <posx>300</posx>
+                <posy>300</posy>
+                <width>1280</width>
+                <height>1080</height>
+                <orientation>vertical</orientation>
+                <itemgap>40</itemgap>
+                <control type="image">
+                    <description>Loading Background Logo</description>
+                    <width>1280</width>
+                    <height>270</height>
+                    <aspectratio>keep</aspectratio>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
+                    <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+                </control>
+                <control type="label">
                     <description>Loading Background Text</description>
                     <width>1280</width>
                     <height>40</height>
-                    <font>font30</font>
+                    <font>font12_Title</font>
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT)]</label>
                 </control> 
-        </control>
+                <control type="progress">
+                    <width>1280</width>
+                    <height>20</height>
+                    <texturebg>seek/progresscache_back.png</texturebg>
+                    <lefttexture border="0">seek/progress_left.png</lefttexture>
+                    <midtexture border="0">seek/progress_mid.png</midtexture>
+                    <righttexture border="0">seek/progress_right.png</righttexture>
+                    <righttexture border="0">seek/progresscache_right.png</righttexture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <info>$INFO[Window(10000).Property(loading.progress)]</info>
+                    <visible>False</visible>
+                </control>
+            </control>          
+        </control> 
 		  <control type="group" id="7000"> 
             <posx>0</posx>
             <posy>0</posy>

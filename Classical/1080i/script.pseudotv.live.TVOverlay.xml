@@ -263,19 +263,21 @@
                     <label>[COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.DYNAMIC_LABEL)] :  [B] [/COLOR]$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0] • [/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR][/B]</label>
                 </control>
             </control>
-			<control type="label" id="5006">
-                <description>Timebar Progressbar Time Button</description>
-                <posx>-1600</posx><!-- #should match 5007 -->
-                <posy>-1025</posy>
-                <width>-130</width>
-                <height>-20</height>
-                <fadetime>250</fadetime>
-                <textcolor>blue</textcolor>
+			 <control type="button" id="5006">
+                <description>Info Progressbar Time Button</description>
+                <posx>430</posx><!-- #should match 5007 -->
+                <posy>235r</posy>
+                <width>165</width>
+                <height>30</height>
+                <font>font12</font>
+                <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font10</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <visible>!Control.IsVisible(102)</visible>
+                <label>$INFO[Player.Time]</label>
+                <texturefocus>pstvlButtonFocus.png</texturefocus>
+                <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
+                <visible>false</visible>
             </control>
             <control type="grouplist">
                 <posx>525</posx>
@@ -338,7 +340,7 @@
 			<aligny>top</aligny>
 			<font>font12</font>
 			<textcolor>FFFFFFFF</textcolor>
-			<label>[B]$INFO[Window(10000).Property(OVERLAY.Description)][/B]</label>
+			<label>[COLOR=FF00b4db][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR][B]$INFO[Window(10000).Property(OVERLAY.Description)][/B]</label>
 			<autoscroll time="4000" delay="7000" repeat="8000">True</autoscroll>
 		</control>
             </control> 
@@ -487,51 +489,61 @@
                     <label>[B]$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0] • [/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR][/B]</label>
                 </control>
             </control>
-            <control type="grouplist">
-                <posx>430</posx>
-                <posy>380</posy>
-                <width>1400</width>
-                <orientation>vertical</orientation>
-                <itemgap>8</itemgap>
+            <control type="group">            
                 <control type="image">
-                    <description>Seekbar Line</description>
-                    <width>1400</width>
+                    <description>MoreInfo Seekbar Line</description>
+                    <posx>430</posx>
+                    <posy>425r</posy>
+                    <width>1100</width>
                     <height>4</height>
                     <texture>seek/progress_mid.png</texture>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <visible>!Control.IsVisible(5007)</visible>
                 </control>
-                <control type="group" id="5007">  
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <control type="progress">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1400</width>
-                        <height>4</height>
-                        <texturebg>seek/progress_back.png</texturebg>
-                        <lefttexture border="0">seek/progresscache_left.png</lefttexture>
-                        <midtexture border="0">seek/progresscache_mid.png</midtexture>
-                        <righttexture border="0">seek/progresscache_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.ProgressCache</info>
-                    </control>
-                    <control type="progress">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1400</width>
-                        <height>4</height>
-                        <texturebg>seek/progresscache_back.png</texturebg>
-                        <lefttexture border="0">seek/progress_left.png</lefttexture>
-                        <midtexture border="0">seek/progress_mid.png</midtexture>
-                        <righttexture border="0">seek/progress_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.Progress</info>
-                    </control> 
+                <control type="progress">
+                    <posx>430</posx>
+                    <posy>425r</posy>
+                    <width>1100</width>
+                    <height>4</height>
+                    <texturebg>seek/progresscache_back.png</texturebg>
+                    <lefttexture border="0">seek/progresscache_left.png</lefttexture>
+                    <midtexture border="0">seek/progresscache_mid.png</midtexture>
+                    <righttexture border="0">seek/progresscache_right.png</righttexture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <info>Player.ProgressCache</info>
+                    <visible>Control.IsVisible(5004)</visible>
+                </control>
+                <control type="progress" id="5004">
+                    <posx>430</posx>
+                    <posy>425r</posy>
+                    <width>1100</width>
+                    <height>4</height>
+                    <texturebg>seek/progress_back.png</texturebg>
+                    <lefttexture border="0">seek/progress_left.png</lefttexture>
+                    <midtexture border="0">seek/progress_mid.png</midtexture>
+                    <righttexture border="0">seek/progress_right.png</righttexture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <info>Player.Progress</info>
+                    <visible>Control.IsVisible(5007)</visible>
                 </control> 
+            </control>
+            <control type="button" id="5005">
+                <description>MoreInfo Progressbar Time Button</description>
+                <posx>430</posx><!-- #should match 5004 -->
+                <posy>435r</posy>
+                <width>165</width>
+                <height>30</height>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <font>font12</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>$INFO[Player.TimeRemaining]</label>
+                <texturefocus>pstvlButtonFocus.png</texturefocus>
+                <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
+                <visible>!Control.IsVisible(101) + [Control.IsVisible(5004)]</visible>
             </control>
 			 <control type="grouplist">
                     <posx>1260</posx>
@@ -702,7 +714,7 @@
                     <textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
                     <font>font12</font>
-                    <label>[B]$INFO[Window(10000).Property(OVERLAY.Description)][/B]</label>
+                    <label>[COLOR=FF00b4db][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR][B]$INFO[Window(10000).Property(OVERLAY.Description)][/B]</label>
                 </control>
             <control type="grouplist">
                 <posx>230</posx>
