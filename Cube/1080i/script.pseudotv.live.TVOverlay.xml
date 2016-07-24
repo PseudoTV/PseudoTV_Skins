@@ -299,21 +299,23 @@
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <font>font12_Title</font>
-                    <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+                    <label>[COLOR=orange][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
-				<control type="label" id="5006">
-                <description>Timebar Progressbar Time Button</description>
-                <posx>600</posx><!-- #should match 5007 -->
-                <posy>-1025</posy>
-                <width>-130</width>
-                <height>-20</height>
-                <fadetime>250</fadetime>
-                <textcolor>blue</textcolor>
+				 <control type="button" id="5006">
+                <description>Info Progressbar Time Button</description>
+                <posx>430</posx><!-- #should match 5007 -->
+                <posy>235r</posy>
+                <width>165</width>
+                <height>30</height>
+                <font>font12</font>
+                <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font10</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <visible>!Control.IsVisible(102)</visible>
+                <label>$INFO[Player.Time]</label>
+                <texturefocus>pstvlButtonFocus.png</texturefocus>
+                <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
+                <visible>false</visible>
             </control>
                 <control type="group"> 
                     <visible>false</visible>
@@ -738,7 +740,7 @@
                     <texture>seek/progress_mid.png</texture>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <visible>!Control.IsVisible(5007)</visible>
+                    <visible>!Control.IsVisible(5004)</visible>
                 </control>
                 <control type="group" id="5007">  
                     <posx>0</posx>
@@ -755,8 +757,9 @@
                         <align>center</align>
                         <aligny>center</aligny>
                         <info>Player.ProgressCache</info>
+						<visible>Control.IsVisible(5004)</visible>
                     </control>
-                    <control type="progress">
+                    <control type="progress" id="5004">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1100</width>
@@ -768,8 +771,25 @@
                         <align>center</align>
                         <aligny>center</aligny>
                         <info>Player.Progress</info>
+						<visible>Control.IsVisible(5007)</visible>
                     </control> 
                 </control>
+				<control type="button" id="5005">
+                <description>MoreInfo Progressbar Time Button</description>
+                <posx>430</posx><!-- #should match 5004 -->
+                <posy>435r</posy>
+                <width>165</width>
+                <height>30</height>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <font>font12</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>$INFO[Player.TimeRemaining]</label>
+                <texturefocus>pstvlButtonFocus.png</texturefocus>
+                <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
+                <visible>!Control.IsVisible(101) + [Control.IsVisible(5004)]</visible>
+            </control>
                 <control type="label">
                     <description>Show Description</description>
                     <posx>420</posx>
