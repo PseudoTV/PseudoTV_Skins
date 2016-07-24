@@ -1,12 +1,12 @@
-<window>
-    <allowoverlay>no</allowoverlay>   
-    <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+<window>  
+    <allowoverlay>yes</allowoverlay>
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
-	<onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
-    <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload>    
-    <onunload>ActivateWindow(12005)</onunload>
-    <!-- <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
+    <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload> 
+    <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
+    <onload condition="Control.IsVisible(9000)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for videowindow starting paused -->
+    <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
+    <onload condition="!Control.IsVisible(9000) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
+<onunload>ActivateWindow(12005)</onunload>
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
@@ -44,7 +44,23 @@
             <texture>220.png</texture>
             <colordiffuse colordiffuse="$VAR[DialogColorVar]">purple</colordiffuse>
         </control>
-		<!-- Now watching label --> 
+		 <control type="label" id="9000">
+		        <posx>-50</posx>
+				<posy>-155</posy>
+                <description>VideoWindow Box Label</description>
+                <width>360</width>       
+                <height>24</height>
+                <font>font12_Title</font>
+                <textcolor>orange</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>center</align>
+                <scroll>true</scroll>
+                <scrollspeed>40</scrollspeed>
+                <label>$INFO[Window(10000).Property(OVERLAY.Title)]</label>
+                <visible>Control.IsVisible(9000)</visible>
+                <aligny>center</aligny>
+            </control>
+			<!-- Now watching label --> 
        <control type="label">
 			   	<posx>20</posx>
 				<posy>100</posy>
@@ -60,22 +76,22 @@
 			   	<visible>!VideoPlayer.Content(movies)</visible>
                 <aligny>center</aligny>
             </control> 
-        <!-- VideoWindow Box --> 
-            <!-- #### Skinners Include Everything for videowindow patch to work #### -->
-            <!-- PATCH START -->
+        <control type="grouplist">
+            <posx>50</posx>
+            <posy>175</posy>
+            <itemgap>10</itemgap>
+            <orientation>vertical</orientation>
+            <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
             <control type="videowindow">
-                <description>video</description>
-				<posx>55</posx>
-                <posy>165</posy>
+                <description>VideoWindow Box Art</description>
                 <width>400</width>      
-                <height>270</height>
-                <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-			    <texture diffuse="video.png"></texture>
-                <visible>true</visible>
+                <height>220</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <aspectratio>keep</aspectratio>
+                <visible>Control.IsVisible(9000)</visible>
             </control>
-            <!-- PATCH END -->
-            <!-- ################################################################## -->
-			 <!-- todo -->
+        </control>
        	<control type ="group">
 			<visible>VideoPlayer.Content(episodes)</visible>
 			<control type="image">
@@ -100,14 +116,28 @@
 		</control>
 		
        
-        <control type="grouplist" id="505">
-		<visible>false</visible>
-            <posx>5</posx>
-            <posy>958</posy>
-            <align>left</align>
-            <orientation>horizontal</orientation>
-            <itemgap>1</itemgap>  
-        </control>
+        <control type="fadelabel" id="505">
+                <description>PTVL RSS Feed Label</description>  
+                <width>370</width>
+                <height>35</height>
+                <font>font10</font>
+                <aligny>center</aligny>
+                <align>left</align>
+                <scroll>true</scroll>
+                <scrollout>true</scrollout>
+                <pauseatend>900000</pauseatend>
+                <angle>90</angle>
+                <scrollspeed>40</scrollspeed>
+                <textcolor>C0C0C0C0</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <textoffsetx>20</textoffsetx>
+                <resetonlabelchange>true</resetonlabelchange>
+                <label>$INFO[Window(10000).Property(twitter.1.label)]</label>
+                <label>$INFO[Window(10000).Property(twitter.2.label)]</label>
+                <label>$INFO[Window(10000).Property(twitter.3.label)]</label>
+                <label>$INFO[Window(10000).Property(twitter.4.label)]</label>
+				<visible>false</visible>
+            </control>  
 		 <control type="image" id="5009">
 			 <visible></visible>
             <description>Optional Channel Focus Highlight</description>         
