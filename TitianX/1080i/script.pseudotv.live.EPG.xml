@@ -1,11 +1,12 @@
 <window>
-    <allowoverlay>no</allowoverlay>   
-    <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for 9506 starting paused -->
+   <allowoverlay>yes</allowoverlay>
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
-    <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload>    
+    <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload> 
+    <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
+    <onload condition="Control.IsVisible(9000)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for videowindow starting paused -->
+    <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
+    <onload condition="!Control.IsVisible(9000) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
     <onunload>ActivateWindow(12005)</onunload>
-    <!-- <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
@@ -48,10 +49,10 @@
                 <colordiffuse>FFFFFFFF</colordiffuse>
             </control>         
         </control>  
-            <control type="label"> 
+            <control type="label" id="9000"> 
                 <description>VideoWindow Box Label</description>
-				<posx>1420</posx>
-				<posy>960</posy>
+				<posx>1430</posx>
+				<posy>990</posy>
                 <width>480</width>       
                 <height>24</height>
                 <font>font13_Title</font>
@@ -61,9 +62,6 @@
                 <scroll>true</scroll>
                 <scrollspeed>40</scrollspeed>
                 <label>$INFO[Window(10000).Property(OVERLAY.Title)]</label>
-                <visible>StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)</visible>
-				<visible>!VideoPlayer.Content(episodes)</visible>
-			   	<visible>!VideoPlayer.Content(movies)</visible>
                 <aligny>center</aligny>
             </control>
             <control type="videowindow">
@@ -75,7 +73,7 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <aspectratio>keep</aspectratio>
-                <visible>StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)</visible>
+               <visible>Control.IsVisible(9000)</visible>
             </control>
               <!-- Now playing banner --> 
 		<control type="image">
