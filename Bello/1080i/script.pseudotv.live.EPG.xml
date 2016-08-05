@@ -17,17 +17,17 @@
         <control type="image">
             <description>EPG Background</description>
             <posx>0</posx>
-            <posy>0</posy>
+            <posy>-20</posy>
             <width>1920</width>
-            <height>1080</height>
+            <height>1140</height>
             <texture>SKINDEFAULT.jpg</texture>
         </control>
 		 <control type="image">
             <description>EPG Background</description>
             <posx>0</posx>
-            <posy>0</posy>
+            <posy>-20</posy>
             <width>1920</width>
-            <height>1080</height>
+            <height>1140</height>
             <texture>bg_vignette.png</texture>
         </control>
 		 <control type="image">
@@ -50,7 +50,7 @@
                 <description>PTVL RSS Feed Label</description>  
                 <width>370</width>
                 <height>35</height>
-                <font>font10</font>
+                <font>sans10</font>
                 <aligny>center</aligny>
                 <align>left</align>
                 <scroll>true</scroll>
@@ -95,7 +95,7 @@
                 <description>VideoWindow Box Label</description>
                 <width>360</width>       
                 <height>24</height>
-                <font>font12</font>
+                <font>sans12</font>
                 <textcolor>C0C0C0C0</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -125,7 +125,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <label>Current Date</label>
-            <font>font12</font>
+            <font>sans12</font>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>D9FFFFFF</shadowcolor>
         </control>
@@ -141,11 +141,11 @@
         <control type="button" id="6001">
                 <description>EPG Label</description>
 				<posx>10</posx>
-                <posy>5</posy>
-                <width>210</width>
+                <posy>25</posy>
+                <width>310</width>
                 <height>68</height>
                 <label>TV Guide</label>
-                <font>font30</font>
+                <font>sans14</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -156,11 +156,11 @@
         <control type="button" id="6002">
                 <description>DVR Label</description>
 				<posx>450</posx>
-                <posy>5</posy>
+                <posy>25</posy>
                 <width>310</width>
                 <height>68</height>
                 <label>Recordings</label>
-                <font>font30</font>
+                <font>sans14</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -171,11 +171,11 @@
         <control type="button" id="6003">
                 <description>OnDemand Label</description>
 				<posx>1000</posx>
-                <posy>5</posy>
+                <posy>25</posy>
                 <width>305</width>
                 <height>68</height>
                 <label>OnDemand</label>
-                <font>font30</font>
+                <font>sans14</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -186,11 +186,11 @@
         <control type="button" id="6004">
                 <description>Apps Label</description>
 				<posx>1570</posx>
-                <posy>5</posy>
+                <posy>25</posy>
                 <width>305</width>
                 <height>68</height>
                 <label>Applications</label>
-                <font>font30</font>
+                <font>sans14</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -217,7 +217,7 @@
             <width min="155" max="400">auto</width>
             <height>38</height>
             <label>Time 1</label>
-            <font>font12</font>
+            <font>sans12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -226,26 +226,38 @@
         <!--Time Bar 2/3-->
         <control type="label" id="102">
             <description>Time Middle Label</description>
-            <posx>1015</posx>
+            <posx>815</posx>
             <posy>480</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 2</label>
-            <font>font12</font>
+            <font>sans12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
-            <shadowcolor>D9FFFFFF</shadowcolor>
         </control>
-        <!--Time Bar 3/3-->
+		 <!--Time Bar 3/4-->
         <control type="label" id="103">
+            <description>Time Middle Label</description>
+            <posx>1220</posx>
+            <posy>480</posy>
+            <width min="155" max="200">auto</width>
+            <height>38</height>
+            <label>Time 3</label>
+            <font>sans12</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+        </control>
+        <!--Time Bar 4/4-->
+        <control type="label" id="104">
             <description>Time Right Label</description>
-            <posx>1680</posx>
+            <posx>1720</posx>
             <posy>480</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 3</label>
-            <font>font12</font>
+            <font>sans12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -375,7 +387,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -385,7 +397,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -395,7 +407,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -405,7 +417,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -415,7 +427,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -425,7 +437,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -443,7 +455,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
              <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
@@ -465,7 +477,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
@@ -487,7 +499,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
@@ -509,7 +521,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
@@ -531,7 +543,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
@@ -553,7 +565,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>sans12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>FF0297eb</textcolor>
@@ -639,7 +651,7 @@
 				<fadetime>250</fadetime>
 				<textcolor>FFFFFFFF</textcolor>
 				<shadowcolor>D9FFFFFF</shadowcolor>
-				<font>font12</font>
+				<font>sans12</font>
 				<align>center</align>
 				<aligny>center</aligny>
 			</control>
@@ -680,18 +692,18 @@
 				<bordersize>6</bordersize>
 			</control>
         <control type="grouplist">
-            <posx>250</posx>
-            <posy>140</posy>
-            <width>1600</width>
+            <posx>270</posx>
+            <posy>150</posy>
+            <width>1580</width>
             <orientation>vertical</orientation>
             <itemgap>20</itemgap>
             <control type="label">
                 <description>Show Title Label</description>
                 <width min="5" max="1100">auto</width>
-                <height>30</height>
-                <font>font30</font>
-                <textcolor>ffffffff</textcolor>
-				<shadowcolor>D9FFFFFF</shadowcolor>
+                <height>40</height>
+                <font>sans14</font>
+                <textcolor>D9FFFFFF</textcolor>
+				
                 <scroll>true</scroll>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -704,9 +716,9 @@
                 <description>Show Title Label</description>
                 <width min="5" max="1100">auto</width>
                 <height>30</height>
-                <font>font13</font>
-                <textcolor>ffffffff</textcolor>
-				<shadowcolor>D9FFFFFF</shadowcolor>
+                <font>sans13</font>
+                <textcolor>D9FFFFFF</textcolor>
+				<shadowcolor>ff000000</shadowcolor>
                 <scroll>true</scroll>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -719,7 +731,7 @@
 		
         <control type="grouplist">
             <posx>330</posx>
-            <posy>310</posy>
+            <posy>290</posy>
             <width>1010</width>
             <orientation>vertical</orientation>
             <itemgap>4</itemgap>
@@ -766,12 +778,11 @@
             </control>    
 		<control type="textbox">
             <width>1010</width>
-            <height>130</height>
+            <height>145</height>
 			<align>left</align>
 			<aligny>top</aligny>
-			<font>font12</font>
-			<textcolor>FFFFFFFF</textcolor>
-			<shadowcolor>D9FFFFFF</shadowcolor>
+			<font>sans12</font>
+			<textcolor>D9FFFFFF</textcolor>
 			<label>$INFO[Window(10000).Property(EPG.Description)]</label>
 			<autoscroll time="4000" delay="7000" repeat="8000">True</autoscroll>
 		</control>

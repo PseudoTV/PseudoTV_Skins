@@ -1,0 +1,10 @@
+<fonts>
+    <font res="720p"  name="sans10" filename="OpenSans-Regular.ttf" size="12" />
+    <font res="1080i" name="sans10" filename="OpenSans-Regular.ttf" size="18" />
+    <font res="720p"  name="sans12" filename="OpenSans-Regular.ttf" size="18" />
+    <font res="1080i" name="sans12" filename="OpenSans-Regular.ttf" size="24" />
+    <font res="720p"  name="sans13" filename="OpenSans-Regular.ttf" size="24" />
+    <font res="1080i" name="sans13" filename="OpenSans-Regular.ttf" size="36" />
+    <font res="720p"  name="sans14" filename="OpenSans-Regular.ttf" size="36" />
+    <font res="1080i" name="sans14" filename="OpenSans-Regular.ttf" size="48" />
+</fonts>
