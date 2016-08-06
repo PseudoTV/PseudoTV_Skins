@@ -1,12 +1,12 @@
 <window>
-   <allowoverlay>yes</allowoverlay>
+  <allowoverlay>yes</allowoverlay>
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
     <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload> 
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
     <onload condition="Control.IsVisible(9000)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for videowindow starting paused -->
     <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload condition="!Control.IsVisible(9000) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
-    <onunload>ActivateWindow(12005)</onunload>
+<onunload>ActivateWindow(12005)</onunload>
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
@@ -55,7 +55,7 @@
 				<posy>990</posy>
                 <width>480</width>       
                 <height>24</height>
-                <font>font13_Title</font>
+                <font>titan12</font>
                 <textcolor>FF0297eb</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -204,7 +204,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <label>Current Date</label>
-            <font>font13_Title</font>
+            <font>titan12</font>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
         </control>
@@ -226,7 +226,7 @@
             <width min="155" max="400">auto</width>
             <height>38</height>
             <label>Time 1</label>
-            <font>font12</font>
+            <font>titan12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -235,12 +235,12 @@
         <!--Time Bar 2/3-->
         <control type="label" id="102">
             <description>Time Middle Label</description>
-            <posx>1015</posx>
+            <posx>815</posx>
             <posy>110</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 2</label>
-            <font>font12</font>
+            <font>titan12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -249,13 +249,26 @@
         <!--Time Bar 3/3-->
         <control type="label" id="103">
             <description>Time Right Label</description>
-            <posx>1680</posx>
+            <posx>1280</posx>
             <posy>110</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 3</label>
-            <font>font12</font>
+            <font>titan12</font>
             <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+		 <!--Time Bar 4/4-->
+        <control type="label" id="104">
+            <description>Time Right Label</description>
+            <posx>1680</posx>
+            <posy>110</posy>
+            <width>170</width>
+            <height>90</height>
+            <label>Time 4</label>
+            <font>titan12</font>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
@@ -336,7 +349,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -346,7 +359,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -356,7 +369,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -366,7 +379,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -376,7 +389,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -386,7 +399,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -404,7 +417,7 @@
                 <label>|</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <textcolor>FF0297eb</textcolor>
             </control>
             <control type="label">
@@ -414,7 +427,7 @@
                 <label>|</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <textcolor>FF0297eb</textcolor>
             </control>
             <control type="label">
@@ -424,7 +437,7 @@
                 <label>|</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <textcolor>FF0297eb</textcolor>
             </control>
             <control type="label">
@@ -434,7 +447,7 @@
                 <label>|</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <textcolor>FF0297eb</textcolor>
             </control>
             <control type="label">
@@ -444,7 +457,7 @@
                 <label>|</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <textcolor>FF0297eb</textcolor>
             </control>
             <control type="label">
@@ -454,7 +467,7 @@
                 <label>|</label> 
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <textcolor>FF0297eb</textcolor>
             </control>
         </control>
@@ -470,7 +483,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
              <align>left</align>
                 <aligny>bottom</aligny>
                 <textcolor>ff000000</textcolor>
@@ -492,7 +505,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -514,7 +527,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -536,7 +549,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -558,7 +571,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -580,7 +593,7 @@
                 <width>240</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -664,7 +677,7 @@
             <fadetime>250</fadetime>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
-            <font>font12</font>
+            <font>titan12</font>
             <align>center</align>
             <aligny>center</aligny>
         </control>
@@ -727,7 +740,7 @@
 				<posy>650</posy>
                 <width min="5" max="980">auto</width>
                 <height>60</height>
-                <font>font30_Title</font>
+                <font>titan14</font>
                 <textcolor>FF0297eb</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <scroll>true</scroll>
@@ -744,7 +757,7 @@
 				<posy>720</posy>
                 <width min="5" max="980">auto</width>
                 <height>30</height>
-                <font>font13_Title</font>
+                <font>titan13</font>
                 <textcolor>FF0297eb</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <scroll>true</scroll>
@@ -813,7 +826,7 @@
                 <wrapmultiline>true</wrapmultiline>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font12_Title</font>
+                <font>titan12</font>
                 <label>$INFO[Window(10000).Property(EPG.Description)]</label>
             </control>
 			<!--Vertical-Horizontal Lines -->
@@ -872,12 +885,13 @@
 		  <control type="label">                  
             <description>Time</description>     
             <posx>1540</posx>                   
-            <posy>33</posy>                    
+            <posy>28</posy>                    
             <width>300</width>                  
             <height>40</height>                 
             <label>$INFO[System.Time]</label>   
-            <font>font10_Title</font>           
-            <align>center</align>               
+            <font>titan10</font>           
+            <align>center</align>
+			<aligny>center</aligny>
             <textcolor>FF0297eb</textcolor>     
         </control>       
         <control type="image" id="800">
@@ -896,8 +910,9 @@
             <width min="40" max="100">auto</width>
             <height>30</height>
             <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-            <font>font10_Title</font>
+            <font>titan10</font>
             <align>center</align>
+			<aligny>center</aligny>
             <textcolor>FF0297eb</textcolor>
 			<visible>true</visible>
         </control>
