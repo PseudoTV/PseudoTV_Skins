@@ -17,10 +17,10 @@
     <controls>
 	<control type="group">  
             <posx>0</posx>
-            <posy>0</posy>
+            <posy>-20</posy>
             <control type="image">
                 <width>1920</width>
-                <height>1080</height>
+                <height>1140</height>
                 <description>EPG Background</description>
                 <texture>back.png</texture>
                 <colordiffuse>FFFFFFFF</colordiffuse>
@@ -32,7 +32,7 @@
 			<pauseatend>0</pauseatend>
 			<loop>true</loop>
 			<posx>0</posx>
-			<posy>0</posy>
+			<posy>40</posy>
 			<width>1920</width>
 			<height>1080</height>
 			<imagepath background="true">Estuary</imagepath>
@@ -45,25 +45,25 @@
 					<left>60</left>
 					<top>180</top>
 					<width>373</width>
-					<height>550</height>
+					<height>565</height>
 					<texture border="22">dialog-bg.png</texture>
 				</control>
 				 <control type="image">
 					<left>400</left>
 					<top>180</top>
 					<width>1470</width>
-					<height>550</height>
+					<height>565</height>
 					<texture border="22">dialog-bg.png</texture>
 				</control>
 				<control type="image">
-							<top>720</top>
+							<top>740</top>
 							<left>60</left>
 							<width>373</width>
 							<height>250</height>
 							<texture border="22">dialog-bg.png</texture>
 						</control>
 						<control type="image">
-							<top>720</top>
+							<top>740</top>
 							<left>400</left>
 							<width>1470</width>
 							<height>250</height>
@@ -88,7 +88,7 @@
                 <description>VideoWindow Box Label</description>
                 <width>360</width>       
                 <height>24</height>
-                <font>font12</font>
+                <font>lato12</font>
                 <textcolor>C0C0C0C0</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -143,7 +143,7 @@
          <height>90</height>
          <aligny>center</aligny>
          <label>Today</label>
-         <font>font12</font>
+         <font>lato12</font>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
         </control>
@@ -182,7 +182,7 @@
          <width>250</width>
          <height>90</height>
          <label>Time 1</label>
-         <font>font12</font>
+         <font>lato12</font>
          <aligny>center</aligny>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
@@ -190,12 +190,12 @@
         <!--Time Bar 2/3-->
         <control type="label" id="102">
             <description>Time Middle Label</description>
-            <posx>1048</posx>
+            <posx>800</posx>
          <posy>188</posy>
          <width>170</width>
          <height>90</height>
          <label>Time 2</label>
-         <font>font12</font>
+         <font>lato12</font>
          <align>center</align>
          <aligny>center</aligny>
          <textcolor>FFFFFFFF</textcolor>
@@ -204,15 +204,28 @@
         <!--Time Bar 3/3-->
         <control type="label" id="103">
             <description>Time Right Label</description>
-             <posx>1673</posx>
+             <posx>1300</posx>
          <posy>188</posy>
-         <width>200</width>
+         <width>170</width>
          <height>90</height>
          <label>Time 3</label>
-         <font>font12</font>
+         <font>lato12</font>
          <aligny>center</aligny>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
+        </control>
+		 <!--Time Bar 4/4-->
+        <control type="label" id="104">
+            <description>Time Right Label</description>
+            <posx>1700</posx>
+            <posy>188</posy>
+            <width>170</width>
+            <height>90</height>
+            <label>Time 4</label>
+            <font>lato12</font>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
         </control>
         <control type="image" id="5003">
             <description>Right Arrow</description>
@@ -250,7 +263,7 @@
             <description>CH 1 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>lato12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -259,7 +272,7 @@
             <description>CH 2 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>lato12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -268,7 +281,7 @@
             <description>CH 3 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>lato12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -277,7 +290,7 @@
             <description>CH 4 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>lato12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -286,7 +299,7 @@
             <description>CH 5 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>lato12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -295,7 +308,7 @@
             <description>CH 6 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>lato12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -309,7 +322,7 @@
          <posy>258</posy>
          <width>250</width>
          <height>63</height>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF0084ff</textcolor>
@@ -332,7 +345,7 @@
          <posy>333</posy>
          <width>250</width>
          <height>63</height>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF0084ff</textcolor>
@@ -355,7 +368,7 @@
          <posy>410</posy>
          <width>250</width>
          <height>63</height>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF0084ff</textcolor>
@@ -378,7 +391,7 @@
          <posy>485</posy>
          <width>250</width>
          <height>63</height>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF0084ff</textcolor>
@@ -401,7 +414,7 @@
          <posy>560</posy>
          <width>250</width>
          <height>63</height>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF0084ff</textcolor>
@@ -424,7 +437,7 @@
          <posy>637</posy>
          <width>250</width>
          <height>63</height>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF0084ff</textcolor>
@@ -507,33 +520,33 @@
             <fadetime>250</fadetime>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
-            <font>font12</font>
+            <font>lato12</font>
             <align>center</align>
             <aligny>center</aligny>
         </control>
         <control type="image" id="5007">
             <description>Timebar line</description>
             <posx>483</posx>
-         <posy>260</posy>
-         <width>2</width>
-         <height>445</height>
-         <aspectratio>keep</aspectratio>
+			<posy>260</posy>
+			<width>2</width>
+			<height>445</height>
+			<aspectratio>keep</aspectratio>
         </control>
 		 <!-- TIME/WEATHER -->
       <control type="label">
          <description>TIME</description>
          <posx>1660</posx>
-         <posy>15</posy>
+         <posy>0</posy>
          <width>200</width>
          <height>45</height>
          <label>$INFO[System.Time]</label>
-         <font>font24_Title</font>
+         <font>lato13</font>
          <align>center</align>
          <textcolor>FFFFFFFF</textcolor>
       </control>
 	  <control type="image">
          <posx>1850</posx>
-         <posy>20</posy>
+         <posy>0</posy>
          <width>40</width>
          <height>40</height>
          <aspectratio align="center">keep</aspectratio>
@@ -542,7 +555,7 @@
       </control>
 	   <control type="image">
          <posx>30</posx>
-         <posy>0</posy>
+         <posy>-20</posy>
          <width>90</width>
          <height>90</height>
          <aspectratio align="center">keep</aspectratio>
@@ -551,9 +564,9 @@
       </control>
 	   <control type="image">
          <posx>30</posx>
-         <posy>1020</posy>
-         <width>50</width>
-         <height>50</height>
+         <posy>1005</posy>
+         <width>40</width>
+         <height>40</height>
          <aspectratio align="center">keep</aspectratio>
          <texture>play.png</texture>
          <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
@@ -561,36 +574,36 @@
 	   <control type="label">
         <description>now playing Label</description>
          <posx>120</posx>
-         <posy>1000</posy>
+         <posy>980</posy>
          <width>350</width>
          <height>90</height>
          <aligny>center</aligny>
          <label>Now Playing:</label>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
         </control>
 	  <control type="label">
         <description>epg Label</description>
          <posx>120</posx>
-         <posy>0</posy>
+         <posy>-20</posy>
          <width>350</width>
          <height>90</height>
          <aligny>center</aligny>
          <label>TV Guide</label>
-         <font>font24_Title</font>
+         <font>lato13</font>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
         </control>
 		<control type="label">
         <description>epg Label</description>
          <posx>290</posx>
-         <posy>1000</posy>
+         <posy>980</posy>
          <width>1350</width>
          <height>90</height>
          <aligny>center</aligny>
          <label>[COLOR=FF0084ff]$INFO[Window(10000).Property(OVERLAY.Title)][/COLOR][COLOR=ffffffff] • [/COLOR]$INFO[Window(10000).Property(OVERLAY.SEtitle)]</label>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
         </control>
@@ -598,7 +611,7 @@
       <!-- WEATHER -->
       <control type="image" id="800">
          <posx>1560</posx>
-         <posy>0</posy>
+         <posy>-25</posy>
          <width>90</width>
          <height>90</height>
          <aspectratio align="center">keep</aspectratio>
@@ -608,39 +621,39 @@
       <control type="label">
          <description>WEATHER</description>
          <posx>1460</posx>
-         <posy>25</posy>
+         <posy>15</posy>
          <width min="60" max="150">auto</width>
          <height>15</height>
          <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <align>center</align>
          <textcolor>FFFFFFFF</textcolor>
          <visible>true</visible>
       </control>
 	 
 		<control type="image">
-							<top>120</top>
+							<top>100</top>
 							<left>1380</left>
 							<width>80</width>
 							<height>70</height>
 							<texture>dialog-bg.png</texture>
 						</control>
 						<control type="image">
-							<top>120</top>
+							<top>100</top>
 							<left>1480</left>
 							<width>80</width>
 							<height>70</height>
 							<texture>dialog-bg.png</texture>
 						</control>
 						<control type="image">
-							<top>120</top>
+							<top>100</top>
 							<left>1580</left>
 							<width>80</width>
 							<height>70</height>
 							<texture>dialog-bg.png</texture>
 						</control>
 						<control type="image">
-							<top>120</top>
+							<top>100</top>
 							<left>1680</left>
 							<width>80</width>
 							<height>70</height>
@@ -659,7 +672,7 @@
 		<control type="button" id="6001">
                 <description>EPG Label</description>
 				<posx>1398</posx>
-                <posy>132</posy>
+                <posy>112</posy>
                 <width>43</width>
                 <height>48</height>
 				<label></label>
@@ -671,7 +684,7 @@
 		<control type="button" id="6002">
                 <description>DVR Label</description>
 				<posx>1500</posx>
-                <posy>132</posy>
+                <posy>112</posy>
                 <width>43</width>
                 <height>48</height>
 				<label></label>
@@ -683,7 +696,7 @@
 		<control type="button" id="6003">
                 <description>OnDemand Label</description>
 				<posx>1600</posx>
-                <posy>132</posy>
+                <posy>112</posy>
                 <width>43</width>
                 <height>48</height>
 				<label></label>
@@ -695,7 +708,7 @@
 		<control type="button" id="6004">
                 <description>Apps Label</description>
 				<posx>1700</posx>
-                <posy>132</posy>
+                <posy>112</posy>
                 <width>43</width>
                 <height>48</height>
 				<label></label>
@@ -715,7 +728,7 @@
     
         <control type="grouplist">
             <posx>470</posx>
-            <posy>750</posy>
+            <posy>760</posy>
             <width>1300</width>
             <orientation>horizontal</orientation>
             <itemgap>5</itemgap>
@@ -723,7 +736,7 @@
                 <description>Show Title Label</description>
                 <width min="5" max="1300">auto</width>
                 <height>30</height>
-                <font>font24_Title</font>
+                <font>lato13</font>
                 <textcolor>FF0084ff</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <scroll>true</scroll>
@@ -791,7 +804,7 @@
                 <wrapmultiline>true</wrapmultiline>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font12_Title</font>
+                <font>lato12</font>
                 <label>$INFO[Window(10000).Property(EPG.Description)]</label>
             </control> 
         </control> 

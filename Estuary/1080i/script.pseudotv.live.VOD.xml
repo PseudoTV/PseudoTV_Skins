@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-    <allowoverlay>no</allowoverlay>   
-    <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for 9506 starting paused -->
-    <onunload>ActivateWindow(12005)</onunload>
-    <onload>SetProperty(PTVL.OnDemand_Opened,true,10000)</onload>
-    <onunload>SetProperty(PTVL.OnDemand_Opened,false,10000)</onunload>
+    <allowoverlay>yes</allowoverlay>
+    <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
+    <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload> 
+    <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
+    <onload condition="Control.IsVisible(9000)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for videowindow starting paused -->
+    <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
+    <onload condition="!Control.IsVisible(9000) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
+<onunload>ActivateWindow(12005)</onunload>
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
@@ -12,14 +15,14 @@
         <posy>0</posy>
     </coordinates>
     <controls>
-        <control type="group">  
+       <control type="group">  
             <posx>0</posx>
-            <posy>0</posy>
+            <posy>-20</posy>
             <control type="image">
                 <width>1920</width>
-                <height>1080</height>
-                <description>DVR Background</description>
-                <texture>DVRbackground.png</texture>
+                <height>1140</height>
+                <description>EPG Background</description>
+                <texture>back.png</texture>
                 <colordiffuse>FFFFFFFF</colordiffuse>
             </control>
 			<control type="multiimage">
@@ -29,7 +32,7 @@
 			<pauseatend>0</pauseatend>
 			<loop>true</loop>
 			<posx>0</posx>
-			<posy>0</posy>
+			<posy>40</posy>
 			<width>1920</width>
 			<height>1080</height>
 			<imagepath background="true">Estuary</imagepath>
@@ -42,25 +45,25 @@
 					<left>60</left>
 					<top>180</top>
 					<width>373</width>
-					<height>550</height>
+					<height>565</height>
 					<texture border="22">dialog-bg.png</texture>
 				</control>
 				 <control type="image">
 					<left>400</left>
 					<top>180</top>
 					<width>1470</width>
-					<height>550</height>
+					<height>565</height>
 					<texture border="22">dialog-bg.png</texture>
 				</control>
 				<control type="image">
-							<top>720</top>
+							<top>740</top>
 							<left>60</left>
 							<width>373</width>
 							<height>250</height>
 							<texture border="22">dialog-bg.png</texture>
 						</control>
 						<control type="image">
-							<top>720</top>
+							<top>740</top>
 							<left>400</left>
 							<width>1470</width>
 							<height>250</height>
@@ -81,7 +84,21 @@
 							<texture border="22">dialog-bg.png</texture>
 						</control>
         </control>
-	 <control type="videowindow">
+            <control type="label" id="9000"> 
+                <description>VideoWindow Box Label</description>
+                <width>360</width>       
+                <height>24</height>
+                <font>lato12</font>
+                <textcolor>C0C0C0C0</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>center</align>
+                <scroll>true</scroll>
+                <scrollspeed>40</scrollspeed>
+                <label></label>
+                <visible>true</visible>
+                <aligny>center</aligny>
+            </control>
+            <control type="videowindow">
                 <description>VideoWindow Box Art</description>
 				<posx>85</posx>
 				<posy>745</posy>
@@ -90,22 +107,23 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <aspectratio>stretch</aspectratio>
-                <visible>StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)</visible>
+                <visible>Control.IsVisible(9000)</visible>
             </control>
- <control type="label">
+ 		 <!-- TIME/WEATHER -->
+      <control type="label">
          <description>TIME</description>
-         <posx>1720</posx>
-         <posy>15</posy>
-         <width>150</width>
+         <posx>1660</posx>
+         <posy>0</posy>
+         <width>200</width>
          <height>45</height>
          <label>$INFO[System.Time]</label>
-         <font>font24_Title</font>
+         <font>lato13</font>
          <align>center</align>
          <textcolor>FFFFFFFF</textcolor>
       </control>
 	  <control type="image">
          <posx>1850</posx>
-         <posy>20</posy>
+         <posy>0</posy>
          <width>40</width>
          <height>40</height>
          <aspectratio align="center">keep</aspectratio>
@@ -114,7 +132,7 @@
       </control>
 	   <control type="image">
          <posx>30</posx>
-         <posy>0</posy>
+         <posy>-20</posy>
          <width>90</width>
          <height>90</height>
          <aspectratio align="center">keep</aspectratio>
@@ -123,9 +141,9 @@
       </control>
 	   <control type="image">
          <posx>30</posx>
-         <posy>1020</posy>
-         <width>50</width>
-         <height>50</height>
+         <posy>1005</posy>
+         <width>40</width>
+         <height>40</height>
          <aspectratio align="center">keep</aspectratio>
          <texture>play.png</texture>
          <colordiffuse colordiffuse="$VAR[DialogColorVar]">FF0084ff</colordiffuse>
@@ -133,44 +151,44 @@
 	   <control type="label">
         <description>now playing Label</description>
          <posx>120</posx>
-         <posy>1000</posy>
+         <posy>980</posy>
          <width>350</width>
          <height>90</height>
          <aligny>center</aligny>
          <label>Now Playing:</label>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
         </control>
 	  <control type="label">
         <description>epg Label</description>
          <posx>120</posx>
-         <posy>0</posy>
+         <posy>-20</posy>
          <width>350</width>
          <height>90</height>
          <aligny>center</aligny>
          <label>TV Guide</label>
-         <font>font24_Title</font>
+         <font>lato13</font>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
         </control>
 		<control type="label">
         <description>epg Label</description>
          <posx>290</posx>
-         <posy>1000</posy>
+         <posy>980</posy>
          <width>1350</width>
          <height>90</height>
          <aligny>center</aligny>
          <label>[COLOR=FF0084ff]$INFO[Window(10000).Property(OVERLAY.Title)][/COLOR][COLOR=ffffffff] • [/COLOR]$INFO[Window(10000).Property(OVERLAY.SEtitle)]</label>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
         </control>
 	  
       <!-- WEATHER -->
       <control type="image" id="800">
-         <posx>1600</posx>
-         <posy>0</posy>
+         <posx>1560</posx>
+         <posy>-25</posy>
          <width>90</width>
          <height>90</height>
          <aspectratio align="center">keep</aspectratio>
@@ -179,40 +197,40 @@
       </control>
       <control type="label">
          <description>WEATHER</description>
-         <posx>1500</posx>
-         <posy>25</posy>
+         <posx>1460</posx>
+         <posy>15</posy>
          <width min="60" max="150">auto</width>
          <height>15</height>
          <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-         <font>font12_Title</font>
+         <font>lato12</font>
          <align>center</align>
          <textcolor>FFFFFFFF</textcolor>
          <visible>true</visible>
       </control>
 	 
 		<control type="image">
-							<top>120</top>
+							<top>100</top>
 							<left>1380</left>
 							<width>80</width>
 							<height>70</height>
 							<texture>dialog-bg.png</texture>
 						</control>
 						<control type="image">
-							<top>120</top>
+							<top>100</top>
 							<left>1480</left>
 							<width>80</width>
 							<height>70</height>
 							<texture>dialog-bg.png</texture>
 						</control>
 						<control type="image">
-							<top>120</top>
+							<top>100</top>
 							<left>1580</left>
 							<width>80</width>
 							<height>70</height>
 							<texture>dialog-bg.png</texture>
 						</control>
 						<control type="image">
-							<top>120</top>
+							<top>100</top>
 							<left>1680</left>
 							<width>80</width>
 							<height>70</height>
@@ -231,7 +249,7 @@
 		<control type="button" id="6001">
                 <description>EPG Label</description>
 				<posx>1398</posx>
-                <posy>132</posy>
+                <posy>112</posy>
                 <width>43</width>
                 <height>48</height>
 				<label></label>
@@ -243,7 +261,7 @@
 		<control type="button" id="6002">
                 <description>DVR Label</description>
 				<posx>1500</posx>
-                <posy>132</posy>
+                <posy>112</posy>
                 <width>43</width>
                 <height>48</height>
 				<label></label>
@@ -255,7 +273,7 @@
 		<control type="button" id="6003">
                 <description>OnDemand Label</description>
 				<posx>1600</posx>
-                <posy>132</posy>
+                <posy>112</posy>
                 <width>43</width>
                 <height>48</height>
 				<label></label>
@@ -267,7 +285,7 @@
 		<control type="button" id="6004">
                 <description>Apps Label</description>
 				<posx>1700</posx>
-                <posy>132</posy>
+                <posy>112</posy>
                 <width>43</width>
                 <height>48</height>
 				<label></label>
@@ -275,18 +293,18 @@
                 <aligny>center</aligny>
 				<texturenofocus>add-ons.png</texturenofocus>
                 <texturefocus>add-onsbuttonFocus.png</texturefocus>
-        </control> 
+        </control>   
 	  <control type="grouplist">
-            <posx>480</posx>
-            <posy>750</posy>
-            <width>1260</width>
+            <posx>470</posx>
+            <posy>760</posy>
+            <width>1300</width>
             <orientation>horizontal</orientation>
             <itemgap>5</itemgap>
             <control type="label">
                 <description>Show Title Label</description>
-                <width min="5" max="1200">auto</width>
+                <width min="5" max="1300">auto</width>
                 <height>30</height>
-                <font>font24_Title</font>
+                <font>lato13</font>
                 <textcolor>FF0084ff</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <scroll>true</scroll>
@@ -299,9 +317,9 @@
             </control>
         </control>
         <control type="grouplist">
-            <posx>480</posx>
+            <posx>470</posx>
             <posy>811</posy>
-            <width>1260</width>
+            <width>1300</width>
             <orientation>vertical</orientation>
             <itemgap>12</itemgap>
            <control type="image">
@@ -347,16 +365,16 @@
             </control>  
             <control type="label">
                 <description>Show Description</description>
-                <width>1260</width>
+                <width>1300</width>
                 <height>190</height>
                 <align>left</align>
                 <aligny>bottom</aligny>
                 <wrapmultiline>true</wrapmultiline>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font12_Title</font>
+                <font>lato12</font>
                 <label>$INFO[Window(10000).Property(EPG.Description)]</label>
             </control> 
-        </control> 	
+        </control> 
     </controls>
 </window>

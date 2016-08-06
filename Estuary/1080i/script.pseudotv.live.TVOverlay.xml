@@ -14,7 +14,7 @@
     <onload>SetProperty(EPG.shadowColor,0xff000000,10000)</onload>
     <onload>SetProperty(EPG.focused_textColor,0xFFFFFFFF,10000)</onload>
     <onload>SetProperty(EPG.textColor,0xFFFFFFFF,10000)</onload>
-    <onload>SetProperty(EPG.textFont,font12_Title,10000)</onload>
+    <onload>SetProperty(EPG.textFont,lato12,10000)</onload>
     <!-- Overlay controls -->
     <controls>   
         <control type="image" id="203">
@@ -32,12 +32,11 @@
             <posx>0</posx>
             <posy>800</posy>             
 			<animation effect="fade" start="0" end="100" time="300" condition="Control.IsVisible(102)">Conditional</animation>
-            <visible>Player.HasVideo + !Window.IsActive(videoosd)</visible>
 		<control type="image">
 				<left>20</left>
 				<top>-10</top>
 				<width>1885</width>
-				<height>285</height>
+				<height>280</height>
 				<texture>back2.png</texture>
 		</control>
 		<control type="multiimage">
@@ -46,10 +45,10 @@
 			<fadetime>4000</fadetime>
 			<pauseatend>0</pauseatend>
 			<loop>true</loop>
-			<posx>20</posx>
-			<posy>-10</posy>
-			<width>1885</width>
-			<height>285</height>
+			<posx>30</posx>
+			<posy>0</posy>
+			<width>1860</width>
+			<height>260</height>
 			<imagepath background="true">Estuary</imagepath>
 			<animation effect="fade" start="0" end="70" time="550" delay="0" tween="sine" easing="out">WindowOpen</animation>
         	<animation effect="fade" start="70" end="0" time="550" delay="200" tween="sine" easing="out">WindowClose</animation>
@@ -81,7 +80,7 @@
                         <height>75</height>
                         <description>StarOver Label</description>
                         <label>[B]To Start Over | Press[/B]</label>
-                        <font>font12</font>
+                        <font>lato12</font>
                         <align>right</align>
                         <aligny>center</aligny>
                         <textcolor>FFFFFFFF</textcolor>
@@ -130,7 +129,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="1300">auto</width>
                     <height>50</height>
-                    <font>font24_Title</font>
+                    <font>lato13</font>
                     <textcolor>ffffffff</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
@@ -150,7 +149,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FF0084ff</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12_Title</font>
+                        <font>lato12</font>
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <label fallback="">$INFO[VideoPlayer.Time]</label>
@@ -164,7 +163,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FF0084ff</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12_Title</font>
+                        <font>lato12</font>
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <label fallback="">$INFO[VideoPlayer.Duration]</label>
@@ -183,7 +182,7 @@
                <height>45</height>
                <align>left</align>
                <aligny>center</aligny>
-               <font>font24_Title</font>
+               <font>lato13</font>
                <textcolor>FF0084ff</textcolor>
                <label>$INFO[Window(10000).Property(OVERLAY.Chnum)]</label>
             </control>
@@ -193,7 +192,7 @@
                <height>45</height>
                <align>center</align>
                <aligny>center</aligny>
-               <font>font12_Title</font>
+               <font>lato12</font>
                <textcolor>ffffffff</textcolor>
 			   <wrapmultiline>false</wrapmultiline>
                <scrollspeed>40</scrollspeed>
@@ -251,7 +250,7 @@
                 <wrapmultiline>true</wrapmultiline>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font12_Title</font>
+                <font>lato12</font>
                 <label>[COLOR=FF0084ff][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
             </control>
          <!-- TIME/WEATHER -->
@@ -262,56 +261,47 @@
             <width>200</width>
             <height>45</height>
             <label>$INFO[System.Time]</label>
-            <font>font24_Title</font>
+            <font>lato13</font>
             <align>center</align>
             <textcolor>FF0084ff</textcolor>
          </control>
-		<control type="label" id="5006">
-                <description>Timebar Progressbar Time Button</description>
-                <posx>530</posx><!-- #should match 5007 -->
-                <posy>230</posy>
-                <width>130</width>
-                <height>20</height>
-                <fadetime>250</fadetime>
-                <textcolor>ff000000</textcolor>
+		<control type="button" id="5006">
+                <description>Info Progressbar Time Button</description>
+                <posx>430</posx><!-- #should match 5007 -->
+                <posy>235r</posy>
+                <width>170</width>
+                <height>30</height>
+                <font>lato10</font>
+                <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font12_Title</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <visible>!Control.IsVisible(101) | !Control.IsVisible(5007)</visible>
+                <label>$INFO[Window(10000).Property(OVERLAY.PLAYING.Time)]</label>
+                <texturefocus>pstvlButtonFocus.png</texturefocus>
+                <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
+                <visible>false</visible>
             </control>
-                <control type="group"> 
-                    <visible></visible>
-					  <control type="progress" id="1">
-					<description>Progressbar</description>
-					<left>530</left>
-					<top>220</top>
-					<width>1000</width>
-					<height>30</height>
-					<info>Player.Progress</info>
-					<reveal>true</reveal>
-					<texturebg border="">seek/osd_bg_progress.png</texturebg>
-					<lefttexture border="">seek/osd_left_progress.png</lefttexture>
-					<midtexture border="">seek/osd_center_progress.png</midtexture>
-					<righttexture border="">seek/osd_right_progress.png</righttexture>
-					<overlaytexture>-</overlaytexture>
-					<visible>Control.IsVisible(5007)</visible>
-				</control>
-				<control type="progress" id="5007">
-					<description>Progressbar</description>
-					<left>530</left>
-					<top>220</top>
-					<width>1000</width>
-					<height>30</height>
-					<info>Player.CacheLevel</info>
-					<texturebg border="5">seek/osd_bg_progress_cache_big.png</texturebg>
-					<lefttexture border="5">seek/osd_left_progress_cache.png</lefttexture>
-					<midtexture border="5">seek/osd_center_progress_cache.png</midtexture>
-					<righttexture border="5">seek/osd_right_progress_cache.png</righttexture>
-					<overlaytexture>-</overlaytexture>
-					<colordiffuse>11FFFFFF</colordiffuse>
-				</control>
-            </control> 
+			 <control type="group">             
+                <control type="image">
+                    <description>Info Seekbar Line</description>
+                    <posx>530</posx>
+                    <posy>230</posy>
+                    <width>1000</width>
+                    <height>8</height>
+                    <texture>seek/osd_bg_progress.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="image" id="5007">
+                    <posx>530</posx>
+                    <posy>230</posy>
+                    <width>1000</width>
+                    <height>8</height>
+                    <texture>seek/progress_mid.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control> 
+            </control>  
         </control> 
         <!-- MOREINFO -->
         <control type="group" id="222">
@@ -390,7 +380,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -405,7 +395,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -420,7 +410,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -435,7 +425,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -484,7 +474,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="1800">auto</width>
                     <height>30</height>
-                    <font>font24_Title</font>
+                    <font>lato13</font>
                     <textcolor>FF0084ff</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
@@ -495,54 +485,43 @@
                     <label>$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0] • [/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR]</label>
                 </control>
             </control>
-            <control type="grouplist">
-			<visible>false</visible>
-                <posx>430</posx>
-                <posy>380</posy>
-                <width>1400</width>
-                <orientation>vertical</orientation>
-                <itemgap>8</itemgap>
+			 <control type="group">
+             <visible>false</visible>
                 <control type="image">
-                    <description>Seekbar Line</description>
-                    <width>1400</width>
-                    <height>4</height>
+                    <description>Info Seekbar Line</description>
+                    <posx>430</posx>
+                    <posy>380</posy>
+                    <width>1000</width>
+                    <height>30</height>
+                    <texture>seek/osd_bg_progress.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="image" id="5004">
+                    <posx>430</posx>
+                    <posy>380</posy>
+                    <width>1000</width>
+                    <height>30</height>
                     <texture>seek/progress_mid.png</texture>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <visible>!Control.IsVisible(5007)</visible>
-                </control>
-                <control type="group" id="5007">  
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <control type="progress">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1400</width>
-                        <height>28</height>
-                        <texturebg>seek/progress_back.png</texturebg>
-                        <lefttexture border="0">seek/progresscache_left.png</lefttexture>
-                        <midtexture border="0">seek/progresscache_mid.png</midtexture>
-                        <righttexture border="0">seek/progresscache_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.ProgressCache</info>
-						<visible>false</visible>
-                    </control>
-                    <control type="progress">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1400</width>
-                        <height>28</height>
-                        <texturebg>seek/progresscache_back.png</texturebg>
-                        <lefttexture border="0">seek/progress_left.png</lefttexture>
-                        <midtexture border="0">seek/progress_mid.png</midtexture>
-                        <righttexture border="0">seek/progress_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.Progress</info>
-						<visible>false</visible>
-                    </control> 
                 </control> 
+            </control>  
+            <control type="button" id="5005">
+                <description>MoreInfo Progressbar Time Button</description>
+                <posx>430</posx><!-- #should match 5004 -->
+                <posy>435r</posy>
+                <width>170</width>
+                <height>30</height>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <font>lato10</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>$INFO[Window(10000).Property(OVERLAY.PLAYING.TimeRemaining)]</label>
+                <texturefocus>pstvlButtonFocus.png</texturefocus>
+                <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
+                <visible>false</visible>
             </control>
 			 <control type="grouplist">
                     <posx>400</posx>
@@ -560,7 +539,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>lato12</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label fallback="">[B]$INFO[System.Time, Time: ] $INFO[Player.StartTime, Started: ][/B]</label>
@@ -575,29 +554,13 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>lato12</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>[B]$INFO[Player.Time][/B]</label>
                         <visible>false</visible>
                         <!-- <visible>Player.HasDuration</visible> -->
                     </control>
-					   <control type="button" id="5005">
-                <description>MoreInfo Progressbar Time Button</description>
-                <posx>430</posx><!-- #should match 5004 -->
-                <posy>435r</posy>
-                <width>165</width>
-                <height>30</height>
-                <textcolor>FFFFFFFF</textcolor>
-                <shadowcolor>ff000000</shadowcolor>
-                <font>font12</font>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[Player.TimeRemaining]</label>
-                <texturefocus>pstvlButtonFocus.png</texturefocus>
-                <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
-                <visible>!Control.IsVisible(101) + [Control.IsVisible(5004)]</visible>
-</control>
 					 <control type="label" id="518">"
                         <description>Seekbar time</description>
                         <posx>0</posx>
@@ -607,7 +570,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>lato12</font>
                         <align>center</align>
                         <aligny>center</aligny>
                         <label>      [B]  $INFO[Player.Duration,[COLOR=FF0084ff]Duration:     [/COLOR]][/B]</label>
@@ -622,7 +585,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>lato12</font>
                         <align>center</align>
                         <aligny>center</aligny>
                         <label>      [B] $INFO[Player.Time,[COLOR=FF0084ff]   Elapsed:    [/COLOR] ][/B]</label>
@@ -637,7 +600,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>lato12</font>
                         <align>center</align>
                         <aligny>center</aligny>
                         <label> [B]$INFO[Player.TimeRemaining,[COLOR=FF0084ff]   Remaining:   [/COLOR] ][/B]</label>
@@ -661,7 +624,7 @@
                         <wrapmultiline>true</wrapmultiline>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12_Title</font>
+                        <font>lato12</font>
                         <label>  $INFO[Window(10000).Property(OVERLAY.Year),[COLOR=FF0084ff]   Year: [/COLOR] ]</label>
                     </control>
 					<control type="label">
@@ -674,7 +637,7 @@
                         <aligny>bottom</aligny>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12_Title</font>
+                        <font>lato12</font>
                         <label>    $INFO[VideoPlayer.Rating,[COLOR=FF0084ff]IMBD:  [/COLOR]]</label>
                     </control>
                     <control type="label">
@@ -688,7 +651,7 @@
                         <wrapmultiline>true</wrapmultiline>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12_Title</font>
+                        <font>lato12</font>
                         <label>$INFO[Window(10000).Property(OVERLAY.Genre),[COLOR=FF0084ff]   Genre: [/COLOR] ]</label>
                     </control>
 					<control type="label">
@@ -701,7 +664,7 @@
                         <aligny>bottom</aligny>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12_Title</font>
+                        <font>lato12</font>
                         <label>  $INFO[VideoPlayer.Studio,[COLOR=FF0084ff]Studio:  [/COLOR]]</label>
                     </control>
                 </control>  
@@ -716,7 +679,7 @@
                     <wrapmultiline>true</wrapmultiline>
                     <textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <label>[COLOR=FF0084ff][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
              <!-- line 4 -->
@@ -873,7 +836,7 @@
                         <label>Coming Up Next</label>
                         <label>Coming Up Next</label>
                         <label>$INFO[Window(10000).Property(OVERLAY.NEXT.Title)]</label>
-                        <font>font12_Title</font>
+                        <font>lato12</font>
                         <scroll>false</scroll>
                         <scrollout>false</scrollout>
                         <textcolor>FFFFFFFF</textcolor>
@@ -972,7 +935,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -986,7 +949,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1000,7 +963,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1014,7 +977,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1028,7 +991,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1042,7 +1005,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1056,7 +1019,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1070,7 +1033,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1084,7 +1047,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1098,7 +1061,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1112,7 +1075,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1126,7 +1089,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1139,9 +1102,11 @@
         <control type="group" id="101">    
             <visible></visible>
             <control type="image">
+			    <posx>0</posx>
+                <posy>-20</posy>
                 <description>Loading Background Image</description>
                 <width>1920</width>
-                <height>1080</height>
+                <height>1140</height>
                 <texture>pstvlBackground.png</texture>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -1167,7 +1132,7 @@
                     <description>Loading Background Text</description>
                     <width>1280</width>
                     <height>40</height>
-                    <font>font12_Title</font>
+                    <font>lato13</font>
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
@@ -1214,7 +1179,7 @@
                     <posy>700</posy>
                     <width>1980</width>
                     <height min="40" max="80">auto</height>
-                    <font>font30</font>
+                    <font>lato13</font>
                     <aligny>center</aligny>
                     <align>center</align>
                     <scroll>True</scroll>
@@ -1232,7 +1197,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1250,7 +1215,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>lato12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
