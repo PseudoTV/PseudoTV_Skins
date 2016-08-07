@@ -4,8 +4,8 @@
     <!-- <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(9506)</onload> -->
     <onload condition="StringCompare((Window(10000).Property(PTVL.VideoWindow)),true)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for 9506 starting paused -->
     <onunload>ActivateWindow(12005)</onunload>
-    <onload>SetProperty(PTVL.OnDemand_Opened,true,10000)</onload>
-    <onunload>SetProperty(PTVL.OnDemand_Opened,false,10000)</onunload>
+    <onload>SetProperty(PTVL.DVR_Opened,true,10000)</onload>
+    <onunload>SetProperty(PTVL.DVR_Opened,false,10000)</onunload>
     <zorder>1</zorder>
     <coordinates>
         <system>1</system>
@@ -13,7 +13,7 @@
         <posy>0</posy>
     </coordinates>
     <controls>
-         <control type="image">
+       <control type="image">
             <description>EPG Background</description>
             <posx>-20</posx>
             <posy>-20</posy>
@@ -78,7 +78,7 @@
 				<posy>10</posy>
                 <width>480</width>      
                 <height>24</height>
-                <font>font13_Title</font>
+                <font>framd13</font>
                 <textcolor>ff000000</textcolor>
                 <align>left</align>
                 <scroll>true</scroll>
@@ -86,12 +86,12 @@
                 <label>Now Watching:</label>
                 <aligny>left</aligny>
             </control>
- <control type="button" id="6001">
+       		<control type="button" id="6001">
 			<posx>14</posx>
 			<posy>312</posy>
             <width>359</width>       
             <height>64</height>
-            <font>font13_Title</font>
+            <font>framd13</font>
             <textcolor>ff000000</textcolor>
             <align>center</align>
             <label>TV Guide</label>
@@ -140,7 +140,7 @@
 				<posy>447</posy>
                 <width>359</width>       
                 <height>64</height>
-                <font>font13_Title</font>
+                <font>framd13</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>Recordings</label>
@@ -162,7 +162,7 @@
 				<posy>588</posy>
                 <width>359</width>       
                 <height>64</height>
-                <font>font13_Title</font>
+                <font>framd13</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>On Demand</label>
@@ -194,7 +194,7 @@
 				<posy>728</posy>
                 <width>359</width>       
                 <height>64</height>
-                <font>font13_Title</font>
+                <font>framd13</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>Applications</label>
@@ -245,7 +245,7 @@
             <width min="40" max="100">auto</width>
             <height>30</height>
             <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-            <font>font12_Title</font>
+            <font>framd12</font>
             <align>center</align>
             <textcolor>ff000000</textcolor>
 			<visible>true</visible>
@@ -276,7 +276,7 @@
             <width>300</width>                  
             <height>60</height>                 
             <label>$INFO[System.Time]</label>   
-            <font>font30_Title</font>           
+            <font>framd13</font>           
             <align>center</align>               
             <textcolor>ff000000</textcolor>     
         </control>
@@ -308,7 +308,7 @@
 				<posy>10</posy>
                 <width>480</width>      
                 <height>24</height>
-                <font>font13_Title</font>
+                <font>framd13</font>
                 <textcolor>ff000000</textcolor>
                 <align>left</align>
                 <scroll>true</scroll>
@@ -332,7 +332,7 @@
 				<posy>60</posy>
                 <width>980</width>       
                 <height>24</height>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <textcolor>ff8a2be2</textcolor>
                 <align>center</align>
                 <label>$INFO[VideoPlayer.Tagline,","]</label>
@@ -344,7 +344,7 @@
             <posy>60</posy>
                 <width>980</width>       
                 <height>24</height>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <textcolor>ff8a2be2</textcolor>
                 <align>left</align>
                 <label>$INFO[VideoPlayer.Title,","]</label>
@@ -355,7 +355,7 @@
 				<posy>20</posy>
                 <width>1000</width>       
                 <height>24</height>
-                <font>font24_Title</font>
+                <font>framd14</font>
                 <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <label>$INFO[Window(10000).Property(OVERLAY.Title)]</label>
@@ -368,16 +368,11 @@
             	<height>140</height>
             	<align>center</align>
             	<aligny>bottom</aligny>
-     <font>font12_Title</font>
+     <font>framd12</font>
      <textcolor>ff000000</textcolor>
                  <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
      <autoscroll time="4000" delay="4000" repeat="8000">True</autoscroll>
  </control>
-			
-      
-             
-      
-     
         <!--line 2 -->
         <control type="grouplist">
             <posx>400</posx>
@@ -385,43 +380,6 @@
             <width>1060</width>
             <orientation>vertical</orientation>
             <itemgap>4</itemgap>
-           <control type="image">
-                <description>Seekbar Line</description>
-                <width>1400</width>
-                <height>14</height>
-                <texture>seek/progress_mid.png</texture>
-                <align>center</align>
-                <aligny>center</aligny>
-                <visible>!Control.IsVisible(515)</visible>
-            </control>
-            <control type="group" id="515">  
-                <control type="progress">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>1060</width>
-                    <height>14</height>
-                    <texturebg>seek/progress_back.png</texturebg>
-                    <lefttexture border="0">seek/progresscache_left.png</lefttexture>
-                    <midtexture border="0">seek/progresscache_mid.png</midtexture>
-                    <righttexture border="0">seek/progresscache_right.png</righttexture>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <info>Player.ProgressCache</info>
-                </control>
-                <control type="progress">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>1060</width>
-                    <height>14</height>
-                    <texturebg>seek/progresscache_back.png</texturebg>
-                    <lefttexture border="0">seek/progress_left.png</lefttexture>
-                    <midtexture border="0">seek/progress_mid.png</midtexture>
-                    <righttexture border="0">seek/progress_right.png</righttexture>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <info>Player.Progress</info>
-                </control> 
-            </control>  
             <control type="label">
                 <description>Show Description</description>
                 <width>1400</width>
@@ -432,7 +390,7 @@
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <label>$INFO[Window(10000).Property(Playing.Description)]</label>
-                <font>font12</font>
+                <font>framd12</font>
             </control> 
         </control>  
     </controls>

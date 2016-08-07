@@ -1,0 +1,10 @@
+<fonts>
+    <font res="720p"  name="framd10" filename="framd.ttf" size="12" />
+    <font res="1080i" name="framd10" filename="framd.ttf" size="18" />
+    <font res="720p"  name="framd12" filename="framd.ttf" size="18" />
+    <font res="1080i" name="framd12" filename="framd.ttf" size="24" />
+    <font res="720p"  name="framd13" filename="framd.ttf" size="24" />
+    <font res="1080i" name="framd13" filename="framd.ttf" size="36" />
+    <font res="720p"  name="framd14" filename="framd.ttf" size="36" />
+    <font res="1080i" name="framd14" filename="framd.ttf" size="48" />
+</fonts>

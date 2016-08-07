@@ -14,9 +14,10 @@
     <onload>SetProperty(EPG.type4,poster,10000)</onload>
     <!-- Set EPG props -->
     <onload>SetProperty(EPG.rowCount,6,10000)</onload>
+	<onload>SetProperty(EPG.shadowColor,0xff000000,10000)</onload>
     <onload>SetProperty(EPG.focused_textColor,0xFF000000,10000)</onload>
-    <onload>SetProperty(EPG.textColor,0xFF0297eb,10000)</onload>
-    <onload>SetProperty(EPG.textFont,font12_Title,10000)</onload>
+    <onload>SetProperty(EPG.textColor,0xffffffff,10000)</onload>
+    <onload>SetProperty(EPG.textFont,framd12,10000)</onload>
     <!-- Overlay controls -->
     <controls>   
         <control type="image" id="203">
@@ -56,7 +57,7 @@
                 <description>Loading Background Text</description>
                 <width>1920</width>
                 <height>1080</height>
-                <font>font30</font>
+                <font>framd13</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT)]</label>
@@ -86,7 +87,7 @@
                         <height>75</height>
                         <description>StarOver Label</description>
                         <label>To Start Over | Press </label>
-                        <font>font12_Title</font>
+                        <font>framd12</font>
                         <align>right</align>
                         <aligny>top</aligny>
                         <textcolor>ff000000</textcolor>
@@ -121,7 +122,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Genre</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>VideoPlayer.Content(Movies)</visible>
@@ -133,7 +134,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Elapsed</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>!VideoPlayer.Content(Movies)+!VideoPlayer.Content(Episodes)</visible>
@@ -143,11 +144,11 @@
 		 		<posx>240</posx>
 				<posy>293</posy>
 				<height>30</height>
-				<width min="55" max="970">auto</width>
+				<width min="55" max="470">auto</width>
 				<label fallback=Unknown>$INFO[VideoPlayer.Genre,,]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<textcolor>ff000000</textcolor>
 				<visible>VideoPlayer.Content(Movies)</visible>
 			</control>
@@ -156,11 +157,11 @@
 		 		<posx>245</posx>
 				<posy>293</posy>
 				<height>30</height>
-				<width min="55" max="970">auto</width>
+				<width min="55" max="470">auto</width>
 				<label fallback="">$INFO[Player.Time]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<textcolor>ff000000</textcolor>
 				<visible>!VideoPlayer.Content(Movies)+!VideoPlayer.Content(Episodes)</visible>
 			</control>
@@ -171,7 +172,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Episode</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>VideoPlayer.Content(Episodes)</visible>
@@ -185,7 +186,7 @@
             	<label>$INFO[Window(10000).Property(OVERLAY.SEtitle)]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<textcolor>ff000000</textcolor>
 				<scroll>true</scroll>
                 <wrapmultiline>false</wrapmultiline>
@@ -201,7 +202,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Director</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -209,12 +210,12 @@
             </control>
 			 <control type="label">
                 <posx>-45</posx>
-                <posy>330</posy>
+                <posy>335</posy>
                 <description>remaining</description>
                 <width>300</width>
                 <height>30</height>
                 <label>Remaining</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -226,7 +227,7 @@
 				<posy>330</posy>
 				<width>1280</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Director, ]</label>
@@ -238,7 +239,7 @@
 				<posy>330</posy>
 				<width>1280</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[Player.TimeRemaining]</label>
@@ -251,7 +252,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Duration</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -263,7 +264,7 @@
 				<posy>370</posy>
 				<width>1680</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Duration]</label>
@@ -277,7 +278,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>First Aired</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -289,7 +290,7 @@
 				<posy>373</posy>
 				<width>1080</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Premiered, ]</label>
@@ -307,10 +308,10 @@
 					<control type="label" id="1">
 				<description>Rating</description>
 				<posx>250</posx>
-				<posy>430</posy>
+				<posy>440</posy>
 				<width>1680</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.RatingandVotes]</label>
@@ -382,10 +383,10 @@
             <control type="image">
                 <description>Dynamic artwork</description>
                 <animation effect="fade" time="500">VisibleChange</animation> 
-                <posx>75</posx>
+                <posx>85</posx>
                 <posy>260r</posy>  
-                <width>420</width>      
-                <height>250</height>
+                <width>400</width>      
+                <height>220</height>
               <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
                 <texture fallback="">$INFO[Window(10000).Property(OVERLAY.landscape)]</texture>
@@ -421,7 +422,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="470">auto</width>
                     <height>30</height>
-                    <font>font24_Title</font>
+                    <font>framd13</font>
                     <textcolor>ff000000</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
@@ -437,70 +438,58 @@
                 <posy>500</posy>
                 <width>470</width>
                 <orientation>vertical</orientation>
-                <itemgap>16</itemgap>
-				 <control type="label">
-                    <description>Show Description</description>
-                    <posx>30</posx>
-                    <posy>400</posy> 
-                    <width>470</width>
-                    <height>490</height>
-                    <align>left</align>
-                    <aligny>bottom</aligny>
-                    <wrapmultiline>true</wrapmultiline>
-                    <textcolor>ff000000</textcolor>
-                    <font>font12_Title</font>
-                    <label>[COLOR=purple][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
-                </control>
+                <itemgap>2</itemgap>
+				<control type="textbox">
+				<posx>30</posx>
+            	<posy>400</posy>
+            	<width>470</width>
+            	<height>213</height>
+            	<align>left</align>
+            	<aligny>bottom</aligny>
+				<font>framd12</font>
+				<textcolor>ff000000</textcolor>
+                <label>[COLOR=purple][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+				<autoscroll time="4000" delay="4000" repeat="8000">True</autoscroll>
+			</control>
 				<control type="button" id="5006">
                 <description>Info Progressbar Time Button</description>
-                <posx>430</posx><!-- #should match 5007 -->
-                <posy>235r</posy>
+                <posx>60</posx><!-- #should match 5007 -->
+                <posy>470r</posy>
                 <width>165</width>
                 <height>30</height>
-                <font>font12</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <shadowcolor>ff000000</shadowcolor>
+                <font>framd10</font>
+                <textcolor>ff000000</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
                 <label>$INFO[Player.Time]</label>
                 <texturefocus>pstvlButtonFocus.png</texturefocus>
                 <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
                 <visible>false</visible>
-            </control>
-                <control type="group"> 
-                    <visible>false</visible>
-					
-                    <control type="progress">
-                        <posx>0</posx>
-                        <posy>0</posy> 
-                        <width>1200</width>
-                        <height>6</height>
-                        <texturebg>seek/progress_back.png</texturebg>
-                        <lefttexture border="0">seek/progresscache_left.png</lefttexture>
-                        <midtexture border="0">seek/progresscache_mid.png</midtexture>
-                        <righttexture border="0">seek/progresscache_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.ProgressCache</info>
-                        <visible>Control.IsVisible(5007)</visible>
-                    </control>
-                    <control type="progress" id="5007">
-                        <posx>0</posx>
-                        <posy>-10</posy> 
-                        <width>1200</width>
-                        <height>24</height>
-                        <texturebg>seek/progresscache_back.png</texturebg>
-                        <lefttexture border="0">seek/progress_left.png</lefttexture>
-                        <midtexture border="0">seek/progress_mid.png</midtexture>
-                        <righttexture border="0">seek/progress_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.Progress</info>
-                    </control> 
-                </control>  
-               
-            </control> 
-        </control>
+            </control>	
+		</control> 
+		 <control type="group">
+             <visible></visible>
+                <control type="image">
+                    <description>Info Seekbar Line</description>
+                    <posx>60</posx>
+                    <posy>500r</posy>
+                    <width>400</width>
+                    <height>12</height>
+                    <texture>seek/osd_bg_progress.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="image" id="5007">
+                    <posx>60</posx>
+                    <posy>500r</posy>
+                    <width>400</width>
+                    <height>10</height>
+                    <texture>seek/progress_mid.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+               </control> 
+            </control>   
+       </control>
 		
         <!-- MOREINFO -->
         <control type="group" id="222">
@@ -535,7 +524,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>framd12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -551,7 +540,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>framd12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -567,7 +556,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>framd12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -583,7 +572,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>framd12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -657,7 +646,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="1100">auto</width>
                     <height>30</height>
-                    <font>font24_Title</font>
+                    <font>framd13</font>
                     <textcolor>ff000000</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
@@ -680,7 +669,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Premiered</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -694,7 +683,7 @@
             	<label>$INFO[VideoPlayer.Premiered]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<textcolor>ff000000</textcolor>
 				<shadowcolor>55000000</shadowcolor>
 				<scroll>true</scroll>
@@ -709,7 +698,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Studio</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -720,7 +709,7 @@
 				<posy>132</posy>
 				<width min="55" max="530">auto</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Studio]</label>
@@ -736,7 +725,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Director</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -747,7 +736,7 @@
 				<posy>175</posy>
 				<width>1080</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Director]</label>
@@ -765,7 +754,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Genre</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -779,7 +768,7 @@
 				<label fallback=Unknown>$INFO[VideoPlayer.Genre,,]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<textcolor>ff000000</textcolor>
 				<shadowcolor>55000000</shadowcolor>
 			</control>
@@ -790,7 +779,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Studio</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -801,7 +790,7 @@
 				<posy>130</posy>
 				<width>1280</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Studio, ]</label>
@@ -813,7 +802,7 @@
                 <width>300</width>
                 <height>30</height>
                 <label>Duration</label>
-                <font>font12_Title</font>
+                <font>framd12</font>
                 <align>center</align>
                 <textcolor>purple</textcolor>
                 <visible>true</visible>
@@ -824,7 +813,7 @@
 				<posy>175</posy>
 				<width>1080</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>framd12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>ff000000</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Duration, ]</label>
@@ -836,44 +825,30 @@
                 <width>1100</width>
                 <orientation>vertical</orientation>
                 <itemgap>4</itemgap>
-                <control type="image">
-                    <description>Seekbar Line</description>
+                <control type="group" >  
+                    <posx>0</posx>
+                    <posy>0</posy>
+					 <control type="group">
+					<control type="image">
+                    <description>Info Seekbar Line</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1100</width>
+                    <height>4</height>
+                    <texture>seek/osd_bg_progress.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="image" id="5004">
+                    <posx>0</posx>
+                    <posy>0</posy>
                     <width>1100</width>
                     <height>4</height>
                     <texture>seek/progress_mid.png</texture>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <visible>!Control.IsVisible(5004)</visible>
-                </control>
-                <control type="group" >  
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <control type="progress">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1100</width>
-                        <height>6</height>
-                        <texturebg>seek/progress_back.png</texturebg>
-                        <lefttexture border="0">seek/progresscache_left.png</lefttexture>
-                        <midtexture border="0">seek/progresscache_mid.png</midtexture>
-                        <righttexture border="0">seek/progresscache_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.ProgressCache</info>
-                    </control>
-                    <control type="progress" id="5004">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1100</width>
-                        <height>6</height>
-                        <texturebg>seek/progresscache_back.png</texturebg>
-                        <lefttexture border="0">seek/progress_left.png</lefttexture>
-                        <midtexture border="0">seek/progress_mid.png</midtexture>
-                        <righttexture border="0">seek/progress_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.Progress</info>
-                    </control>
+               </control> 
+            </control>   
 					 <control type="button" id="5005">
                 <description>MoreInfo Progressbar Time Button</description>
                 <posx>430</posx><!-- #should match 5004 -->
@@ -969,7 +944,7 @@
                     <aligny>bottom</aligny>
                     <wrapmultiline>true</wrapmultiline>
                     <textcolor>ff000000</textcolor>
-                    <font>font12_Title</font>
+                    <font>framd12</font>
                     <label>[COLOR=purple][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
                    
@@ -1118,7 +1093,7 @@
                         <label>Coming Up Next</label>
                         <label>Coming Up Next</label>
                         <label>$INFO[Window(10000).Property(OVERLAY.NEXT.Title)]</label>
-                        <font>font12_Title</font>
+                        <font>framd12</font>
                         <scroll>false</scroll>
                         <scrollout>false</scrollout>
                         <textcolor>ff000000</textcolor>
