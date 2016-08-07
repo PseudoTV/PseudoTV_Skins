@@ -50,7 +50,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>EPG</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -65,7 +65,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>DVR</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -80,7 +80,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>OnDemand</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -95,7 +95,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>Apps</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -188,7 +188,7 @@
                     <fadetime>500</fadetime>
                     <aligny>center</aligny>
                     <align>center</align>
-					<font>font12_Title</font>
+					<font>ubuntu12</font>
                     <textcolor>ff000000</textcolor>
                     <wrapmultiline>False</wrapmultiline>
                     <label>$INFO[Container(500).ListItem.Label]</label>

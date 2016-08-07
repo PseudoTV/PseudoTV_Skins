@@ -1,0 +1,10 @@
+<fonts>
+    <font res="720p"  name="ubuntu10" filename="Ubuntu-L.ttf" size="12" />
+    <font res="1080i" name="ubuntu10" filename="Ubuntu-L.ttf" size="18" />
+    <font res="720p"  name="ubuntu12" filename="Ubuntu-L.ttf" size="18" />
+    <font res="1080i" name="ubuntu12" filename="Ubuntu-L.ttf" size="24" />
+    <font res="720p"  name="ubuntu13" filename="Ubuntu-L.ttf" size="24" />
+    <font res="1080i" name="ubuntu13" filename="Ubuntu-L.ttf" size="36" />
+    <font res="720p"  name="ubuntu14" filename="Ubuntu-L.ttf" size="36" />
+    <font res="1080i" name="ubuntu14" filename="Ubuntu-L.ttf" size="48" />
+</fonts>

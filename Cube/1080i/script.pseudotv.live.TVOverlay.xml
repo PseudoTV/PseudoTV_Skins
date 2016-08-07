@@ -17,7 +17,7 @@
     <onload>SetProperty(EPG.shadowColor,0xFF000000,10000)</onload>
     <onload>SetProperty(EPG.focused_textColor,0xffffa500,10000)</onload>
     <onload>SetProperty(EPG.textColor,0xFFFFFFFF,10000)</onload>
-    <onload>SetProperty(EPG.textFont,font12_Title,10000)</onload>
+    <onload>SetProperty(EPG.textFont,ubuntu12,10000)</onload>
     <!-- Overlay controls -->
     <controls>
 	 <control type="group" id="101">
@@ -105,7 +105,7 @@
                     <height>165</height>
                     <description>StarOver Label</description>
                     <label>To Start Over | Press </label>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>orange</textcolor>
@@ -179,7 +179,7 @@
                 <height>280</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture diffuse="video_diffuse.png"></texture>
-                <texture fallback="">$INFO[Window(10000).Property(OVERLAY.poster)]</texture>
+                <texture fallback="empty.png">$INFO[Window(10000).Property(OVERLAY.poster)]</texture>
                 <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
             </control>
 			 <control type="image">
@@ -191,7 +191,7 @@
                 <height>210</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture diffuse="video_diffuse.png"></texture>
-                <texture fallback="">$INFO[Window(10000).Property(OVERLAY.landscape)]</texture>
+                <texture fallback="fanart.png">$INFO[Window(10000).Property(OVERLAY.landscape)]</texture>
                 <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
             </control>   
             <control type="image">
@@ -224,7 +224,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="1100">auto</width>
                     <height>30</height>
-                    <font>font30_Title</font>
+                    <font>ubuntu13</font>
                     <textcolor>orange</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <scroll>true</scroll>
@@ -242,7 +242,7 @@
 					<posy>860</posy>
                     <width min="5" max="1100">auto</width>
                     <height>30</height>
-                    <font>font13_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>orange</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <scroll>true</scroll>
@@ -259,7 +259,7 @@
 					<posy>790</posy>
                     <width min="5" max="1100">auto</width>
                     <height>30</height>
-                    <font>font30_Title</font>
+                    <font>ubuntu14</font>
                     <textcolor>orange</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <align>left</align>
@@ -283,7 +283,7 @@
 		 
             <control type="grouplist">
                 <posx>420</posx>
-                <posy>900</posy>
+                <posy>920</posy>
                 <width>1400</width>
                 <orientation>vertical</orientation>
                 <itemgap>4</itemgap>
@@ -298,8 +298,8 @@
                     <wrapmultiline>true</wrapmultiline>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
-                    <font>font12_Title</font>
-                    <label>[COLOR=orange][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+                    <font>ubuntu12</font>
+                    <label>[COLOR=orange]$INFO[Window(10000).Property(OVERLAY.Time)] • [/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
 				 <control type="button" id="5006">
                 <description>Info Progressbar Time Button</description>
@@ -307,7 +307,7 @@
                 <posy>235r</posy>
                 <width>165</width>
                 <height>30</height>
-                <font>font12</font>
+                <font>ubuntu12</font>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -317,36 +317,28 @@
                 <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
                 <visible>false</visible>
             </control>
-                <control type="group"> 
-                    <visible>false</visible>
-                    <control type="progress">
-                        <posx>0</posx>
-                        <posy>0</posy> 
-                        <width>1400</width>
-                        <height>4</height>
-                        <texturebg>seek/progress_back.png</texturebg>
-                        <lefttexture border="0">seek/progresscache_left.png</lefttexture>
-                        <midtexture border="0">seek/progresscache_mid.png</midtexture>
-                        <righttexture border="0">seek/progresscache_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.ProgressCache</info>
-                        <visible>Control.IsVisible(5007)</visible>
-                    </control>
-                    <control type="progress" id="5007">
-                        <posx>0</posx>
-                        <posy>0</posy> 
-                        <width>1400</width>
-                        <height>4</height>
-                        <texturebg>seek/progresscache_back.png</texturebg>
-                        <lefttexture border="0">seek/progress_left.png</lefttexture>
-                        <midtexture border="0">seek/progress_mid.png</midtexture>
-                        <righttexture border="0">seek/progress_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.Progress</info>
-                    </control> 
-                </control>  
+			 <control type="group">
+             <visible>false</visible>
+                <control type="image">
+                    <description>Info Seekbar Line</description>
+                    <posx>530</posx>
+                    <posy>230</posy>
+                    <width>1000</width>
+                    <height>8</height>
+                    <texture>seek/osd_bg_progress.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="image" id="5007">
+                    <posx>530</posx>
+                    <posy>230</posy>
+                    <width>1000</width>
+                    <height>8</height>
+                    <texture>seek/progress_mid.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control> 
+            </control>    
             </control> 
         </control> 
         <!-- MOREINFO -->
@@ -431,7 +423,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -446,7 +438,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -462,7 +454,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -478,7 +470,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -549,12 +541,12 @@
 			   	<visible>VideoPlayer.Content(Episodes)</visible>
 			<control type="label">
                 <posx>-80</posx>
-                <posy>85</posy>
+                <posy>90</posy>
                 <description>Premiered</description>
                 <width>300</width>
                 <height>30</height>
                 <label>Premiered</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <textcolor>FFEB9E17</textcolor>
                 <visible>true</visible>
@@ -568,7 +560,7 @@
             	<label>$INFO[VideoPlayer.Premiered]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12_Title</font>
+				<font>ubuntu12</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>55000000</shadowcolor>
 				<scroll>true</scroll>
@@ -578,12 +570,12 @@
 			</control>
 			<control type="label">
                 <posx>-105</posx>
-                <posy>130</posy>
+                <posy>135</posy>
                 <description>Studio</description>
                 <width>300</width>
                 <height>30</height>
                 <label>Studio</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <textcolor>FFEB9E17</textcolor>
                 <visible>true</visible>
@@ -591,10 +583,10 @@
 			<control type="label" id="1">
 				<description>Studio</description>
 				<posx>240</posx>
-				<posy>130</posy>
+				<posy>135</posy>
 				<width min="55" max="530">auto</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>ubuntu12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>FFFFFFFF</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Studio]</label>
@@ -605,12 +597,12 @@
 			</control>
 			 <control type="label">
                 <posx>-95</posx>
-                <posy>170</posy>
+                <posy>180</posy>
                 <description>Director</description>
                 <width>300</width>
                 <height>30</height>
                 <label>Director</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <textcolor>FFEB9E17</textcolor>
                 <visible>true</visible>
@@ -618,10 +610,10 @@
 			<control type="label" >
 				<description>Rating</description>
 				<posx>240</posx>
-				<posy>170</posy>
+				<posy>180</posy>
 				<width>1080</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>ubuntu12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>FFFFFFFF</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Director]</label>
@@ -634,12 +626,12 @@
 			    <visible>VideoPlayer.Content(Movies)</visible>
 		 <control type="label">
                 <posx>-100</posx>
-                <posy>80</posy>
+                <posy>90</posy>
                 <description>Genre</description>
                 <width>300</width>
                 <height>30</height>
                 <label>Genre</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <textcolor>FFEB9E17</textcolor>
                 <visible>true</visible>
@@ -653,18 +645,18 @@
 				<label fallback=Unknown>$INFO[VideoPlayer.Genre,,]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12_Title</font>
+				<font>ubuntu12</font>
 				<textcolor>FFFFFFFF</textcolor>
 				<shadowcolor>55000000</shadowcolor>
 			</control>
 			 <control type="label">
                 <posx>-95</posx>
-                <posy>125</posy>
+                <posy>135</posy>
                 <description>Studio</description>
                 <width>300</width>
                 <height>30</height>
                 <label>Studio</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <textcolor>FFEB9E17</textcolor>
                 <visible>true</visible>
@@ -672,22 +664,22 @@
 			<control type="label" id="1">
 				<description>Studio</description>
 				<posx>245</posx>
-				<posy>125</posy>
+				<posy>135</posy>
 				<width>1280</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>ubuntu12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>FFFFFFFF</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Studio, ]</label>
 			</control>
 			 <control type="label">
                 <posx>-80</posx>
-                <posy>170</posy>
+                <posy>180</posy>
                 <description>Duration</description>
                 <width>300</width>
                 <height>30</height>
                 <label>Duration</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <textcolor>FFEB9E17</textcolor>
                 <visible>true</visible>
@@ -695,10 +687,10 @@
 			<control type="label" id="1">
 				<description>Rating</description>
 				<posx>245</posx>
-				<posy>170</posy>
+				<posy>180</posy>
 				<width>1080</width>
 				<height>25</height>
-				<font>font12_Title</font>
+				<font>ubuntu12</font>
 				<aspectratio align="left">keep</aspectratio>
 				<textcolor>FFFFFFFF</textcolor>
 				<label fallback="Unknown">$INFO[VideoPlayer.Duration, ]</label>
@@ -715,7 +707,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="1500">auto</width>
                     <height>30</height>
-                    <font>font24_Title</font>
+                    <font>ubuntu13</font>
                     <textcolor>orange</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <scroll>true</scroll>
@@ -727,53 +719,35 @@
                     <label>$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0][B] • [/B][/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR]</label>
                 </control>
             </control>
+			 <control type="group">
+			 <visible>false</visible>
+                <control type="image">
+                    <description>Info Seekbar Line</description>
+                    <posx>430</posx>
+                    <posy>420r</posy>
+                    <width>1250</width>
+                    <height>6</height>
+                    <texture>seek/osd_bg_progress.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="image" id="5004">
+                    <posx>430</posx>
+                    <posy>420r</posy>
+                    <width>1250</width>
+                    <height>6</height>
+                    <texture>seek/progress_mid.png</texture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control> 
+            </control>    
             <control type="grouplist">
                 <posx>430</posx>
                 <posy>410r</posy>
                 <width>1250</width>
                 <orientation>vertical</orientation>
                 <itemgap>16</itemgap>
-                <control type="image">
-                    <description>Seekbar Line</description>
-                    <width>1100</width>
-                    <height>8</height>
-                    <texture>seek/progress_mid.png</texture>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <visible>!Control.IsVisible(5004)</visible>
-                </control>
-                <control type="group" id="5007">  
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <control type="progress">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1100</width>
-                        <height>8</height>
-                        <texturebg>seek/progress_back.png</texturebg>
-                        <lefttexture border="0">seek/progresscache_left.png</lefttexture>
-                        <midtexture border="0">seek/progresscache_mid.png</midtexture>
-                        <righttexture border="0">seek/progresscache_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.ProgressCache</info>
-						<visible>Control.IsVisible(5004)</visible>
-                    </control>
-                    <control type="progress" id="5004">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1100</width>
-                        <height>8</height>
-                        <texturebg>seek/progresscache_back.png</texturebg>
-                        <lefttexture border="0">seek/progress_left.png</lefttexture>
-                        <midtexture border="0">seek/progress_mid.png</midtexture>
-                        <righttexture border="0">seek/progress_right.png</righttexture>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <info>Player.Progress</info>
-						<visible>Control.IsVisible(5007)</visible>
-                    </control> 
-                </control>
+               
 				<control type="button" id="5005">
                 <description>MoreInfo Progressbar Time Button</description>
                 <posx>430</posx><!-- #should match 5004 -->
@@ -782,13 +756,13 @@
                 <height>30</height>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font12</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <label>$INFO[Player.TimeRemaining]</label>
                 <texturefocus>pstvlButtonFocus.png</texturefocus>
                 <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
-                <visible>!Control.IsVisible(101) + [Control.IsVisible(5004)]</visible>
+                <visible>false</visible>
             </control>
                 <control type="label">
                     <description>Show Description</description>
@@ -801,8 +775,8 @@
                     <wrapmultiline>true</wrapmultiline>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
-                    <font>font12_Title</font>
-                    <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+                    <font>ubuntu12</font>
+                    <label>[COLOR=orange][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
             </control>
             <!-- line 4 -->
@@ -937,7 +911,7 @@
                         <label>Coming Up Next</label>
                         <label>Coming Up Next</label>
                         <label>$INFO[Window(10000).Property(OVERLAY.NEXT.Title)]</label>
-                        <font>font12_Title</font>
+                        <font>ubuntu12</font>
                         <scroll>false</scroll>
                         <scrollout>false</scrollout>
                         <textcolor>orange</textcolor>
@@ -1014,7 +988,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1028,7 +1002,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1043,7 +1017,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1058,7 +1032,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1073,7 +1047,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1088,7 +1062,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1103,7 +1077,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1118,7 +1092,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1133,7 +1107,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1148,7 +1122,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1163,7 +1137,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1178,7 +1152,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>ubuntu12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1232,7 +1206,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>ubuntu12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1250,7 +1224,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>ubuntu12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>

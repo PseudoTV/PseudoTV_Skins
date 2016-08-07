@@ -109,7 +109,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <label>Current Date</label>
-            <font>font12_Title</font>
+            <font>ubuntu12</font>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
         </control>
@@ -129,7 +129,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>EPG</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -144,7 +144,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>DVR</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -159,7 +159,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>OnDemand</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -174,7 +174,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>Apps</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -201,7 +201,7 @@
             <width min="155" max="400">auto</width>
             <height>38</height>
             <label>Time 1</label>
-            <font>font12_Title</font>
+            <font>ubuntu12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -210,12 +210,12 @@
         <!--Time Bar 2/3-->
         <control type="label" id="102">
             <description>Time Middle Label</description>
-            <posx>1235</posx>
+            <posx>1035</posx>
             <posy>795</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 2</label>
-            <font>font12_Title</font>
+            <font>ubuntu12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -224,13 +224,26 @@
         <!--Time Bar 3/3-->
         <control type="label" id="103">
             <description>Time Right Label</description>
-            <posx>1790</posx>
+            <posx>1390</posx>
             <posy>795</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 3</label>
-            <font>font12_Title</font>
+            <font>ubuntu12</font>
             <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+		 <!--Time Bar 4/4-->
+        <control type="label" id="104">
+            <description>Time Right Label</description>
+            <posx>1790</posx>
+            <posy>795</posy>
+            <width>170</width>
+            <height>38</height>
+            <label>Time 4</label>
+            <font>ubuntu12</font>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
@@ -304,7 +317,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -314,7 +327,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -324,7 +337,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -342,7 +355,7 @@
                 <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
              <align>center</align>
                 <aligny>top</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -364,7 +377,7 @@
                 <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>top</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -386,7 +399,7 @@
                 <width>220</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>top</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -481,7 +494,7 @@
             <fadetime>250</fadetime>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
-            <font>font12</font>
+            <font>ubuntu12</font>
             <align>center</align>
             <aligny>center</aligny>
         </control>
@@ -532,13 +545,13 @@
             <posy>860</posy>
             <width>370</width>
             <orientation>vertical</orientation>
-            <itemgap>45</itemgap>
+            <itemgap>2</itemgap>
             <control type="label">
-			<visible>false</visible>
+			<visible></visible>
                 <description>Show Title Label</description>
                 <width min="5" max="370">auto</width>
                 <height>30</height>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <textcolor>ffffa500</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>
@@ -552,7 +565,7 @@
                 <description>Show Title Label</description>
                 <width min="5" max="370">auto</width>
                 <height>30</height>
-                <font>font10_Title</font>
+                <font>ubuntu10</font>
                 <textcolor>ffffa500</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>
@@ -566,7 +579,7 @@
 		
         <control type="grouplist">
             <posx>10</posx>
-            <posy>900</posy>
+            <posy>930</posy>
             <width>470</width>
             <orientation>vertical</orientation>
             <itemgap>4</itemgap>
@@ -622,17 +635,17 @@
             <wrapmultiline>true</wrapmultiline>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
-            <font>font10_Title</font>
+            <font>ubuntu10</font>
 			<visible>false</visible>
         </control>
 		<control type="textbox">
 			<posx>0</posx>
-            <posy>870</posy>
+            <posy>910</posy>
             <width>380</width>
             <height>150</height>
 			<align>left</align>
 			<aligny>top</aligny>
-			<font>font10_Title</font>
+			<font>ubuntu10</font>
 			<textcolor>FFFFFFFF</textcolor>
 			<label>$INFO[Window(10000).Property(EPG.Description)]</label>
 			<autoscroll time="4000" delay="7000" repeat="8000">True</autoscroll>

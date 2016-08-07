@@ -51,7 +51,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>EPG</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -66,7 +66,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>DVR</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -81,7 +81,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>OnDemand</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -96,7 +96,7 @@
                 <width>200</width>
                 <height>38</height>
                 <label>Apps</label>
-                <font>font12_Title</font>
+                <font>ubuntu12</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
