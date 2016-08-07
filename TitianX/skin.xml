@@ -4,9 +4,8 @@
   <version>0.7.9</version>
   <!-- amount to zoom skin to remove overscan compensation -->
   <zoom>0</zoom>
-  
   <credits>
-    <skinname>TitianX</skinname>
+    <skinname>Titian</skinname>
     <name>Tromyl</name>
   </credits>
 </skin>

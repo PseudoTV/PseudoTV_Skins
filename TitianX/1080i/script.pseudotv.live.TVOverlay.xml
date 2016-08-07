@@ -35,7 +35,6 @@
             <posx>-10</posx>
             <posy>805</posy>             
             <animation effect="fade" start="0" end="100" time="300" condition="Control.IsVisible(102)">Conditional</animation>
-            <visible>Player.HasVideo + !Window.IsActive(videoosd)</visible> 
             <control type="image">
                 <description>Info Overlay </description>
                 <width>1940</width>
@@ -790,6 +789,7 @@
                 <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
                 <visible>false</visible>
             </control>
+			</control>
                 <control type="grouplist">
                     <posx>0</posx>
                     <posy>-20</posy>
@@ -873,7 +873,6 @@
                     <label>[COLOR=FF0297eb][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
                    
-            </control>
             <control type="grouplist">
                 <posx>430</posx>
                 <posy>239r</posy>
