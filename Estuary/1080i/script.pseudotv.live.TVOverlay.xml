@@ -1108,6 +1108,7 @@
                 <width>1920</width>
                 <height>1140</height>
                 <texture>pstvlBackground.png</texture>
+                <animation effect="fade" start="25" end="25" condition="True">Conditional</animation>
                 <align>center</align>
                 <aligny>center</aligny>
             </control>
