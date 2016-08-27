@@ -20,8 +20,17 @@
     <onload>SetProperty(EPG.textFont,ubuntu12,10000)</onload>
     <!-- Overlay controls -->
     <controls>
-	 <control type="group" id="101">
-		<visible>false</visible>
+	  <control type="group" id="101">    
+            <visible></visible>
+            <control type="image">
+                <description>Loading Background Image</description>
+                <width>1920</width>
+                <height>1080</height>
+                <texture>pstvlBackground.png</texture>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="grouplist">   
                 <posx>300</posx>
                 <posy>300</posy>
                 <width>1280</width>
@@ -38,31 +47,61 @@
                     <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
                     <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
                 </control>
+                <control type="image">
+                    <description>Busy animation</description>
+                    <width>1280</width>
+                    <height>50</height>
+                    <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
+                    <texture flipx="true" colordiffuse="ff800080">spinner.gif</texture>
+                    <aspectratio>keep</aspectratio>
+                </control>
                 <control type="label">
                     <description>Loading Background Text</description>
                     <width>1280</width>
                     <height>40</height>
-                    <font>font30</font>
+                    <font>ubuntu13</font>
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT)]</label>
                 </control> 
-                <control type="progress">
+				 <control type="label">
+                    <description>Loading Background Text</description>
                     <width>1280</width>
                     <height>20</height>
-                    <texturebg>seek/progresscache_back.png</texturebg>
-                    <lefttexture border="0">seek/progress_left.png</lefttexture>
-                    <midtexture border="0">seek/progress_mid.png</midtexture>
-                    <righttexture border="0">seek/progress_right.png</righttexture>
-                    <righttexture border="0">seek/progresscache_right.png</righttexture>
+                    <font>ubuntu12</font>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <info>$INFO[Window(10000).Property(loading.progress)]</info>
-                    <visible>False</visible>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT2)]</label>
+                </control> 
+                 <control type="progress" id="99">
+                    <width>1280</width>
+                    <height>20</height>
+                    <animation effect="fade" start="25" end="25" condition="True">Conditional</animation>
+                    <texturebg>seek/osd_bg_progress.png</texturebg>
+                    <lefttexture border="0"></lefttexture>
+                    <midtexture border="0">seek/progress_mid.png</midtexture>
+                    <righttexture border="0"></righttexture>
+                    <align>center</align>
+                    <aligny>center</aligny>
                 </control>
-            </control>            
+                <control type="label">
+                    <description>Loading Background Text</description>
+                    <width>1280</width>
+                    <height>20</height>
+                    <font>ubuntu12</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_STATUS)]</label>
+                    <visible>Control.IsVisible(99)</visible>
+                </control> 
+            </control> 
+        </control>
         <control type="image" id="203">
             <description>Corner Channel Bug</description>
             <posx>150</posx>

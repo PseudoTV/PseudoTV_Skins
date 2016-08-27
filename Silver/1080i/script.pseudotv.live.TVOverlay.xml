@@ -41,27 +41,77 @@
                 <align>center</align>
                 <aligny>center</aligny>
             </control>
-            <control type="image">
-                <description>Loading Background Logo</description>
-                <posx>725</posx>
-                <posy>225</posy>
-                <width>480</width>
-                <height>270</height>
-                <aspectratio>keep</aspectratio>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
-                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
-            </control>
-            <control type="label">
-                <description>Loading Background Text</description>
-                <width>1920</width>
+            <control type="grouplist">   
+                <posx>300</posx>
+                <posy>300</posy>
+                <width>1280</width>
                 <height>1080</height>
-                <font>framd13</font>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT)]</label>
-            </control>  
+                <orientation>vertical</orientation>
+                <itemgap>40</itemgap>
+                <control type="image">
+                    <description>Loading Background Logo</description>
+                    <width>1280</width>
+                    <height>270</height>
+                    <aspectratio>keep</aspectratio>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
+                    <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+                </control>
+                <control type="image">
+                    <description>Busy animation</description>
+                    <width>1280</width>
+                    <height>50</height>
+                    <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
+                    <texture flipx="true" colordiffuse="ff800080">spinner.gif</texture>
+                    <aspectratio>keep</aspectratio>
+                </control>
+                <control type="label">
+                    <description>Loading Background Text</description>
+                    <width>1280</width>
+                    <height>40</height>
+                    <font>framd13</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT)]</label>
+                </control> 
+				 <control type="label">
+                    <description>Loading Background Text</description>
+                    <width>1280</width>
+                    <height>20</height>
+                    <font>framd12</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT2)]</label>
+                </control> 
+                 <control type="progress" id="99">
+                    <width>1280</width>
+                    <height>20</height>
+                    <animation effect="fade" start="25" end="25" condition="True">Conditional</animation>
+                    <texturebg>seek/osd_bg_progress.png</texturebg>
+                    <lefttexture border="0"></lefttexture>
+                    <midtexture border="0">seek/progress_mid.png</midtexture>
+                    <righttexture border="0"></righttexture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="label">
+                    <description>Loading Background Text</description>
+                    <width>1280</width>
+                    <height>20</height>
+                    <font>framd12</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_STATUS)]</label>
+                    <visible>Control.IsVisible(99)</visible>
+                </control> 
+            </control> 
         </control>
         <control type="group" id="102">            
             <posx>1400</posx>
