@@ -16,7 +16,7 @@
     <onload>SetProperty(EPG.shadowColor,0xff000000,10000)</onload>
     <onload>SetProperty(EPG.focused_textColor,0xFFFFFFFF,10000)</onload>
     <onload>SetProperty(EPG.textColor,0xFFFFFFFF,10000)</onload>
-    <onload>SetProperty(EPG.textFont,font12_Title,10000)</onload>
+    <onload>SetProperty(EPG.textFont,arial12,10000)</onload>
     <!-- Overlay controls -->
     <controls>   
         <control type="image" id="203">
@@ -34,7 +34,6 @@
             <posx>0</posx>
             <posy>0</posy>             
             <animation effect="fade" start="0" end="100" time="300" condition="Control.IsVisible(102)">Conditional</animation>
-            <visible>Player.HasVideo + !Window.IsActive(videoosd)</visible> 
             <control type="image">
                 <description>Info Overlay </description>
                 <width>1920</width>
@@ -64,8 +63,8 @@
                         <width>336</width>
                         <height>75</height>
                         <description>StarOver Label</description>
-                        <label>[B]To Start Over | Press[/B]</label>
-                        <font>font12</font>
+                        <label>To Start Over | Press</label>
+                        <font>arial12</font>
                         <align>right</align>
                         <aligny>center</aligny>
                         <textcolor>FFFFFFFF</textcolor>
@@ -188,7 +187,7 @@
                <height>45</height>
                <align>left</align>
                <aligny>center</aligny>
-               <font>font12</font>
+               <font>arial12</font>
                <textcolor>FFFFFFFF</textcolor>
                <label>$INFO[VideoPlayer.Genre]  $INFO[VideoPlayer.mpaa]  $INFO[VideoPlayer.TimeRemaining, Remaining: ]</label>
                <scroll>true</scroll>
@@ -201,7 +200,7 @@
                <height>45</height>
                <align>left</align>
                <aligny>center</aligny>
-               <font>font12</font>
+               <font>arial12</font>
                <textcolor>FFFFFFFF</textcolor>
                <label>$INFO[VideoPlayer.mpaa]  $INFO[VideoPlayer.Premiered, First aired: ]  $INFO[Player.Duration, Duration: ]  $INFO[Player.TimeRemaining, Remaining: ]</label>
                <scroll>true</scroll>
@@ -226,7 +225,7 @@
             <width>150</width>
             <height>45</height>
             <label>$INFO[System.Time]</label>
-            <font>font24_Title</font>
+            <font>arial12</font>
             <align>center</align>
             <textcolor>FFFFFFFF</textcolor>
          </control>
@@ -238,7 +237,7 @@
             <width min="60" max="150">auto</width>
             <height>15</height>
             <label>$INFO[Window(10000).Property(OVERLAY.Chnum)]</label>
-            <font>Font24_Title</font>
+            <font>arial12</font>
             <align>center</align>
             <textcolor>FF00b4db</textcolor>
          </control>
@@ -252,7 +251,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="1300">auto</width>
                     <height>30</height>
-                    <font>font14</font>
+                    <font>arial12</font>
                     <textcolor>FF00b4db</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
@@ -260,7 +259,7 @@
                     <wrapmultiline>false</wrapmultiline>
                     <scrollspeed>40</scrollspeed>
                     <scrollsuffix> - </scrollsuffix>
-                    <label>[COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.DYNAMIC_LABEL)] :  [B] [/COLOR]$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0] • [/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR][/B]</label>
+                    <label>[B][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.DYNAMIC_LABEL)] :   [/COLOR]$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0] [/B]• [/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR]</label>
                 </control>
             </control>
 			 <control type="button" id="5006">
@@ -269,7 +268,7 @@
                 <posy>235r</posy>
                 <width>165</width>
                 <height>30</height>
-                <font>font12</font>
+                <font>arial12</font>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -327,20 +326,20 @@
                     <wrapmultiline>true</wrapmultiline>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
-                    <font>font12</font>
-                    <label>[B]$INFO[Window(10000).Property(OVERLAY.Description)][/B]</label>
+                    <font>arial12</font>
+                    <label>$INFO[Window(10000).Property(OVERLAY.Description)]</label>
 					<visible>false</visible>
                 </control>
 				<control type="textbox">
-			<posx>0</posx>
+			<posx>-20</posx>
             <posy>0</posy>
             <width>1000</width>
             <height>110</height>
 			<align>left</align>
 			<aligny>top</aligny>
-			<font>font12</font>
+			<font>arial12</font>
 			<textcolor>FFFFFFFF</textcolor>
-			<label>[COLOR=FF00b4db][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR][B]$INFO[Window(10000).Property(OVERLAY.Description)][/B]</label>
+			<label>[COLOR=FF00b4db]$INFO[Window(10000).Property(OVERLAY.Time)] • [/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
 			<autoscroll time="4000" delay="7000" repeat="8000">True</autoscroll>
 		</control>
             </control> 
@@ -370,7 +369,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -385,7 +384,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -400,7 +399,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -415,7 +414,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -476,8 +475,8 @@
                 <control type="label">
                     <description>Show Title Label</description>
                     <width min="5" max="1800">auto</width>
-                    <height>30</height>
-                    <font>font16</font>
+                    <height>60</height>
+                    <font>arial12</font>
                     <textcolor>FF00B4DB</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <scroll>true</scroll>
@@ -486,7 +485,7 @@
                     <wrapmultiline>false</wrapmultiline>
                     <scrollspeed>40</scrollspeed>
                     <scrollsuffix> - </scrollsuffix>
-                    <label>[B]$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0] • [/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR][/B]</label>
+                    <label>$INFO[Window(10000).Property(OVERLAY.Title)][COLOR=C0C0C0C0] • [/COLOR][COLOR=FFFFFFFF]$INFO[Window(10000).Property(OVERLAY.SEtitle)][/COLOR]</label>
                 </control>
             </control>
             <control type="group">            
@@ -537,7 +536,7 @@
                 <height>30</height>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font12</font>
+                <font>arial12</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <label>$INFO[Player.TimeRemaining]</label>
@@ -560,10 +559,10 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>arial12</font>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label fallback="">[B]$INFO[System.Time, Time: ] $INFO[Player.StartTime, Started: ][/B]</label>
+                        <label fallback="">$INFO[System.Time, Time: ] $INFO[Player.StartTime, Started: ]</label>
                         <visible>False</visible>
                     </control>
                     <control type="label" id="516">
@@ -575,10 +574,10 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>arial12</font>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label>[B]$INFO[Player.Time][/B]</label>
+                        <label>$INFO[Player.Time]</label>
                         <visible>False</visible>
                         <!-- <visible>Player.HasDuration</visible> -->
                     </control>
@@ -591,10 +590,10 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>arial12</font>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <label>      [B]  $INFO[Player.Duration,[COLOR=FF00B4DB]Duration:     [/COLOR]][/B]</label>
+                        <label>        $INFO[Player.Duration,[COLOR=FF00B4DB]Duration:     [/COLOR]]</label>
                         <visible>Player.HasDuration</visible>
                     </control> 
                     <control type="label" id="516">
@@ -606,10 +605,10 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>arial12</font>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <label>      [B] $INFO[Player.Time,[COLOR=FF00B4DB]   Elapsed:    [/COLOR] ][/B]</label>
+                        <label>       $INFO[Player.Time,[COLOR=FF00B4DB]   Elapsed:    [/COLOR] ]</label>
                         <visible>Player.HasDuration</visible>
                     </control> 
 					 <control type="label" id="516">
@@ -621,10 +620,10 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
+                        <font>arial12</font>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <label> [B]$INFO[Player.TimeRemaining,[COLOR=FF00B4DB]   Remaining:   [/COLOR] ][/B]</label>
+                        <label> $INFO[Player.TimeRemaining,[COLOR=FF00B4DB]   Remaining:   [/COLOR] ]</label>
                         <visible>Player.HasDuration</visible>
                     </control>
                    
@@ -645,8 +644,8 @@
                         <wrapmultiline>true</wrapmultiline>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
-                        <label>    [B]$INFO[Window(10000).Property(OVERLAY.Year),[COLOR=FF00B4DB]   Year: [/COLOR] ][/B]</label>
+                        <font>arial12</font>
+                        <label>    $INFO[Window(10000).Property(OVERLAY.Year),[COLOR=FF00B4DB]   Year: [/COLOR] ]</label>
                     </control>
 					<control type="label">
                         <description>Show Info</description>
@@ -658,8 +657,8 @@
                         <aligny>bottom</aligny>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
-                        <label>      [B]$INFO[VideoPlayer.Rating,[COLOR=FF00B4DB]IMBD:  [/COLOR]][/B]</label>
+                        <font>arial12</font>
+                        <label>      $INFO[VideoPlayer.Rating,[COLOR=FF00B4DB]IMBD:  [/COLOR]]</label>
                     </control>
                     <control type="label">
                         <description>Show Info</description>
@@ -672,8 +671,8 @@
                         <wrapmultiline>true</wrapmultiline>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
-                        <label>  [B]$INFO[Window(10000).Property(OVERLAY.Genre),[COLOR=FF00B4DB]   Genre: [/COLOR] ][/B]</label>
+                        <font>arial12</font>
+                        <label>  $INFO[Window(10000).Property(OVERLAY.Genre),[COLOR=FF00B4DB]   Genre: [/COLOR] ]</label>
                     </control>
 					<control type="label">
                         <description>Show Info</description>
@@ -685,8 +684,8 @@
                         <aligny>bottom</aligny>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
-                        <label>    [B]$INFO[VideoPlayer.Studio,[COLOR=FF00B4DB]Studio:  [/COLOR]][/B]</label>
+                        <font>arial12</font>
+                        <label>    $INFO[VideoPlayer.Studio,[COLOR=FF00B4DB]Studio:  [/COLOR]]</label>
                     </control>
 					<control type="label">
                         <description>Show Info</description>
@@ -698,8 +697,8 @@
                         <aligny>bottom</aligny>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>font12</font>
-                        <label>[B]$INFO[VideoPlayer.Director, [COLOR=FF00B4DB]Director:  [/COLOR]][/B]</label>
+                        <font>arial12</font>
+                        <label>$INFO[VideoPlayer.Director, [COLOR=FF00B4DB]Director:  [/COLOR]]</label>
                     </control>
                 </control>  
 			 <control type="label">
@@ -713,8 +712,8 @@
                     <wrapmultiline>true</wrapmultiline>
                     <textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
-                    <font>font12</font>
-                    <label>[COLOR=FF00b4db][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR][B]$INFO[Window(10000).Property(OVERLAY.Description)][/B]</label>
+                    <font>arial12</font>
+                    <label>[COLOR=FF00b4db]$INFO[Window(10000).Property(OVERLAY.Time)] • [/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
             <control type="grouplist">
                 <posx>230</posx>
@@ -845,9 +844,9 @@
                <posy>790</posy>
                <width>750</width>
                <height>30</height>               
-               <font>font12</font>
+               <font>arial12</font>
                <align>left</align>
-			   <label>[B]Coming Up Next:[/B]</label>
+			   <label>Coming Up Next:</label>
                <textcolor>FFFFFFFF</textcolor>
             </control>
 			 <control type="image">
@@ -866,9 +865,9 @@
                <posy>835</posy>
                <width>750</width>
                <height>30</height>               
-               <font>font12</font>
+               <font>arial12</font>
                <align>left</align>
-			   <label>[B]$INFO[Window(10000).Property(OVERLAY.NEXT.Title)][/B]</label>
+			   <label>$INFO[Window(10000).Property(OVERLAY.NEXT.Title)]</label>
                <textcolor>FFFFFFFF</textcolor>
             </control>
             <control type="label">
@@ -877,9 +876,9 @@
                <posy>870</posy>
                <width>750</width>
                <height>30</height>               
-               <font>font12</font>
+               <font>arial12</font>
                <align>left</align>
-			   <label>[B]$INFO[Window(10000).Property(OVERLAY.NEXT.SEtitle)][/B]</label>
+			   <label>$INFO[Window(10000).Property(OVERLAY.NEXT.SEtitle)]</label>
                <textcolor>FFFFFFFF</textcolor>
             </control>         
                 </control>
@@ -949,7 +948,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -963,7 +962,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -977,7 +976,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -991,7 +990,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1005,7 +1004,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1019,7 +1018,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1033,7 +1032,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1047,7 +1046,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1061,7 +1060,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1075,7 +1074,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1089,7 +1088,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1103,7 +1102,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12_Title</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>pstvlButtonNoFocus.png</texturenofocus>
@@ -1119,31 +1118,81 @@
                 <description>Loading Background Image</description>
                 <width>1920</width>
                 <height>1080</height>
-                <texture>maskmain.png</texture>
+                <texture>pstvlBackground.png</texture>
                 <align>center</align>
                 <aligny>center</aligny>
             </control>
-            <control type="image">
-                <description>Loading Background Logo</description>
-                <posx>725</posx>
-                <posy>225</posy>
-                <width>480</width>
-                <height>270</height>
-                <aspectratio>keep</aspectratio>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
-                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
-            </control>
-            <control type="label">
-                <description>Loading Background Text</description>
-                <width>1920</width>
+            <control type="grouplist">   
+                <posx>300</posx>
+                <posy>300</posy>
+                <width>1280</width>
                 <height>1080</height>
-                <font>font30</font>
-                <align>center</align>
-                <aligny>center</aligny>
-                <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT)]</label>
-            </control>  
+                <orientation>vertical</orientation>
+                <itemgap>40</itemgap>
+                <control type="image">
+                    <description>Loading Background Logo</description>
+                    <width>1280</width>
+                    <height>270</height>
+                    <aspectratio>keep</aspectratio>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <texture fallback="logo.png">$INFO[Window(10000).Property(OVERLAY.LOGOART)]</texture>
+                    <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
+                </control>
+                <control type="image">
+                    <description>Busy animation</description>
+                    <width>1280</width>
+                    <height>50</height>
+                    <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
+                    <texture flipx="true" colordiffuse="ff800080">spinner.gif</texture>
+                    <aspectratio>keep</aspectratio>
+                </control>
+                <control type="label">
+                    <description>Loading Background Text</description>
+                    <width>1280</width>
+                    <height>40</height>
+                    <font>arial14</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT)]</label>
+                </control> 
+				 <control type="label">
+                    <description>Loading Background Text</description>
+                    <width>1280</width>
+                    <height>20</height>
+                    <font>arial12</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_TEXT2)]</label>
+                </control> 
+                 <control type="progress" id="99">
+                    <width>1280</width>
+                    <height>20</height>
+                    <animation effect="fade" start="25" end="25" condition="True">Conditional</animation>
+                    <texturebg>seek/osd_bg_progress.png</texturebg>
+                    <lefttexture border="0"></lefttexture>
+                    <midtexture border="0">seek/progress_mid.png</midtexture>
+                    <righttexture border="0"></righttexture>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="label">
+                    <description>Loading Background Text</description>
+                    <width>1280</width>
+                    <height>20</height>
+                    <font>arial12</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <label>$INFO[Window(10000).Property(OVERLAY.BACKGROUND_STATUS)]</label>
+                    <visible>Control.IsVisible(99)</visible>
+                </control> 
+            </control> 
         </control>
    <control type="group" id="7000"> 
             <posx>0</posx>
@@ -1170,7 +1219,7 @@
                     <posy>700</posy>
                     <width>1980</width>
                     <height min="40" max="80">auto</height>
-                    <font>font30</font>
+                    <font>arial16</font>
                     <aligny>center</aligny>
                     <align>center</align>
                     <scroll>True</scroll>
@@ -1188,7 +1237,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1206,7 +1255,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font12</font>
+                    <font>arial12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>

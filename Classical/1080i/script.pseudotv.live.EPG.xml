@@ -23,7 +23,7 @@
                 <description>VideoWindow Box Label</description>
                 <width>360</width>       
                 <height>24</height>
-                <font>font12</font>
+                <font>arial12</font>
                 <textcolor>C0C0C0C0</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -60,7 +60,7 @@
                 <description>PTVL RSS Feed Label</description>  
                 <width>0</width>
                 <height>0</height>
-                <font>font10</font>
+                <font>arial10</font>
                 <aligny>center</aligny>
                 <align>left</align>
                 <scroll>true</scroll>
@@ -84,7 +84,7 @@
          <posy>788</posy>
          <width>450</width>
          <height>45</height>
-         <font>Font_Bold34</font>
+         <font>arial12</font>
          <align>center</align>
          <label>NOW WATCHING:</label>
          <textcolor>C0C0C0C0</textcolor>
@@ -100,7 +100,7 @@
          <height>90</height>
          <aligny>center</aligny>
          <label>Today</label>
-         <font>font12_Title</font>
+         <font>arial12</font>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
         </control>
@@ -123,7 +123,7 @@
          <width>250</width>
          <height>90</height>
          <label>Time 1</label>
-         <font>font12_Title</font>
+         <font>arial12</font>
          <aligny>center</aligny>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
@@ -131,12 +131,12 @@
         <!--Time Bar 2/3-->
         <control type="label" id="102">
             <description>Time Middle Label</description>
-            <posx>968</posx>
+            <posx>800</posx>
          <posy>208</posy>
          <width>170</width>
          <height>90</height>
          <label>Time 2</label>
-         <font>font12_Title</font>
+         <font>arial12</font>
          <align>center</align>
          <aligny>center</aligny>
          <textcolor>FFFFFFFF</textcolor>
@@ -145,15 +145,28 @@
         <!--Time Bar 3/3-->
         <control type="label" id="103">
             <description>Time Right Label</description>
-             <posx>1573</posx>
+             <posx>1200</posx>
          <posy>208</posy>
          <width>200</width>
          <height>90</height>
          <label>Time 3</label>
-         <font>font12_Title</font>
+         <font>arial12</font>
          <aligny>center</aligny>
          <textcolor>FFFFFFFF</textcolor>
          <shadowcolor>FF000000</shadowcolor>
+        </control>
+		 <!--Time Bar 4/4-->
+        <control type="label" id="104">
+            <description>Time Right Label</description>
+            <posx>1600</posx>
+            <posy>208</posy>
+            <width>170</width>
+            <height>90</height>
+            <label>Time 4</label>
+            <font>arial12</font>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
         </control>
         <control type="image" id="5003">
             <description>Right Arrow</description>
@@ -191,7 +204,7 @@
             <description>CH 1 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>arial12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -200,7 +213,7 @@
             <description>CH 2 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>arial12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -209,7 +222,7 @@
             <description>CH 3 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>arial12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -218,7 +231,7 @@
             <description>CH 4 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>arial12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -227,7 +240,7 @@
             <description>CH 5 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>arial12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -236,7 +249,7 @@
             <description>CH 6 NUMBER</description>
             <width>75</width>
             <height>76</height>
-            <font>font12_Title</font>
+            <font>arial12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -304,7 +317,7 @@
          <posy>285</posy>
          <width>300</width>
          <height>63</height>
-         <font>font13</font>
+         <font>aria12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF00B4DB</textcolor>
@@ -327,7 +340,7 @@
          <posy>365</posy>
          <width>300</width>
          <height>63</height>
-         <font>font13</font>
+         <font>arial12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF00B4DB</textcolor>
@@ -350,7 +363,7 @@
          <posy>447</posy>
          <width>300</width>
          <height>63</height>
-         <font>font13</font>
+         <font>arial12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF00B4DB</textcolor>
@@ -373,7 +386,7 @@
          <posy>528</posy>
          <width>300</width>
          <height>63</height>
-         <font>font13</font>
+         <font>arial12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF00B4DB</textcolor>
@@ -396,7 +409,7 @@
          <posy>611</posy>
          <width>300</width>
          <height>63</height>
-         <font>font13</font>
+         <font>arial12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF00B4DB</textcolor>
@@ -419,7 +432,7 @@
          <posy>692</posy>
          <width>300</width>
          <height>63</height>
-         <font>font13</font>
+         <font>arial12</font>
          <align>left</align>
          <aligny>center</aligny>
          <textcolor>FF00B4DB</textcolor>
@@ -436,6 +449,164 @@
          <aspectratio>keep</aspectratio>
          <visible>!StringCompare(Control.GetLabel(326),)</visible>
       </control>
+	   <control type="group">            
+            <posx>105</posx>
+            <posy>-55</posy>
+            <width>278</width>
+            <height>75</height>
+            <itemgap>10</itemgap>
+            <orientation>vertical</orientation>
+            <visible>[StringCompare(Control.GetLabel(301),) + StringCompare(Control.GetLabel(321),)]</visible>
+            <control type="image">
+                <description>Channel 1 Icon</description>            
+                <posx>10</posx>
+                <posy>339</posy>                         
+                <width>75</width>
+                <height>75</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <aspectratio>keep</aspectratio> 
+                <texture fallback="logo.png">$INFO[Window(10000).Property(EPG.LOGO_ROW1)]</texture>
+            </control>
+            <control type="label">
+                <description>Channel 1 Name</description>          
+                <posx>100</posx>
+                <posy>339</posy>
+                <width>255</width>
+                <height>75</height>
+                <font>arial10</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <label>$INFO[Window(10000).Property(EPG.NAME_ROW1)]</label>
+            </control>
+            <control type="image">
+                <description>Channel 2 Icon</description>         
+                <posx>10</posx>
+                <posy>419</posy>                          
+                <width>75</width>
+                <height>75</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <aspectratio>keep</aspectratio>
+                <texture fallback="logo.png">$INFO[Window(10000).Property(EPG.LOGO_ROW2)]</texture>
+            </control>
+            <control type="label">
+                <description>Channel 2 Name</description>     
+                <posx>100</posx>
+                <posy>419</posy>  
+                <width>255</width>
+                <height>75</height>
+                <label></label>
+                <font>arial10</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <label>$INFO[Window(10000).Property(EPG.NAME_ROW2)]</label>
+            </control>
+            <control type="image">
+                <description>Channel 3 Icon</description>         
+                <posx>10</posx>
+                <posy>500</posy>                       
+                <width>75</width>
+                <height>75</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <aspectratio>keep</aspectratio>
+                <texture fallback="logo.png">$INFO[Window(10000).Property(EPG.LOGO_ROW3)]</texture>
+            </control>
+            <control type="label">
+                <description>Channel 3 Name</description>     
+                <posx>100</posx>
+                <posy>500</posy>  
+                <width>255</width>
+                <height>75</height>
+                <label></label>
+                <font>arial10</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <label>$INFO[Window(10000).Property(EPG.NAME_ROW3)]</label>
+            </control>
+            <control type="image">
+                <description>Channel 4 Icon</description>         
+                <posx>10</posx>
+                <posy>585</posy>                       
+                <width>75</width>
+                <height>75</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <aspectratio>keep</aspectratio>
+                <texture fallback="logo.png">$INFO[Window(10000).Property(EPG.LOGO_ROW4)]</texture>
+            </control>
+            <control type="label">
+                <description>Channel 4 Name</description>     
+                <posx>100</posx>
+                <posy>585</posy>  
+                <width>255</width>
+                <height>75</height>
+                <label></label>
+                <font>arial10</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <label>$INFO[Window(10000).Property(EPG.NAME_ROW4)]</label>
+            </control>
+            <control type="image">
+                <description>Channel 5 Icon</description>         
+                <posx>10</posx>
+                <posy>670</posy>                       
+                <width>75</width>
+                <height>75</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <aspectratio>keep</aspectratio> 
+                <texture fallback="logo.png">$INFO[Window(10000).Property(EPG.LOGO_ROW5)]</texture>
+            </control> 
+            <control type="label">
+                <description>Channel 5 Name</description>     
+                <posx>100</posx>
+                <posy>670</posy>  
+                <width>255</width>
+                <height>75</height>
+                <label></label>
+                <font>arial10</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <label>$INFO[Window(10000).Property(EPG.NAME_ROW5)]</label>
+            </control> 
+            <control type="image">
+                <description>Channel 6 Icon</description>         
+                <posx>10</posx>
+                <posy>754</posy>                       
+                <width>75</width>
+                <height>75</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <aspectratio>keep</aspectratio>  
+                <texture fallback="logo.png">$INFO[Window(10000).Property(EPG.LOGO_ROW6)]</texture>
+            </control>   
+            <control type="label">
+                <description>Channel 6 Name</description>     
+                <posx>100</posx>
+                <posy>754</posy>  
+                <width>255</width>
+                <height>75</height>
+                <label></label>
+                <font>arial10</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <label>$INFO[Window(10000).Property(EPG.NAME_ROW6)]</label>
+            </control>
+        </control>
       <!--SHOW LIST -->
       <control type="group" id="111">
          <posx>370</posx>
@@ -508,7 +679,7 @@
             <fadetime>250</fadetime>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
-            <font>font14</font>
+            <font>arial12</font>
             <align>center</align>
             <aligny>center</aligny>
         </control>
@@ -540,7 +711,7 @@
          <width>150</width>
          <height>45</height>
          <label>$INFO[System.Time]</label>
-         <font>font24_Title</font>
+         <font>arial12</font>
          <align>center</align>
          <textcolor>FFFFFFFF</textcolor>
       </control>
@@ -560,7 +731,7 @@
          <width min="60" max="150">auto</width>
          <height>15</height>
          <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
-         <font>Font_Reg10</font>
+         <font>arial12</font>
          <align>center</align>
          <textcolor>FFFFFFFF</textcolor>
          <visible>!Control.IsVisible(800)</visible>
@@ -581,7 +752,7 @@
                 <width>223</width>
                 <height>38</height>
                 <label>EPG</label>
-                <font>font10_Title</font>
+                <font>arial10</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>.png</texturenofocus>
@@ -596,7 +767,7 @@
                 <width>273</width>
                 <height>38</height>
                 <label>[B]DVR[/B]</label>
-                <font>font10_Title</font>
+                <font>arial10</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>.png</texturenofocus>
@@ -611,7 +782,7 @@
                 <width min="5" max="200">auto</width>
                 <height>38</height>
                 <label>On[CR]Demand</label>
-                <font>font10_Title</font>
+                <font>arial10</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>.png</texturenofocus>
@@ -626,7 +797,7 @@
                 <width>273</width>
                 <height>38</height>
                 <label>Apps</label>
-                <font>font10_Title</font>
+                <font>arial10</font>
                 <align>center</align>
                 <aligny>center</aligny>
 				<texturenofocus>.png</texturenofocus>
@@ -645,7 +816,7 @@
                 <description>Show Title Label</description>
                 <width min="5" max="1100">auto</width>
                 <height>30</height>
-                <font>Font_Bold34</font>
+                <font>arial12</font>
                 <textcolor>FF00B4DB</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <scroll>true</scroll>
@@ -713,8 +884,8 @@
                 <wrapmultiline>true</wrapmultiline>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>font12</font>
-                <label>[B]$INFO[Window(10000).Property(EPG.Description)][/B]</label>
+                <font>arial12</font>
+                <label>$INFO[Window(10000).Property(EPG.Description)]</label>
             </control> 
         </control> 
     </controls>

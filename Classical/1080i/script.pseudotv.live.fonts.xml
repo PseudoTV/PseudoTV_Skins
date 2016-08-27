@@ -1,0 +1,10 @@
+<fonts>
+    <font res="720p"  name="arial10" filename="arialbd.ttf" size="12" />
+    <font res="1080i" name="arial10" filename="arialbd.ttf" size="18" />
+    <font res="720p"  name="arial12" filename="arialbd.ttf" size="18" />
+    <font res="1080i" name="arial12" filename="arialbd.ttf" size="24" />
+    <font res="720p"  name="arial13" filename="arialbd.ttf" size="24" />
+    <font res="1080i" name="arial13" filename="arialbd.ttf" size="36" />
+    <font res="720p"  name="arial14" filename="arialbd.ttf" size="36" />
+    <font res="1080i" name="arial14" filename="arialbd.ttf" size="48" />
+</fonts>
