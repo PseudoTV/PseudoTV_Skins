@@ -3,10 +3,12 @@
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
     <onunload>SetProperty(PTVL.EPG_Opened,false,10000)</onunload> 
     <onload>SetProperty(PTVL.EPG_Opened,true,10000)</onload>
-	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,30)</onload>
+	 <onload>Skin.SetString(SkinHelper.RandomFanartDelay, 10)</onload>
     <onload condition="Control.IsVisible(9000)">ActivateWindow(10006)</onload><!-- Activate random window, workaround for videowindow starting paused -->
     <onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload condition="!Control.IsVisible(9000) + System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
+	
+	
 <onunload>ActivateWindow(12005)</onunload>
     <zorder>1</zorder>
     <coordinates>
@@ -31,16 +33,16 @@
 		<control type="image">
             <texture>video2.png</texture>
             <posx>49</posx>
-            <posy>845</posy>
+            <posy>865</posy>
             <width>393</width>
-            <height>230</height>
+            <height>210</height>
             <visible>true</visible>
         </control>
 		 <control type="label" id="9000"> 
                 <description>VideoWindow Box Label</description>
                 <width>360</width>       
                 <height>24</height>
-                <font>font12</font>
+                <font>bold12</font>
                 <textcolor>C0C0C0C0</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -53,7 +55,7 @@
             <control type="videowindow">
                 <description>VideoWindow Box Art</description>
 				<posx>53</posx>
-				<posy>855</posy>
+				<posy>875</posy>
                 <width>382</width>      
                 <height>210</height>
                 <align>center</align>
@@ -86,17 +88,17 @@
 		<control type="image">
             <texture>230.png</texture>
             <posx>59</posx>
-            <posy>920</posy>
+            <posy>940</posy>
             <width>375</width>
-            <height>160</height>
+            <height>140</height>
             <visible>true</visible>
         </control>
 		<control type="label">
 			<posx>55</posx>
-			<posy>1035</posy>
+			<posy>1040</posy>
             <width>360</width>       
             <height>24</height>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <textcolor>ffffa500</textcolor>
             <align>center</align>
             <aligny>center</aligny>
@@ -106,76 +108,76 @@
 		<control type="image">
             <texture>video2.png</texture>
             <posx>524</posx>
-            <posy>846</posy>
+            <posy>866</posy>
             <width>393</width>
-            <height>228</height>
+            <height>208</height>
             <visible>true</visible>
         </control>
         <control type="image">
 		    <posx>533</posx>
-            <posy>855</posy>
+            <posy>875</posy>
             <width>375</width>      
-            <height>212</height>
+            <height>192</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
-            <texture background="true">$INFO[Window(Home).Property(SkinHelper.RecentVideosBackground)]</texture>
+            <texture fallback="">$INFO[Window(10000).Property(EPG.landscape)]</texture>
             <fadetime>2000</fadetime>
         </control>
 		<control type="image">
             <texture>230.png</texture>
             <posx>532</posx>
-            <posy>920</posy>
+            <posy>940</posy>
             <width>377</width>
-            <height>160</height>
+            <height>140</height>
             <visible>true</visible>
             </control>
 		<control type="label">
 			<posx>540</posx>
-			<posy>1037</posy>
+			<posy>1040</posy>
             <width>360</width>       
             <height>24</height>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <textcolor>ffffa500</textcolor>
             <align>center</align>
             <aligny>center</aligny>
-            <label>Recently added Videos</label>
+            <label>$INFO[Window(10000).Property(EPG.DYNAMIC_LABEL)]</label>
         </control> 
         <!-- Panel 3 -->
 		<control type="image">
             <texture>video2.png</texture>
             <posx>1006</posx>
-            <posy>845</posy>
+            <posy>865</posy>
             <width>393</width>
-            <height>230</height>
+            <height>210</height>
             <visible>true</visible>
         </control>
         <control type="image">
 			<posx>1015</posx>
-            <posy>855</posy>
+            <posy>875</posy>
             <width>375</width>      
-            <height>212</height>
+            <height>192</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
-            <texture fallback="">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground.landscape)]</texture>
+            <texture fallback="fanart.png">$INFO[Window(Home).Property(TrendingShows.1.Fanart)]</texture>
             <fadetime>1500</fadetime>
         </control>
 		<control type="image">
             <texture>230.png</texture>
             <posx>1015</posx>
-            <posy>920</posy>
+            <posy>940</posy>
             <width>375</width>
-            <height>160</height>
+            <height>140</height>
             <visible>true</visible>
         </control>
 		<control type="label">
 		    <posx>1010</posx>
-            <posy>1035</posy>
+            <posy>1040</posy>
             <width>370</width>       
             <height>24</height>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <align>center</align>
             <aligny>center</aligny>
-            <label>In Progress TVShows</label>
+            <label>Trending Shows</label>
             <textcolor>ffffa500</textcolor>
             <fadetime>1500</fadetime>
         </control>
@@ -183,28 +185,28 @@
 		<control type="image">
             <texture>video2.png</texture>
             <posx>1485</posx>
-            <posy>845</posy>
+            <posy>865</posy>
             <width>393</width>
-            <height>230</height>
+            <height>210</height>
             <visible>true</visible>
         </control>
         <control type="image">
 		    <posx>1495</posx>
-            <posy>855</posy>
+            <posy>875</posy>
             <width>375</width>      
-            <height>212</height>
+            <height>192</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
-            <texture fallback="">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground.landscape)]</texture>
+			<texture fallback="">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</texture>
 			<visible>true</visible>
             <fadetime>1000</fadetime>
         </control>
 		<control type="image">
             <texture>230.png</texture>
             <posx>1500</posx>
-            <posy>920</posy>
+            <posy>940</posy>
             <width>370</width>
-            <height>160</height>
+            <height>140</height>
             <visible>true</visible>
         </control>
 		<control type="label">
@@ -212,10 +214,10 @@
             <posy>1040</posy>
             <width>360</width>       
             <height>24</height>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <align>center</align>
             <aligny>center</aligny>
-            <label>Unwatched Movies</label>
+            <label>Recently Added</label>
             <textcolor>ffffa500</textcolor>
             <fadetime>1000</fadetime>
         </control> 
@@ -223,9 +225,9 @@
 		<control type="image">
             <texture>pstvlButtonNoFocus.png</texture>
             <posx>10</posx>
-            <posy>831</posy>
+            <posy>851</posy>
             <width>1980</width>
-            <height>325</height>
+            <height>305</height>
             <visible>true</visible>
         </control>
 		<!-- Background Artwork -->
@@ -234,7 +236,7 @@
             <posx>10</posx>
             <posy>645</posy>
             <width>1980</width>
-            <height>180</height>
+            <height>200</height>
             <visible>true</visible>
         </control> 
          <!-- Epg/Recordings/OnDemand/Applications -->
@@ -265,7 +267,7 @@
             <width>173</width>
             <height>38</height>
             <label>TV Guide</label>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <align>left</align>
             <aligny>center</aligny>
 			<texturenofocus>NA.png</texturenofocus>
@@ -278,7 +280,7 @@
             <width>173</width>
             <height>38</height>
             <label>Recordings</label>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <align>left</align>
             <aligny>center</aligny>
 			<texturenofocus>NA.png</texturenofocus>
@@ -291,7 +293,7 @@
             <width>173</width>
             <height>38</height>
             <label>OnDemand</label>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <align>left</align>
             <aligny>center</aligny>
 			<texturenofocus>NA.png</texturenofocus>
@@ -304,7 +306,7 @@
             <width>173</width>
             <height>38</height>
             <label>Applications</label>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <align>left</align>
             <aligny>center</aligny>
 			<texturenofocus>NA.png</texturenofocus>
@@ -435,7 +437,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <label>Current Date</label>
-            <font>font12</font>
+            <font>bold12</font>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
         </control>
@@ -458,7 +460,7 @@
             <width min="155" max="400">auto</width>
             <height>38</height>
             <label>Time 1</label>
-            <font>font12</font>
+            <font>bold12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -467,12 +469,12 @@
         <!--Time Bar 2/3-->
         <control type="label" id="102">
             <description>Time Middle Label</description>
-            <posx>1070</posx>
+            <posx>970</posx>
             <posy>100</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 2</label>
-            <font>font12</font>
+            <font>bold12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -481,16 +483,30 @@
         <!--Time Bar 3/3-->
         <control type="label" id="103">
             <description>Time Right Label</description>
+            <posx>1420</posx>
+            <posy>100</posy>
+            <width min="150" max="400">auto</width>
+            <height>38</height>
+            <label>Time 3</label>
+            <font>bold12</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+		  <!--Time Bar 4/4-->
+        <control type="label" id="104">
+            <description>Time Right Label</description>
             <posx>1820</posx>
             <posy>100</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 3</label>
-            <font>font12</font>
+            <font>bold12</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
-            <shadowcolor>ff000000</shadowcolor>
+            <shadowcolor>D9FFFFFF</shadowcolor>
         </control>
         <control type="image" id="5003">
             <description>Right Arrow</description>
@@ -578,7 +594,7 @@
             <width>75</width>
             <height>64</height>
             <label></label>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -589,7 +605,7 @@
             <width>75</width>
             <height>64</height>
             <label></label>
-            <font>font12_Title</font>
+            <font>bold12</font>
             <align>right</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -600,7 +616,7 @@
                 <width>75</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -611,7 +627,7 @@
                 <width>75</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -622,7 +638,7 @@
                 <width>75</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -633,7 +649,7 @@
                 <width>75</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -652,7 +668,7 @@
                 <width>250</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -673,7 +689,7 @@
                 <width>250</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -694,7 +710,7 @@
                 <width>250</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -715,7 +731,7 @@
                 <width>250</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -736,7 +752,7 @@
                 <width>250</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -757,7 +773,7 @@
                 <width>250</width>
                 <height>64</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>bold12</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ffffa500</textcolor>
@@ -840,7 +856,7 @@
             <fadetime>250</fadetime>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
-            <font>font12</font>
+            <font>bold12</font>
             <align>center</align>
             <aligny>center</aligny>
 			<visible>true</visible>
@@ -900,7 +916,7 @@
         </control>
         <control type="grouplist">
             <posx>30</posx>
-            <posy>655</posy>
+            <posy>665</posy>
             <width>1400</width>
             <orientation>horizontal</orientation>
             <itemgap>5</itemgap>
@@ -908,7 +924,7 @@
                 <description>Show Title Label</description>
                 <width min="5" max="1100">auto</width>
                 <height>30</height>
-                <font>font24_Title</font>
+                <font>bold13</font>
                 <textcolor>orange</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>
@@ -973,15 +989,15 @@
             <wrapmultiline>true</wrapmultiline>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
-            <font>font10_Title</font>
+            <font>bold10</font>
 			<visible>false</visible>
         </control>
 		<control type="textbox">
             <width>1380</width>
-            <height>90</height>
+            <height>120</height>
 			<align>left</align>
 			<aligny>top</aligny>
-			<font>font12_Title</font>
+			<font>bold12</font>
 			<textcolor>FFFFFFFF</textcolor>
 			<label>$INFO[Window(10000).Property(EPG.Description)]</label>
 			<autoscroll time="4000" delay="7000" repeat="8000">True</autoscroll>
@@ -1010,7 +1026,7 @@
             <control type="label">
                 <width>1880</width>
                 <height>55</height>
-                <font>font12</font>
+                <font>bold12</font>
                 <aligny>center</aligny>
                 <align>left</align>
                 <scroll>True</scroll>
