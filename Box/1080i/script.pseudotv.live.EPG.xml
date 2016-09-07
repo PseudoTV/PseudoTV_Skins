@@ -71,11 +71,11 @@
 		 <control type="label">
                 <description>pltv Label</description> 
 				<posx>50</posx>
-			<posy>70</posy>
+			<posy>60</posy>
                 <width>373</width>
                 <height>38</height>
-                <label>Pseudo Live TV</label>
-                <font>font13_Title</font>
+                <label>[B]Pseudo Live TV[/B]</label>
+                <font>X36012</font>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -86,7 +86,7 @@
                 <description>VideoWindow Box Label</description>
                 <width>360</width>       
                 <height>24</height>
-                <font>font12</font>
+                <font>X36012</font>
                 <textcolor>C0C0C0C0</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>center</align>
@@ -140,7 +140,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <label>Current Date</label>
-            <font>font12</font>
+            <font>X36012</font>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
         </control>
@@ -163,7 +163,7 @@
             <width min="155" max="400">auto</width>
             <height>38</height>
             <label>Time 1</label>
-            <font>font12</font>
+            <font>X36012</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -172,12 +172,12 @@
         <!--Time Bar 2/3-->
         <control type="label" id="102">
             <description>Time Middle Label</description>
-            <posx>1215</posx>
+            <posx>1115</posx>
             <posy>70</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 2</label>
-            <font>font12</font>
+            <font>X36012</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -186,12 +186,26 @@
         <!--Time Bar 3/3-->
         <control type="label" id="103">
             <description>Time Right Label</description>
-            <posx>1800</posx>
+            <posx>1400</posx>
             <posy>70</posy>
             <width min="150" max="400">auto</width>
             <height>38</height>
             <label>Time 3</label>
-            <font>font12</font>
+            <font>X36012</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+		 <!--Time Bar 3/3-->
+        <control type="label" id="104">
+            <description>Time Right Label</description>
+            <posx>1700</posx>
+            <posy>70</posy>
+            <width min="150" max="400">auto</width>
+            <height>38</height>
+            <label>Time 3</label>
+            <font>X36012</font>
             <align>left</align>
             <aligny>center</aligny>
             <textcolor>FFFFFFFF</textcolor>
@@ -314,15 +328,15 @@
 	 	</control>
 		 <control type="image" id="5009">     
             <description>Optional Channel Focus Highlight</description>         
-            <posx>380</posx>  
-            <width>315</width>
+            <posx>460</posx>  
+            <width>235</width>
             <height>70</height>
             <texture>pstvlButtonFocus.png</texture>
         </control> 
          <control type="image" id="5010">     
             <description>Optional Channel Playing Highlight</description>         
-            <posx>360</posx>  
-            <width>335</width>
+            <posx>460</posx>  
+            <width>235</width>
             <height>70</height>
             <texture>pstvlHighlightAlt2.png</texture>
 			<colordiffuse></colordiffuse>
@@ -338,7 +352,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -348,7 +362,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -358,7 +372,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -368,7 +382,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -378,7 +392,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -388,7 +402,7 @@
                 <width>75</width>
                 <height>70</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>right</align>
                 <aligny>center</aligny>
                 <textcolor>FFFFFFFF</textcolor>
@@ -396,7 +410,7 @@
         </control>
         <!--Channel List-->
         <control type="grouplist">            
-            <posx>460</posx>
+            <posx>450</posx>
             <posy>127</posy>
             <itemgap>25</itemgap>
             <orientation>vertical</orientation>
@@ -406,7 +420,7 @@
                 <width>230</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
              <align>center</align>
                 <aligny>bottom</aligny>
                 <textcolor>ff000000</textcolor>
@@ -428,7 +442,7 @@
                 <width>230</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -450,7 +464,7 @@
                 <width>230</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -472,7 +486,7 @@
                 <width>230</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -494,7 +508,7 @@
                 <width>230</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -516,7 +530,7 @@
                 <width>230</width>
                 <height>55</height>
                 <label></label>
-                <font>font12_Title</font>
+                <font>X36012</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <textcolor>ff000000</textcolor>
@@ -546,7 +560,7 @@
         </control>
         <control type="grouplist">              
             <posx>10</posx>
-            <posy>400</posy>
+            <posy>380</posy>
             <itemgap>90</itemgap>
             <orientation>vertical</orientation>
             <control type="button" id="6001">
@@ -554,7 +568,7 @@
                 <width>338</width>
                 <height>68</height>
                 <label>TV Listings</label>
-                <font>font24_Title</font>
+                <font>X36014</font>
                 <align>left</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -567,7 +581,7 @@
                 <width>338</width>
                 <height>68</height>
                 <label>Recordings</label>
-                <font>font24_Title</font>
+                <font>X36014</font>
                 <align>left</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -580,7 +594,7 @@
                 <width>338</width>
                 <height>68</height>
                 <label>OnDemand</label>
-                <font>font24_Title</font>
+                <font>X36014</font>
                 <align>left</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -593,7 +607,7 @@
                 <width>338</width>
                 <height>68</height>
                 <label>Applications</label>
-                <font>font24_Title</font>
+                <font>X36014</font>
                 <align>left</align>
                 <aligny>center</aligny>
 				<texturenofocus>NA.png</texturenofocus>
@@ -668,7 +682,7 @@
             <fadetime>250</fadetime>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>ff000000</shadowcolor>
-            <font>font12</font>
+            <font>X36012</font>
             <align>center</align>
             <aligny>center</aligny>
         </control>
@@ -700,9 +714,9 @@
             <description>Dynamic art1</description>
             <animation effect="fade" time="500">VisibleChange</animation> 
             <posx>1430</posx>
-            <posy>800</posy>  
-            <width>440</width>      
-            <height>250</height>
+            <posy>810</posy>  
+            <width>420</width>      
+            <height>230</height>
 			<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="video_diffuse.png"></texture>
             <texture fallback="">$INFO[Window(10000).Property(EPG.landscape)]</texture>
@@ -743,15 +757,15 @@
         </control>
         <control type="grouplist">
             <posx>380</posx>
-            <posy>650</posy>
-            <width>1500</width>
+            <posy>640</posy>
+            <width>1700</width>
             <orientation>horizontal</orientation>
             <itemgap>5</itemgap>
             <control type="label">
                 <description>Show Title Label</description>
                 <width min="5" max="1100">auto</width>
-                <height>30</height>
-                <font>font30_Title</font>
+                <height>60</height>
+                <font>X36014</font>
                 <textcolor>ffffffff</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>
@@ -767,8 +781,8 @@
 				<posy>700</posy>
                 <description>Show Title Label</description>
                 <width min="5" max="1100">auto</width>
-                <height>30</height>
-                <font>font12_Title</font>
+                <height>60</height>
+                <font>X36012</font>
                 <textcolor>ff000000</textcolor>
                 <scroll>true</scroll>
                 <align>left</align>
@@ -776,7 +790,7 @@
                 <wrapmultiline>false</wrapmultiline>
                 <scrollspeed>40</scrollspeed>
                 <scrollsuffix> - </scrollsuffix>
-                <label>$INFO[Window(10000).Property(EPG.SEtitle)]</label>
+                <label>[B]$INFO[Window(10000).Property(EPG.SEtitle)][/B]</label>
             </control>
         <control type="grouplist">
             <posx>380</posx>
@@ -846,20 +860,21 @@
             <height>600</height>
 			<align>left</align>
 			<aligny>top</aligny>
-			<font>font12_Title</font>
+			<font>X36012</font>
 			<textcolor>FFFFFFFF</textcolor>
-			<label>$INFO[Window(10000).Property(EPG.Description)]</label>
+			<shadowcolor>ff000000</shadowcolor>
+			<label>[B]$INFO[Window(10000).Property(EPG.Description)][/B]</label>
 			<autoscroll time="4000" delay="7000" repeat="8000">True</autoscroll>
 		</control>
         </control>
 		<control type="label">                  
             <description>Time</description>     
             <posx>15</posx>                   
-            <posy>990</posy>                    
+            <posy>985</posy>                    
             <width>300</width>                  
             <height>80</height>                 
-            <label>$INFO[System.Time]</label>   
-            <font>font30_Title</font>           
+            <label>[B]$INFO[System.Time][/B]</label>   
+            <font>X36014</font>           
             <align>center</align>               
             <textcolor>ff000000</textcolor>     
         </control>      
