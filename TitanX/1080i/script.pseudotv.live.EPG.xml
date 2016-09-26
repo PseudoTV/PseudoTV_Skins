@@ -976,7 +976,6 @@
         </control>
         <control type="group">
         <control type="image" id="100">
-		<visible>!StringCompare(Control.GetLabel(101),logo.png)</visible>
             <description>Dynamic art2</description>
             <animation effect="fade" time="500">VisibleChange</animation> 
             <posx>5</posx>
@@ -989,20 +988,6 @@
             <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
         </control>
 		 </control>
-		  <control type="image" id="101">
-		 
-                <description>Dynamic artwork</description>
-                <animation effect="fade" time="500">VisibleChange</animation> 
-                <posx>5</posx>
-                <posy>830</posy>  
-                <width>315</width>      
-                <height>210</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="video_diffuse.png"></texture>
-                <texture fallback="blank.png">http://localhost:52307/getpvrthumb&amp;title=$INFO[Window(10000).Property(EPG.Title)]&amp;type=landscape,thumb</texture>
-                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
-				
-            </control>
         <control type="image">
             <description>isManaged Art</description>   
             <posx>345</posx>

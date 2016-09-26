@@ -141,18 +141,6 @@
                 <texture fallback="landscape.png">$INFO[Window(10000).Property(OVERLAY.landscape)]</texture>
                 <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
             </control>
-			 <control type="image">
-			 <visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
-                <description>Dynamic artwork</description>
-                <posx>25</posx>
-                <posy>250r</posy>  
-                <width>360</width>      
-                <height>230</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="video_diffuse.png"></texture>
-                <texture background="true">http://localhost:52307/getpvrthumb&amp;title=$INFO[Window(10000).Property(OVERLAY.Title)]&amp;type=landscape,thumb</texture>
-                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
-            </control>
            
             <control type="image">
                 <description>isNew Art</description>         
@@ -474,18 +462,6 @@
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture diffuse="video_diffuse.png"></texture>
                 <texture fallback="">$INFO[Window(10000).Property(OVERLAY.poster)]</texture>
-                <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
-            </control>
-			 <control type="image">
-			 <visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
-                <description>Dynamic artwork</description>
-                <posx>25</posx>
-                <posy>495r</posy>  
-                <width>340</width>      
-                 <height min="180" max="460">auto</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="video_diffuse.png"></texture>
-                <texture fallback="blank.png">http://localhost:52307/getpvrthumb&amp;title=$INFO[Window(10000).Property(OVERLAY.Title)]&amp;type=landscape,thumb</texture>
                 <animation effect="fade" start="95" end="95" condition="True">Conditional</animation>
             </control>
 		<control type="image">
