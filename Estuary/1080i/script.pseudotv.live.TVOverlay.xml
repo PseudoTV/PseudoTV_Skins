@@ -14,15 +14,15 @@
     <onload>SetProperty(EPG.shadowColor,0xff000000,10000)</onload>
     <onload>SetProperty(EPG.focused_textColor,0xFFFFFFFF,10000)</onload>
     <onload>SetProperty(EPG.textColor,0xFFFFFFFF,10000)</onload>
-    <onload>SetProperty(EPG.textFont,lato12,10000)</onload>
+    <onload>SetProperty(EPG.textFont,titan12,10000)</onload>
     <!-- Overlay controls -->
     <controls>   
         <control type="image" id="203">
             <description>Corner Channel Bug</description>
-            <posx>350r</posx>
-            <posy>188r</posy>
-            <width>150</width>
-            <height>150</height>
+            <posx>150</posx>
+            <posy>88</posy>
+            <width>180</width>
+            <height>180</height>
             <aspectratio>keep</aspectratio>
             <texture>NA.png</texture>
             <visible>!Control.IsVisible(101)</visible>
@@ -79,8 +79,8 @@
                         <width>336</width>
                         <height>75</height>
                         <description>StarOver Label</description>
-                        <label>[B]To Start Over | Press[/B]</label>
-                        <font>lato12</font>
+                        <label>To Start Over | Press</label>
+                        <font>titan12</font>
                         <align>right</align>
                         <aligny>center</aligny>
                         <textcolor>FFFFFFFF</textcolor>
@@ -129,7 +129,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="1300">auto</width>
                     <height>50</height>
-                    <font>lato13</font>
+                    <font>titan13</font>
                     <textcolor>ffffffff</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
@@ -149,7 +149,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FF0084ff</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <label fallback="">$INFO[VideoPlayer.Time]</label>
@@ -163,7 +163,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FF0084ff</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <align>left</align>
                         <aligny>bottom</aligny>
                         <label fallback="">$INFO[VideoPlayer.Duration]</label>
@@ -182,7 +182,7 @@
                <height>45</height>
                <align>left</align>
                <aligny>center</aligny>
-               <font>lato13</font>
+               <font>titan13</font>
                <textcolor>FF0084ff</textcolor>
                <label>$INFO[Window(10000).Property(OVERLAY.Chnum)]</label>
             </control>
@@ -192,7 +192,7 @@
                <height>45</height>
                <align>center</align>
                <aligny>center</aligny>
-               <font>lato12</font>
+               <font>titan12</font>
                <textcolor>ffffffff</textcolor>
 			   <wrapmultiline>false</wrapmultiline>
                <scrollspeed>40</scrollspeed>
@@ -250,8 +250,8 @@
                 <wrapmultiline>true</wrapmultiline>
                 <textcolor>FFFFFFFF</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
-                <font>lato12</font>
-                <label>[COLOR=FF0084ff][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
+                <font>titan12</font>
+                <label>[B]$INFO[Window(10000).Property(OVERLAY.Description)][/B]</label>
             </control>
          <!-- TIME/WEATHER -->
 		 <control type="label">
@@ -261,7 +261,7 @@
             <width>200</width>
             <height>45</height>
             <label>$INFO[System.Time]</label>
-            <font>lato13</font>
+            <font>titan13</font>
             <align>center</align>
             <textcolor>FF0084ff</textcolor>
          </control>
@@ -281,26 +281,21 @@
                 <texturenofocus>pstvlButtonNoFocusAlt.png</texturenofocus>
                 <visible>false</visible>
             </control>
-			 <control type="group">             
-                <control type="image">
-                    <description>Info Seekbar Line</description>
-                    <posx>530</posx>
-                    <posy>230</posy>
-                    <width>1000</width>
-                    <height>8</height>
-                    <texture>seek/osd_bg_progress.png</texture>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                </control>
-                <control type="image" id="5007">
-                    <posx>530</posx>
-                    <posy>230</posy>
-                    <width>1000</width>
-                    <height>8</height>
-                    <texture>seek/progress_mid.png</texture>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                </control> 
+			 <control type="group"> 
+			  <control type="progress" id="5007">
+                        <posx>530</posx>
+                        <posy>220</posy> 
+                        <width>1000</width>
+                        <height>20</height>
+                        <texturebg>seek/osd_bg_progress_big.png</texturebg>
+                        <lefttexture border="0">seek/progress_left.png</lefttexture>
+                        <midtexture border="0">seek/progress_mid.png</midtexture>
+                        <righttexture border="0">seek/progress_right.png</righttexture>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>Player.Progress</info>   
+                    </control>
+               
             </control>  
         </control> 
         <!-- MOREINFO -->
@@ -380,7 +375,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -395,7 +390,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -410,7 +405,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -425,7 +420,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -474,7 +469,7 @@
                     <description>Show Title Label</description>
                     <width min="5" max="1800">auto</width>
                     <height>30</height>
-                    <font>lato13</font>
+                    <font>titan13</font>
                     <textcolor>FF0084ff</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
@@ -539,7 +534,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label fallback="">[B]$INFO[System.Time, Time: ] $INFO[Player.StartTime, Started: ][/B]</label>
@@ -554,7 +549,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>[B]$INFO[Player.Time][/B]</label>
@@ -570,7 +565,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <align>center</align>
                         <aligny>center</aligny>
                         <label>      [B]  $INFO[Player.Duration,[COLOR=FF0084ff]Duration:     [/COLOR]][/B]</label>
@@ -585,7 +580,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <align>center</align>
                         <aligny>center</aligny>
                         <label>      [B] $INFO[Player.Time,[COLOR=FF0084ff]   Elapsed:    [/COLOR] ][/B]</label>
@@ -600,7 +595,7 @@
                         <fadetime>250</fadetime>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <align>center</align>
                         <aligny>center</aligny>
                         <label> [B]$INFO[Player.TimeRemaining,[COLOR=FF0084ff]   Remaining:   [/COLOR] ][/B]</label>
@@ -624,7 +619,7 @@
                         <wrapmultiline>true</wrapmultiline>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <label>  $INFO[Window(10000).Property(OVERLAY.Year),[COLOR=FF0084ff]   Year: [/COLOR] ]</label>
                     </control>
 					<control type="label">
@@ -637,7 +632,7 @@
                         <aligny>bottom</aligny>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <label>    $INFO[VideoPlayer.Rating,[COLOR=FF0084ff]IMBD:  [/COLOR]]</label>
                     </control>
                     <control type="label">
@@ -651,7 +646,7 @@
                         <wrapmultiline>true</wrapmultiline>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <label>$INFO[Window(10000).Property(OVERLAY.Genre),[COLOR=FF0084ff]   Genre: [/COLOR] ]</label>
                     </control>
 					<control type="label">
@@ -664,7 +659,7 @@
                         <aligny>bottom</aligny>
                         <textcolor>FFFFFFFF</textcolor>
                         <shadowcolor>ff000000</shadowcolor>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <label>  $INFO[VideoPlayer.Studio,[COLOR=FF0084ff]Studio:  [/COLOR]]</label>
                     </control>
                 </control>  
@@ -679,7 +674,7 @@
                     <wrapmultiline>true</wrapmultiline>
                     <textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <label>[COLOR=FF0084ff][B]$INFO[Window(10000).Property(OVERLAY.Time)] • [/B][/COLOR]$INFO[Window(10000).Property(OVERLAY.Description)]</label>
                 </control>
              <!-- line 4 -->
@@ -836,7 +831,7 @@
                         <label>Coming Up Next</label>
                         <label>Coming Up Next</label>
                         <label>$INFO[Window(10000).Property(OVERLAY.NEXT.Title)]</label>
-                        <font>lato12</font>
+                        <font>titan12</font>
                         <scroll>false</scroll>
                         <scrollout>false</scrollout>
                         <textcolor>FFFFFFFF</textcolor>
@@ -935,7 +930,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -949,7 +944,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -963,7 +958,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -977,7 +972,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -991,7 +986,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1005,7 +1000,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1019,7 +1014,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1033,7 +1028,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1047,7 +1042,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1061,7 +1056,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1075,7 +1070,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1089,7 +1084,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
                     <texturenofocus>.png</texturenofocus>
@@ -1100,7 +1095,7 @@
             </control>
         </control>
         <control type="group" id="101">    
-            <visible></visible>
+            <visible>false</visible>
             <control type="image">
 			    <posx>0</posx>
                 <posy>-20</posy>
@@ -1108,7 +1103,6 @@
                 <width>1920</width>
                 <height>1140</height>
                 <texture>pstvlBackground.png</texture>
-                <animation effect="fade" start="25" end="25" condition="True">Conditional</animation>
                 <align>center</align>
                 <aligny>center</aligny>
             </control>
@@ -1158,7 +1152,7 @@
                     <description>Loading Background Text</description>
                     <width>1280</width>
                     <height>40</height>
-                    <font>lato13</font>
+                    <font>titan13</font>
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
@@ -1169,7 +1163,7 @@
                     <description>Loading Background Text</description>
                     <width>1280</width>
                     <height>20</height>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
@@ -1191,7 +1185,7 @@
                     <description>Loading Background Text</description>
                     <width>1280</width>
                     <height>20</height>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>
@@ -1226,7 +1220,7 @@
                     <posy>700</posy>
                     <width>1980</width>
                     <height min="40" max="80">auto</height>
-                    <font>lato13</font>
+                    <font>titan13</font>
                     <aligny>center</aligny>
                     <align>center</align>
                     <scroll>True</scroll>
@@ -1244,7 +1238,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
@@ -1262,7 +1256,7 @@
                     <label></label>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>lato12</font>
+                    <font>titan12</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
                     <texturefocus>pstvlButtonFocus.png</texturefocus>
